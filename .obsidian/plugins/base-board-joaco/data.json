@@ -1,0 +1,14 @@
+{
+  "columnConfigs": {
+    "Tareas::Kanban::estado": {
+      "columns": [
+        "propuesta",
+        "bloqueada",
+        "pendiente",
+        "en-curso",
+        "en-revision",
+        "hecho"
+      ]
+    }
+  }
+}

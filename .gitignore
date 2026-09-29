@@ -1,0 +1,19 @@
+# Bóveda FP&A — qué NO se sube al repo privado de GitHub
+
+# Estado local de Obsidian (cambia a cada rato y es distinto en cada equipo)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.trash/
+
+# Plugin original del tablero (deshabilitado; se usa base-board-joaco)
+.obsidian/plugins/base-board/
+
+# Configuración de Obsidian Git de cada equipo (en el celular puede guardar credenciales)
+.obsidian/plugins/obsidian-git/data.json
+
+# macOS
+.DS_Store
+
+# Respaldos locales hechos antes de cambios grandes
+_sistema/respaldo-*.tgz

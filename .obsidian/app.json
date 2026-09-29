@@ -1,0 +1,7 @@
+{
+  "attachmentFolderPath": "_sistema/adjuntos",
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "Inbox",
+  "promptDelete": true
+}

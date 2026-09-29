@@ -1,0 +1,161 @@
+filters:
+  and:
+    - type == "tarea"
+    - file.inFolder("Tareas")
+formulas:
+  orden_prioridad: if(prioridad == "alta", 1, if(prioridad == "media-alta", 2, if(prioridad == "media", 3, if(prioridad == "media-baja", 4, if(prioridad == "baja", 5, 6)))))
+  orden_tiempo: if(tiempo == 1, 1, if(tiempo == 2, 2, if(tiempo == 3, 3, if(tiempo == 4, 4, if(tiempo == 5, 5, 9)))))
+  tiempo_txt: if(tiempo == 1, "⏱ ≤2 h", if(tiempo == 2, "⏱ ½ día", if(tiempo == 3, "⏱ 1 día", if(tiempo == 4, "⏱ 2–3 días", if(tiempo == 5, "⏱ 1 sem+", "")))))
+properties:
+  formula.tiempo_txt:
+    displayName: Tiempo
+views:
+  - type: kanban
+    name: Kanban
+    filters:
+      and:
+        - estado != "descartada"
+    groupBy:
+      property: estado
+      direction: ASC
+    order:
+      - file.name
+      - prioridad
+      - formula.tiempo_txt
+      - proyecto
+    boardColumns:
+      - propuesta
+      - bloqueada
+      - pendiente
+      - en-curso
+      - en-revision
+      - hecho
+    collapsedColumns:
+      bloqueada: true
+    columnColors:
+      en-curso: "#3243c8"
+      en-revision: "#eeda59"
+      hecho: "#35bb50"
+    filterBarSelected: []
+    priorityOrder: alta, media-alta, media, media-baja, baja
+    timeProperty: note.tiempo
+    sortByTime: true
+    timeAscending: true
+    showSequence: true
+    sequenceColumns: en-revision, en-curso, pendiente, bloqueada, propuesta
+    showTaskId: true
+    taskIdProperty: note.id
+  - type: table
+    name: Todas (activas)
+    filters:
+      and:
+        - estado != "hecho"
+        - estado != "descartada"
+    order:
+      - id
+      - file.name
+      - estado
+      - prioridad
+      - formula.tiempo_txt
+      - tipo
+      - proyecto
+      - fecha_limite
+    sort:
+      - property: formula.orden_prioridad
+        direction: ASC
+      - property: formula.orden_tiempo
+        direction: ASC
+  - type: table
+    name: Pendiente
+    filters:
+      and:
+        - estado == "pendiente"
+    order:
+      - id
+      - file.name
+      - prioridad
+      - formula.tiempo_txt
+      - proyecto
+      - fecha_limite
+    sort:
+      - property: formula.orden_prioridad
+        direction: ASC
+      - property: formula.orden_tiempo
+        direction: ASC
+  - type: table
+    name: En curso
+    filters:
+      and:
+        - estado == "en-curso"
+    order:
+      - id
+      - file.name
+      - prioridad
+      - formula.tiempo_txt
+      - proyecto
+    sort:
+      - property: formula.orden_prioridad
+        direction: ASC
+      - property: formula.orden_tiempo
+        direction: ASC
+  - type: table
+    name: En revisión
+    filters:
+      and:
+        - estado == "en-revision"
+    order:
+      - id
+      - file.name
+      - prioridad
+      - formula.tiempo_txt
+      - proyecto
+    sort:
+      - property: formula.orden_prioridad
+        direction: ASC
+      - property: formula.orden_tiempo
+        direction: ASC
+  - type: table
+    name: Hecho
+    filters:
+      and:
+        - estado == "hecho"
+    order:
+      - id
+      - file.name
+      - tipo
+      - proyecto
+      - creado
+      - file.mtime
+    sort:
+      - property: file.mtime
+        direction: DESC
+  - type: table
+    name: Sin tocar (viejas primero)
+    filters:
+      and:
+        - estado != "hecho"
+        - estado != "descartada"
+    order:
+      - id
+      - file.name
+      - estado
+      - tipo
+      - prioridad
+      - file.mtime
+    sort:
+      - property: file.mtime
+        direction: ASC
+  - type: table
+    name: Descartadas
+    filters:
+      and:
+        - estado == "descartada"
+    order:
+      - id
+      - file.name
+      - fuente
+      - proyecto
+      - file.mtime
+    sort:
+      - property: file.mtime
+        direction: DESC
