@@ -61,7 +61,7 @@ Cada tarea programada escribe solo en su zona y, antes de crear, busca la llave 
 | Mantenimiento (día 1) | `Inbox/Deriva — …`, `Journal/Resumen AAAA-MM.md` | métrica (una Deriva abierta por métrica) |
 
 - Todas reportan en `_sistema/registro/AAAA-MM.md` (una sección por corrida). **Ningún agente escribe en la nota diaria del Journal**: es de Joaquín.
-- La bóveda se sincroniza con el repo **privado** `Joaquinihc/boveda-JIHC` de GitHub (cuenta de trabajo de Joaquín; https://github.com/Joaquinihc/boveda-JIHC) mediante el plugin Obsidian Git; `.gitignore` define qué no se sube. **Ningún agente ejecuta git en la bóveda** (ni commit, ni push, ni pull): lo hace el plugin. Nunca escribas secretos (tokens, contraseñas, cadenas de conexión) en ninguna nota.
+- La bóveda se sincroniza con el repo **privado** `Joaquinihc/boveda-JIHC` de GitHub (cuenta de trabajo de Joaquín; https://github.com/Joaquinihc/boveda-JIHC) mediante el plugin Obsidian Git (el Mac es la única fuente: sube cada hora y no trae cambios; el repo es solo de consulta y respaldo, no se edita en GitHub ni desde otros equipos); `.gitignore` define qué no se sube. **Ningún agente ejecuta git en la bóveda** (ni commit, ni push, ni pull): lo hace el plugin. Nunca escribas secretos (tokens, contraseñas, cadenas de conexión) en ninguna nota.
 - Las instrucciones vivas de cada tarea están en `_sistema/tareas-locales/` (fuente única). Ningún agente modifica esa carpeta salvo a pedido explícito de Joaquín en conversación.
 
 ## Reglas duras
