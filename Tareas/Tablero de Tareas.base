@@ -32,6 +32,7 @@ views:
       - hecho
     collapsedColumns:
       bloqueada: true
+      hecho: true
     columnColors:
       en-curso: "#3243c8"
       en-revision: "#eeda59"
