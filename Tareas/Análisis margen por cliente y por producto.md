@@ -30,3 +30,4 @@ revisar: false
 ## Historial
 - 2026-09-22 · Importada desde Notion (In progress).
 - 2026-09-29 · Notion: In progress → To Review
+- 2026-10-02 · Mencionada de nuevo en [[2026-09-29 FP&A Weekly]] (dejar costos de plataforma como estimación aparte y redondeada)

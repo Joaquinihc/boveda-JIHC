@@ -25,3 +25,4 @@ revisar: false
 
 ## Historial
 - 2026-09-22 · Importada desde Notion (In progress).
+- 2026-10-02 · Mencionada de nuevo en [[2026-10-01 Costos Azure y OpenAI]] (catalogar costos de Azure y OpenAI en el P&L)
