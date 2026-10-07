@@ -6,6 +6,7 @@ url: https://github.com/agendapro/agendapro-dbt/pull/414
 autor: Joaquinihc
 merge: 2026-09-30
 temas: [activacion, dwh, definiciones]
+proyecto: "[[_Activación]]"
 creado: 2026-10-02
 revisar: false
 ---
@@ -14,7 +15,7 @@ revisar: false
 
 > Borrador cosechado por la tarea PRs (vie). Hechos del PR, sin juicio. Rama `refactor/postgres-to-redshift`. Lo consume el PR 415 (ver [[PR 415 — exclude imported bookings from activation and velocity cohorts]]).
 
-**Proyecto**: sin link (el PR no nombra proyecto).
+**Proyecto**: [[_Activación]] (asignado por Joaquín el 2026-10-07).
 
 ## Qué cambió
 - Columnas nuevas `bookings_count_demand` y `cum_bookings_count_demand` en `fct_bookings_created_daily` y `fct_bookings_created_monthly`: excluyen reservas importadas desde otro software al hacer onboarding. Espejo de `enrollments_count_demand` (que ya excluye migraciones de clases).

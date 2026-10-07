@@ -1,7 +1,7 @@
 {
 	"id": "base-board-joaco",
 	"name": "Base Board (Joaco)",
-	"version": "1.5.0",
+	"version": "1.5.1",
 	"minAppVersion": "1.10.2",
 	"description": "Fork personal de Base Board: subtareas visibles en las tarjetas, colores de prioridad, orden por prioridad, filtro por propiedad y fecha de última modificación. Basado en Base Board de Michael DeRazon (MIT).",
 	"author": "Joaquín Herrera (fork de Base Board, Michael DeRazon)",

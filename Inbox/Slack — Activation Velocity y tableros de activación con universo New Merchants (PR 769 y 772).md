@@ -2,6 +2,7 @@
 type: sugerencia
 origen: slack
 temas: [activacion, definiciones, evidence, okrs, board, fitness]
+proyecto: "[[_Activación]]"
 criterio: "(a) cambia cómo se mide + (c) conclusión que explica un número"
 fuente: https://agendapro.slack.com/archives/D095G9DL97T/p1790648940336049
 canal: "DM con Pablo Lucero"

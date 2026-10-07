@@ -5,7 +5,7 @@ estado: hecho
 prioridad: baja
 tipo: analisis
 origen: notion
-proyecto:
+proyecto: "[[_Activación]]"
 temas: []
 notion_id: 31fab34c233b80589ef7dc0c0daf26fd
 notion_estado: "Done"
@@ -27,3 +27,4 @@ Importada ya cerrada en Notion.
 
 ## Historial
 - 2026-09-22 · Importada desde Notion (Done).
+- 2026-10-07 · Asignada al proyecto [[_Activación]] desde Claude Code, a pedido de Joaquín

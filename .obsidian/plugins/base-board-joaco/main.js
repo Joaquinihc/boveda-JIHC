@@ -2411,6 +2411,7 @@ var CardManager = class {
     const groupByProp = this.view.getGroupByProperty();
     const visibleProps = this.view.config.getOrder();
     const chips = [];
+    const hiddenIdProp = this.view.getHiddenIdChipProperty();
     for (const propId of visibleProps) {
       if (chips.length >= 6) break;
       if (propId.startsWith("file.")) {
@@ -2419,6 +2420,7 @@ var CardManager = class {
       const propName = propId.startsWith("note.") ? propId.slice(5) : propId;
       if (groupByProp && propName === groupByProp) continue;
       if (propName === ORDER_PROPERTY) continue;
+      if (hiddenIdProp && propName === hiddenIdProp) continue;
       const val = entry.getValue(propId);
       if (!val || val instanceof import_obsidian7.NullValue || !val.isTruthy()) continue;
       const display = formatValueForChip(val);
@@ -2556,9 +2558,10 @@ var CardManager = class {
     var _a, _b, _c, _d, _e, _f;
     const file = entry.file;
     const groupByProp = this.view.getGroupByProperty();
+    const hiddenIdProp = this.view.getHiddenIdChipProperty();
     const visibleProperties = this.view.config.getOrder().filter((propId) => {
       const propName = propId.startsWith("note.") ? propId.slice(5) : propId;
-      return propName !== groupByProp && propName !== ORDER_PROPERTY;
+      return propName !== groupByProp && propName !== ORDER_PROPERTY && propName !== hiddenIdProp;
     }).map((propId) => {
       const value = entry.getValue(propId);
       return [
@@ -3485,15 +3488,30 @@ var KanbanView = class extends import_obsidian9.BasesView {
     return val === void 0 || val === null ? true : !!val;
   }
   /** Task id text of a file (e.g. "T-042"), or null when missing. */
-  getTaskIdText(filePath) {
-    var _a, _b, _c;
+  /** Joaco fork: frontmatter property that holds the task id (e.g. "id"). */
+  getTaskIdPropertyName() {
+    var _a;
     const raw = (_a = this.config) == null ? void 0 : _a.get(CONFIG_KEY_ID_PROPERTY);
     const propId = typeof raw === "string" && raw.trim() !== "" ? raw.trim() : "note.id";
     const prop = propId.startsWith("note.") ? propId.slice(5) : propId;
     if (!prop || prop === "__proto__" || prop === "constructor") return null;
+    return prop;
+  }
+  /**
+   * Joaco fork: property to leave out of the card chips because the id is
+   * already shown in the footer. It stays in the view's displayed properties
+   * so the Bases search can find cards by id (T-069).
+   */
+  getHiddenIdChipProperty() {
+    return this.isShowTaskId() ? this.getTaskIdPropertyName() : null;
+  }
+  getTaskIdText(filePath) {
+    var _a, _b;
+    const prop = this.getTaskIdPropertyName();
+    if (!prop) return null;
     const file = this.app.vault.getAbstractFileByPath(filePath);
     if (!file || !(file instanceof import_obsidian9.TFile)) return null;
-    const val = (_c = (_b = this.app.metadataCache.getFileCache(file)) == null ? void 0 : _b.frontmatter) == null ? void 0 : _c[prop];
+    const val = (_b = (_a = this.app.metadataCache.getFileCache(file)) == null ? void 0 : _a.frontmatter) == null ? void 0 : _b[prop];
     if (typeof val === "number") return String(val);
     return typeof val === "string" && val.trim() !== "" ? val.trim() : null;
   }

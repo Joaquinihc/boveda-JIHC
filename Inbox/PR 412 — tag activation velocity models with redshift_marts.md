@@ -6,6 +6,7 @@ url: https://github.com/agendapro/agendapro-dbt/pull/412
 autor: Joaquinihc
 merge: 2026-09-29
 temas: [activacion, dwh, evidence]
+proyecto: "[[_Activación]]"
 creado: 2026-10-02
 revisar: false
 ---
@@ -14,7 +15,7 @@ revisar: false
 
 > Borrador cosechado por la tarea PRs (vie). Hechos del PR, sin juicio. Rama `refactor/postgres-to-redshift`.
 
-**Proyecto**: sin link (el PR no nombra proyecto).
+**Proyecto**: [[_Activación]] (asignado por Joaquín el 2026-10-07).
 
 ## Qué cambió
 - Tag `redshift_marts` inline en `int_company_booking_cohorts` y los tres `activation_velocity_*_report` (monthly, weekly, weekly_cohort), para que el flow diario `run-dbt-marts-redshift` los seleccione.

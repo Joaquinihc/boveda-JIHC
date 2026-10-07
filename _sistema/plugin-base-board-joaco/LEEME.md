@@ -6,7 +6,7 @@ type: recurso
 Respaldo del código del plugin propio que dibuja el tablero de `Tareas/`. El plugin instalado (lo que Obsidian ejecuta) está en `.obsidian/plugins/base-board-joaco/`; aquí está el **código fuente** para poder modificarlo en el futuro.
 
 - `base-board-joaco-src.tgz`: repositorio completo (con historial git, sin `node_modules`). Rama `fork-joaco` sobre Base Board 2.5.1 de Michael DeRazon (licencia MIT, incluida en el paquete).
-- Versión actual: **1.5.0** (7-oct-2026).
+- Versión actual: **1.5.1** (7-oct-2026).
 
 ## Qué cambia respecto del original
 - 1.0.0: subtareas de `## Subtareas` visibles y marcables en la tarjeta; chip de `prioridad` coloreado; orden por prioridad; filtro fijo por `tipo`; "Últ. mod" al pie.
@@ -18,6 +18,7 @@ Respaldo del código del plugin propio que dibuja el tablero de `Tareas/`. El pl
 - 1.4.0: **columnas dobles**. Una columna configurada (en este tablero, `en-curso`) que tiene más de N tarjetas visibles (aquí 10) se ensancha y muestra las tarjetas en dos columnas, en zigzag (1 | 2, 3 | 4…). Con N o menos vuelve a una columna. Arrastrar funciona en las dos mitades. Se configura en las opciones de la vista, grupo "Columnas dobles" (`doubleColumns` y `doubleColumnsThreshold` en el `.base`). En el celular siempre es una columna.
 - 1.4.1: el ancho de las columnas sale de la variable CSS `--base-board-column-width` (por defecto 280px). El snippet `.obsidian/snippets/tablero-ancho.css` la fija en 320px. La columna doble mide el doble (`2 × ancho − 10px`), así cada mitad conserva el ancho de una columna normal. Para cambiar el ancho, edita solo la variable del snippet.
 - 1.5.0: la columna doble se arma como **mosaico**: cada tarjeta, en orden, va a la mitad que esté más corta, pegada a la de arriba, sin huecos verticales (antes era zigzag por filas y quedaban huecos bajo las tarjetas cortas). Se reacomoda sola cuando una tarjeta cambia de alto. Al arrastrar, la tarjeta queda antes de la tarjeta sobre cuya parte de arriba se suelta, en la mitad elegida; después se acomoda en el espacio libre.
+- 1.5.1: **buscar por id**. El buscador de Bases solo busca en las propiedades mostradas de la vista, así que `id` se agregó a las propiedades mostradas del tablero (`order` en el `.base`). Para que no se vea dos veces, el plugin no lo dibuja como etiqueta cuando ya lo muestra en el pie («Mostrar el id» activado).
 
 ## Cómo reconstruirlo
 ```bash

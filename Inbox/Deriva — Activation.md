@@ -3,6 +3,7 @@ type: deriva
 metrica: "[[Activation]]"
 estado: abierta
 temas: [activacion, definiciones, dwh]
+proyecto: "[[_Activación]]"
 fuente: https://github.com/agendapro/agendapro-dbt/blob/refactor/postgres-to-redshift/models/intermediate/revenue/int_company_activation_status.sql
 creado: 2026-10-01
 revisar: false

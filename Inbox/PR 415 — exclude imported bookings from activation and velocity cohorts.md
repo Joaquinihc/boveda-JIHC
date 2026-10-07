@@ -7,15 +7,16 @@ autor: Joaquinihc
 estado_pr: abierto
 merge:
 temas: [activacion, graduacion, churn, waterfall, definiciones]
+proyecto: "[[_Activación]]"
 creado: 2026-10-02
-revisar: true
+revisar: false
 ---
 
 # PR 415 — activación y cohortes de velocity sin reservas importadas
 
 > Borrador cosechado por la tarea PRs (vie). Hechos del PR, sin juicio. Rama `refactor/postgres-to-redshift`. **Abierto** (creado 30-sep, sin merge al 2-oct). Usa el contador del PR 414 (ver [[PR 414 — add import-free booking counters to fct_bookings_created]]).
 
-**Proyecto**: sin link (el PR toca graduación pero no nombra el proyecto; candidato: Churn y Graduación). `revisar: true`.
+**Proyecto**: [[_Activación]] (asignado por Joaquín el 2026-10-07; toca también la graduación de [[_Churn y Graduación]]).
 
 ## Qué cambió
 - `int_company_booking_cohorts` e `int_company_activation_status` leen `bookings_count_demand` en vez de `bookings_count`: dejan de contar el historial importado (marca CSV y carga 514942).
