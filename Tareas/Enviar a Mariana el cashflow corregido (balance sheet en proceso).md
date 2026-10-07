@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: hecho
 prioridad:
 tiempo:
 tipo: reporte
@@ -28,3 +28,4 @@ Enviar a Mariana el cashflow con el tipo de cambio ya corregido e informarle que
 
 ## Historial
 - 2026-09-29 · Creada desde [[2026-09-28 Coordinación Finanzas]] (propuesta)
+- 2026-10-07 · Hecho: Joaquín ya le envió el cashflow corregido a Mariana (Joaquín en conversación)

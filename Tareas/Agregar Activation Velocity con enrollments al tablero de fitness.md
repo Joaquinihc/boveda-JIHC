@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: reporte
@@ -28,3 +28,4 @@ Agregar al tablero de fitness la métrica Activation Velocity (% de clientes que
 
 ## Historial
 - 2026-10-02 · Creada desde [[2026-09-29 FP&A Weekly]] (propuesta)
+- 2026-10-07 · Pasó a subtarea de [[Arreglar definición de activación]] (Joaquín en conversación)

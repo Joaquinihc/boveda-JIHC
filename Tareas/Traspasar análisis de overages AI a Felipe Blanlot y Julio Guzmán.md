@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: gestion
@@ -12,7 +12,7 @@ temas:
 fuente: "[[2026-09-29 FP&A Weekly]]"
 fecha_limite:
 creado: 2026-09-29
-revisar: true
+revisar: false
 id: T-083
 ---
 
@@ -29,3 +29,4 @@ El tema de overages AI pasa a Felipe Blanlot y Julio Guzmán para que lo tomen. 
 
 ## Historial
 - 2026-10-02 · Creada desde [[2026-09-29 FP&A Weekly]] (propuesta)
+- 2026-10-07 · Descartada (Joaquín en conversación)

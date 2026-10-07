@@ -1,7 +1,7 @@
 ---
 type: tarea
 id: T-070
-estado: propuesta
+estado: descartada
 prioridad:
 tipo: gestion
 origen: reunion
@@ -24,3 +24,4 @@ Confirmar cómo cobra Beauty la instalación/onboarding. En la reunión se dijo 
 
 ## Historial
 - 2026-09-23 · Creada en propuesta desde [[2026-09-22 Reunión — Revenue Waterfall, CAC y bookings]]: espera la aprobación de Joaquín (monitor)
+- 2026-10-07 · Descartada (Joaquín en conversación)

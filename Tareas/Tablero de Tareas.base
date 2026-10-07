@@ -10,8 +10,8 @@ properties:
   formula.tiempo_txt:
     displayName: Tiempo
 views:
-  - type: kanban
-    name: Kanban
+  - type: tablero-joaquin
+    name: tablero-joaquín
     filters:
       and:
         - estado != "descartada"
@@ -33,6 +33,7 @@ views:
     collapsedColumns:
       bloqueada: true
       hecho: true
+      propuesta: true
     columnColors:
       en-curso: "#3243c8"
       en-revision: "#eeda59"
@@ -46,6 +47,8 @@ views:
     sequenceColumns: en-revision, en-curso, pendiente, bloqueada, propuesta
     showTaskId: true
     taskIdProperty: note.id
+    doubleColumns: en-curso
+    doubleColumnsThreshold: 10
   - type: table
     name: Todas (activas)
     filters:

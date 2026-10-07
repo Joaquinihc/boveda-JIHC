@@ -1,7 +1,7 @@
 ---
 type: tarea
 id: T-068
-estado: propuesta
+estado: descartada
 prioridad:
 tipo: reporte
 origen: reunion
@@ -24,3 +24,4 @@ Gráficos de registro de bookings por corte para ver el uso de la plataforma, pe
 
 ## Historial
 - 2026-09-23 · Creada en propuesta desde [[2026-09-22 Reunión — Revenue Waterfall, CAC y bookings]]: espera la aprobación de Joaquín (monitor)
+- 2026-10-07 · Pasó a subtarea de [[Dashboard de bookings y enrollments desde cero]] (Joaquín en conversación)

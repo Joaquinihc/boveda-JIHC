@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: gestion
@@ -26,3 +26,4 @@ La data de Reminders vive en un microservicio propio (no está en el DWH ni en e
 
 ## Historial
 - 2026-09-29 · Creada desde [[2026-09-28 Coordinación Finanzas]] (propuesta)
+- 2026-10-07 · Pasó a subtarea de [[Análisis migración Reminders a Sofía]] (Joaquín en conversación)

@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: cuadratura
@@ -31,3 +31,4 @@ Consultar con Pablo si los movimientos de ProPay entran al cashflow (o a un cash
 ## Historial
 - 2026-10-06 · Creada desde [[2026-10-05 Working Capital ProPay y cierre P&L México (Rafa)]] (propuesta)
 - 2026-10-06 · Mencionada de nuevo en [[2026-10-05 Boletas de garantía y saldo Working Capital ProPay (Rafa)]] (confirmar con Pablo Lucero el saldo final a septiembre)
+- 2026-10-07 · Descartada (Joaquín en conversación)

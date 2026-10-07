@@ -1,7 +1,7 @@
 ---
 type: tarea
-estado: propuesta
-prioridad:
+estado: en-curso
+prioridad: alta
 tiempo:
 tipo: cuadratura
 origen: reunion
@@ -26,3 +26,4 @@ Reunión agendada por Nicolás Astudillo para el 29-sep para revisar las inconsi
 
 ## Historial
 - 2026-09-29 · Creada desde [[2026-09-28 Coordinación Finanzas]] (propuesta)
+- 2026-10-07 · Aprobada: en curso, prioridad alta (Joaquín en conversación)

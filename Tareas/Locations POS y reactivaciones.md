@@ -32,6 +32,8 @@ Conversar con Ignacio para llegar a las mismas métricas: (1) compañías, locat
 - [ ] 9. Sugerir a Ignacio ajustes a su deck (semana parcial y corte)
 - [ ] 10. Auditar casos borde de las tablas SoT de ventas POS
 - [ ] 11. Incorporar las tablas SoT de ventas POS a dbt y Evidence
+- [ ] 12. Presentación a Riverwood: ordenar las subtareas y editar el board book
+- [ ] 13. Migrar el payback a las tablas nuevas de ventas POS y medir el impacto
 
 ## Notas
 
@@ -117,6 +119,18 @@ Cada subtarea de arriba tiene aquí su descripción con el mismo número y títu
 - **Resultado esperado**: el board book leyendo `dwh.pos_sales_sot` como única fuente.
 - Venía de las tareas [[Incorporar las tablas SoT de ventas POS a dbt y Evidence]] (T-072) y [[Reactualizar los gráficos POS del board book con la tabla consolidada]] (T-074), unidas el 25-sep.
 
+### 12. Presentación a Riverwood: ordenar las subtareas y editar el board book
+- **Qué es**: preparar la presentación de la reunión trimestral con Riverwood. Para eso hay que ordenar las demás subtareas de esta tarea (qué queda resuelto antes de presentar y qué se presenta como pendiente) y con eso editar la presentación del board book y completar los archivos pedidos.
+- **Pasos**: (1) revisar el calendario de Pablo y agendar la presentación (se habló del día 14); (2) ordenar las subtareas 1 a 11 y 13 según lo que entra en la presentación; (3) editar la presentación del board book y completar los archivos pedidos.
+- **Resultado esperado**: presentación a Riverwood agendada y con los números de ventas POS ordenados y explicados.
+- Venía de la propuesta [[Coordinar presentación con Riverwood (revisar calendario de Pablo)]] (T-075), de [[2026-09-24 Reunión — Tablas SoT de ventas POS (Ignacio)]]; se mencionó de nuevo en [[2026-10-05 Payback y migración a tablas POS]]. Pasó a ser esta subtarea el 7-oct.
+
+### 13. Migrar el payback a las tablas nuevas de ventas POS y medir el impacto
+- **Qué es**: pasar el cálculo del payback a la tabla nueva de ventas POS (columna de compra válida) y medir cuánto cambia la cantidad de POS que considera. Es la parte del payback que la subtarea 11 dejó pendiente (hoy sigue en `country_pos`).
+- **Pasos**: (1) verificar qué POS toma hoy el cálculo (solo primera venta o también adicionales y reactivaciones); (2) comparar la cantidad de POS del registro actual vs el nuevo y el efecto en el payback; (3) decidir formalmente si reactivaciones y ventas adicionales entran al payback.
+- **Resultado esperado**: payback calculado con la tabla nueva y el impacto medido.
+- Venía de la propuesta [[Migrar el payback a las tablas nuevas de ventas POS y medir el impacto]] (T-088), de [[2026-10-05 Payback y migración a tablas POS]]. Pasó a ser esta subtarea el 7-oct.
+
 ## Historial
 - 2026-09-10 · Cuadratura jul–sep 2026 (Chile, ISR) a nivel company_id contra el board book: +9 unidades, con causa identificada caso por caso. 17 company_id investigados en `pos_sales2`, facturas, addons de Chargebee, planilla KAM y HubSpot.
 - 2026-09-22 · Importada desde Notion (In progress).
@@ -126,3 +140,5 @@ Cada subtarea de arriba tiene aquí su descripción con el mismo número y títu
 - 2026-09-24 · Mencionada de nuevo en [[2026-09-24 Reunión — Tablas SoT de ventas POS (Ignacio)]] (aclarar con Payments las ventas revertidas con factura pagada)
 - 2026-09-25 · Subtarea agregada: «Auditar casos borde de las tablas SoT de ventas POS» (de [[2026-09-24 Reunión — Tablas SoT de ventas POS (Ignacio)]]) (Joaquín por Slack, aplicado en conversación)
 - 2026-09-25 · Subtarea agregada: «Incorporar las tablas SoT de ventas POS a dbt y Evidence», con «Reactualizar los gráficos POS del board book…» como paso 3 (Joaquín por Slack, aplicado en conversación)
+- 2026-10-07 · Subtarea agregada: «Coordinar presentación con Riverwood (revisar calendario de Pablo)», como subtarea 12 (ordenar las subtareas y editar la presentación del board book) (de [[2026-09-24 Reunión — Tablas SoT de ventas POS (Ignacio)]]) (Joaquín en conversación)
+- 2026-10-07 · Subtarea agregada: «Migrar el payback a las tablas nuevas de ventas POS y medir el impacto», como subtarea 13 (de [[2026-10-05 Payback y migración a tablas POS]]) (Joaquín en conversación)

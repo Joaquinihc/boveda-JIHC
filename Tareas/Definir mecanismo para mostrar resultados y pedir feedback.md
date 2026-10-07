@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: gestion
@@ -27,3 +27,4 @@ Encontrar un formato para compartir resultados de análisis y cerrar las tareas 
 
 ## Historial
 - 2026-10-02 · Creada desde [[2026-09-30 Feedback de desempeño]] (propuesta)
+- 2026-10-07 · Descartada (Joaquín en conversación)

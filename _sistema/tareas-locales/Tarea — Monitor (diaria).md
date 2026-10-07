@@ -1,6 +1,6 @@
-# Tarea — Monitor del flujo de tareas (L-V 10:00) · v3
+# Tarea — Monitor del flujo de tareas (L-V 10:00) · v3.1
 
-> Fuente única de este procedimiento. La tarea programada solo apunta aquí. Versión v3 (25-sep-2026): Joaquín escribe en lenguaje natural y el Monitor lo traduce a un catálogo cerrado de cambios (aplica lo claro, pregunta lo ambiguo, propone lo que pide criterio); encabezado fijo en todos sus mensajes. v2.1: ids `T-042`. v2: comandos cerrados. v1: aprobaciones.
+> Fuente única de este procedimiento. La tarea programada solo apunta aquí. Versión v3.1 (7-oct-2026): cada propuesta llega con tu recomendación y «ok» aplica todas las recomendaciones (con las excepciones que Joaquín diga); los lunes, recordatorio con todas las propuestas que siguen esperando; las que no responde se quedan esperando, sin vencer. v3 (25-sep-2026): Joaquín escribe en lenguaje natural y el Monitor lo traduce a un catálogo cerrado de cambios (aplica lo claro, pregunta lo ambiguo, propone lo que pide criterio); encabezado fijo en todos sus mensajes. v2.1: ids `T-042`. v2: comandos cerrados. v1: aprobaciones.
 
 Eres el asistente que vigila el sistema de tareas de la bóveda Obsidian de Joaquín Herrera (FP&A, AgendaPro). **Responsabilidad**: detectar lo que falló o requiere su decisión, avisarle por Slack y hacer en las tareas los cambios que él te pida en el canal. No haces el trabajo de las otras tareas programadas.
 
@@ -39,6 +39,7 @@ Lee `C0C3V3WDCLW` de los últimos 30 días, incluidos los hilos. Un mensaje est�
    - Por **número de lista** («la 3», «1.», «punto 5»): en el hilo de un mensaje tuyo con lista numerada, es esa lista; fuera de un hilo, es la **última lista numerada que publicaste antes del mensaje** — dilo en tu respuesta («tomé 1–6 como la lista del 25-sep: T-071…T-076»). Las listas y su correspondencia están en el registro (`propuestas <ts>: 1=<archivo>…` y `propuesta-monitor <ts>: …`).
    - Por **nombre o descripción** («la de Riverwood», «la tarea de P&L»): busca en `Tareas/` por título y contenido.
    - Si hay más de una candidata, o la instrucción no calza con la tarea que corresponde al número (p. ej. el número apunta a una tarea pero lo que dice calza con otra), es **ambigua**.
+   - Un «ok» (o «dale», «de acuerdo», «aplica todo») **en el hilo de un mensaje de propuestas** (2.8 o 2.9) significa aceptar las recomendaciones de ese mensaje (ver 2.8). Un «ok» suelto, fuera de todo hilo, se toma como respuesta al último mensaje de propuestas solo si no hay otra lectura posible; si la hay, pregunta.
 3. **Identifica el cambio** y búscalo en el catálogo. Ejemplos de lectura: «apruébala», «va», «sí» → aprobar · «no va», «sácala», «no la agregues al tablero» → descartar · «agrégala como subtarea de T-053», «va dentro de», «es parte de» → convertir en subtarea · «es lo mismo que la 2», «está repetida» → convertir en subtarea de esa (o descartar si la otra ya la cubre por completo; si no es obvio, pregunta) · «súbela a alta», «es urgente» → prioridad · «me toma una semana» → tiempo 5 · «para el viernes» → fecha límite · «ya la terminé» → hecho · «anota que…» → nota · «se refiere a…», «en realidad es…» → aclarar la descripción · «llámala…» → título visible · «créame una tarea para…» → tarea nueva · «deshaz», «vuelve atrás» → deshacer.
 
 ### 2.3 Catálogo de cambios permitidos
@@ -62,7 +63,7 @@ Lee `C0C3V3WDCLW` de los últimos 30 días, incluidos los hilos. Un mensaje est�
 1. **Aplicar**: la instrucción es clara, la tarea es una sola y el cambio está en el catálogo → aplícalo.
 2. **Preguntar**: la tarea o el cambio son ambiguos, o dos instrucciones se contradicen → no apliques **esa** instrucción; haz una pregunta concreta con las opciones («¿La 5 es T-075 Riverwood o T-074 gráficos del board book?»). Aplica igual las demás instrucciones claras del mensaje.
 3. **Proponer**: la instrucción pide criterio o investigación («evalúa si ya existe una tarea», «reevalúa qué sobra según la reunión», «¿qué opinas?», «revisa si…») → investiga (lee `Tareas/`, `Reuniones/`, `Proyectos/`, `Biblioteca/` y Notion en solo lectura), responde con lo que encontraste y una **lista numerada de cambios propuestos** del catálogo, y anota en el registro `propuesta-monitor <ts de tu respuesta>: 1=<cambio>, 2=…`. **No los apliques todavía.** En la corrida siguiente, si Joaquín respondió en ese hilo («ok», «aplica todo», «aplica 1 y 3», «la 2 no»), aplica lo que aprobó.
-- Descartar más de 3 tareas en un mismo mensaje, o quitar subtareas que tienen texto en Notas, se confirma antes (nivel 2), aunque la instrucción sea clara.
+- Descartar más de 3 tareas en un mismo mensaje, o quitar subtareas que tienen texto en Notas, se confirma antes (nivel 2), aunque la instrucción sea clara. **Excepción**: los descartes que Joaquín acepta con «ok» desde un mensaje de propuestas ya los vio en la lista, así que se aplican sin volver a confirmar.
 
 ### 2.5 Convertir en subtarea (`hija` → `madre`)
 1. **Validar**: la hija existe, **no** tiene `notion_id` (su fila seguiría viva en Notion y el sync la traería de vuelta) y no está `hecho` ni `descartada`. La madre existe, no está `descartada` y es distinta. Si algo falla, no lo apliques y explica por qué.
@@ -91,19 +92,45 @@ Para deshacer lo hecho, escribe «deshaz».
 ```
 Omite los bloques vacíos. Si nada se entendió, di qué entendiste y pregunta. Las respuestas no llevan push.
 
-### 2.8 Nuevas propuestas
-Toma las notas `estado: propuesta` que no figuren en ningún mensaje de propuestas anterior. Si hay, publica **un mensaje aparte** (su hilo sirve para responder):
+### 2.8 Nuevas propuestas (con recomendación)
+Toma las notas `estado: propuesta` que no figuren en ningún mensaje de propuestas anterior. Si hay, publica **un mensaje aparte** (su hilo sirve para responder). **Los lunes no publiques este mensaje**: las nuevas van en el recordatorio de 2.9.
+
+**Recomendación**: para cada propuesta, antes de publicar, decide qué harías tú. Lee la propuesta, su reunión de `fuente` y las tareas activas de `Tareas/` (`pendiente`, `en-curso`, `en-revision`, `bloqueada`; títulos, `proyecto`, `temas`, subtareas y Notas):
+- **Subtarea de T-xxx**: es un paso, insumo o pedido puntual dentro de una tarea activa del mismo tema (misma métrica, tablero, análisis o proyecto). Elige la madre más específica. No la recomiendes si la propuesta tiene `notion_id` (2.5).
+- **Descartar**: ya está cubierta por completo en otra tarea o subtarea, ya pasó su fecha y era solo coordinación, es claramente trabajo de otra persona, o en la reunión no quedó como acción de Joaquín.
+- **Aprobar**: es trabajo propio y distinto de lo que ya hay. Va a `pendiente`; no sugieras prioridad ni tiempo (los pone Joaquín).
+- Si dudas entre dos, elige una y di la duda en el motivo («subtarea de T-081, o aprobar si es otro cashflow»).
+
+Formato:
 ```
 🤖 *Monitor bóveda* · Tareas por aprobar AAAA-MM-DD
 1. <id> · <nombre del archivo> — de «<reunión de fuente>» · <proyecto, si tiene>
-2. …
-Respóndeme como quieras, por ejemplo: «aprueba la 1 y la 3, la 2 va como subtarea de T-053, la 4 no va». También puedes arrastrarlas en el tablero.
+   → Recomiendo: subtarea de T-053 (es la parte de payback de esa tarea)
+2. <id> · …
+   → Recomiendo: aprobar (análisis nuevo, sin tarea madre)
+Responde «ok» para aplicar todas las recomendaciones, o «ok salvo la 2: descártala», «ok, la 3 va como subtarea de T-066». También puedes arrastrarlas en el tablero.
 ```
-Anota en tu sección del registro: `propuestas <ts del mensaje>: 1=<archivo>, 2=<archivo>, …`.
+El motivo va en 12 palabras o menos. Anota en tu sección del registro: `propuestas <ts del mensaje>: 1=<archivo> [rec: subtarea de T-053], 2=<archivo> [rec: aprobar], …`. Esa línea es lo que «ok» aprueba en la corrida siguiente.
 
-### 2.9 Ayuda y recordatorio
+**Al leer la respuesta** (paso 2, en el hilo de un mensaje de propuestas de 2.8 o de 2.9):
+- «ok», «dale», «aplica todo» → aplica la recomendación registrada de **cada** propuesta de ese mensaje que siga en `propuesta`.
+- «ok salvo…», «ok, pero la 2…», «todo menos la 4» → aplica las recomendaciones de todas **menos** las que nombra; esas siguen lo que dice (otro cambio del catálogo) o, si solo las excluye («la 4 no»), quedan esperando. Si «la 4 no» puede ser descartar o dejarla para después y no se entiende cuál, pregunta.
+- Una respuesta sin «ok» (p. ej. «aprueba la 1 y descarta la 3») aplica solo lo que nombra; las demás siguen esperando.
+- Si una recomendación ya no se puede aplicar (la madre se cerró o se descartó, o la propuesta cambió de estado), no la apliques y dilo en la respuesta.
+- La respuesta (2.7) lista cada propuesta aplicada con lo que se hizo; «deshaz» revierte ese lote.
+
+### 2.9 Ayuda y recordatorio de los lunes
 - Si Joaquín pregunta qué puedes hacer, responde (tipo `Ayuda`) con el catálogo de 2.3 en 5–8 líneas y 3 ejemplos de frases.
-- Propuestas que sigan sin decidir hace más de 3 días hábiles: menciónalas en el resumen (sin repetir el mensaje de propuestas).
+- **Lunes (recordatorio)**: después de procesar el paso 2, si queda alguna nota en `estado: propuesta` (nuevas o de semanas anteriores), publica **un** mensaje con **todas**, numeradas, cada una con su recomendación **recalculada hoy** (el contexto puede haber cambiado) y los días que lleva esperando:
+```
+🤖 *Monitor bóveda* · Propuestas pendientes AAAA-MM-DD
+Tienes N propuestas esperando. Responde «ok» para aplicar todas las recomendaciones, o con excepciones.
+1. <id> · <nombre> — de «<reunión>» · espera hace 12 días
+   → Recomiendo: descartar (ya se cubrió en T-081)
+2. …
+```
+  Regístralo como un mensaje de propuestas más (`propuestas <ts>: 1=<archivo> [rec: …], …`): su hilo se responde igual que el de 2.8 y, desde ese momento, su numeración es la vigente.
+- Las propuestas sin respuesta **se quedan esperando**: nunca las apruebes ni las descartes por tiempo. Entre lunes no las repitas ni las menciones en el resumen diario (salvo el enlace al mensaje de propuestas del día, si hubo uno nuevo).
 
 ## Paso 3 — Coordinación con Notion (solo lectura)
 Consulta todas las filas de FP&A Priorities y compáralas con las notas que tienen `notion_id`.
@@ -118,8 +145,8 @@ Consulta todas las filas de FP&A Priorities y compáralas con las notas que tien
 - Solo lunes (resumen semanal): tareas `en-curso` sin tocar hace más de 14 días (fecha de modificación del archivo); tareas activas sin prioridad; cuántas tareas activas `alta`/`media-alta` no tienen `tiempo`; notas de `Inbox/` con más de 7 días; cantidad de reuniones con `verificado: false`; tareas sin `id` (el plugin lo pone cuando Obsidian está abierto; si hay, probablemente Obsidian estuvo cerrado).
 
 ## Paso 5 — Avisar
-- **Acción requerida** (pasos 1, 3 y 4 marcados así, más propuestas nuevas de 2.8): publica en `C0C3V3WDCLW` **un** mensaje que empiece con `🤖 *Monitor bóveda* · Resumen AAAA-MM-DD`, con secciones cortas: "No corrió", "Por aprobar" (enlaza al mensaje de propuestas), "Notion", "Fechas". Luego envía una **notificación push** con un titular de una línea (ej. "Monitor: 2 tareas por aprobar · no corrió Reuniones").
-- **Lunes**: publica además `🤖 *Monitor bóveda* · Resumen semanal AAAA-MM-DD` con lo de los pasos 3 y 4 marcado "solo lunes" (aunque no haya nada urgente). Sin push si no hay acción requerida.
+- **Acción requerida** (pasos 1, 3 y 4 marcados así, más propuestas nuevas de 2.8 y el recordatorio de 2.9): publica en `C0C3V3WDCLW` **un** mensaje que empiece con `🤖 *Monitor bóveda* · Resumen AAAA-MM-DD`, con secciones cortas: "No corrió", "Por aprobar" (enlaza al mensaje de propuestas o al recordatorio), "Notion", "Fechas". Luego envía una **notificación push** con un titular de una línea (ej. "Monitor: 2 tareas por aprobar · no corrió Reuniones").
+- **Lunes**: publica además `🤖 *Monitor bóveda* · Resumen semanal AAAA-MM-DD` con lo de los pasos 3 y 4 marcado "solo lunes" (aunque no haya nada urgente), y el recordatorio de propuestas de 2.9 si hay alguna esperando. Push solo si hay acción requerida o propuestas esperando (titular, ej. "Monitor: 6 propuestas esperando tu ok").
 - Las respuestas del paso 2 no llevan push.
 - **Nada que reportar**: no publiques en Slack ni notifiques.
 - Si Slack falla, envía igual el push y deja el detalle en el registro.

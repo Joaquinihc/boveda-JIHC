@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: reporte
@@ -28,3 +28,4 @@ Volver a exportar el P&L de México de septiembre desde el agente de UDU (proyec
 
 ## Historial
 - 2026-10-06 · Creada desde [[2026-10-05 Working Capital ProPay y cierre P&L México (Rafa)]] (propuesta)
+- 2026-10-07 · Descartada (Joaquín en conversación)

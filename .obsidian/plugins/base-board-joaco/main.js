@@ -110,6 +110,109 @@ var import_obsidian9 = require("obsidian");
 
 // src/drag-drop.ts
 var import_obsidian = require("obsidian");
+
+// src/two-col.ts
+function parseColumnList(raw) {
+  if (typeof raw !== "string") return [];
+  return raw.split(",").map((v) => v.trim().toLowerCase()).filter((v) => v !== "");
+}
+function isDoubleColumn(columnName, visibleCount, columns, threshold) {
+  if (columns.length === 0) return false;
+  if (!columns.includes(columnName.trim().toLowerCase())) return false;
+  return visibleCount > threshold;
+}
+var MASONRY_GAP = 6;
+function masonrySpan(height, gap = MASONRY_GAP) {
+  const h = Number.isFinite(height) && height > 0 ? height : 0;
+  return Math.max(1, Math.ceil(h + gap));
+}
+function masonryInsertIndex(boxes, x, y, tolerance = 4) {
+  if (boxes.length === 0) return -1;
+  const halves = [];
+  boxes.forEach((box, i) => {
+    const half2 = halves.find((h) => Math.abs(h.left - box.left) <= tolerance);
+    if (half2) {
+      half2.indices.push(i);
+      half2.right = Math.max(half2.right, box.right);
+    } else {
+      halves.push({ left: box.left, right: box.right, indices: [i] });
+    }
+  });
+  const center = (h) => (h.left + h.right) / 2;
+  let half = halves.find((h) => x >= h.left && x <= h.right);
+  if (!half) {
+    half = halves.reduce(
+      (best, h) => Math.abs(center(h) - x) < Math.abs(center(best) - x) ? h : best
+    );
+  }
+  for (const i of half.indices) {
+    const box = boxes[i];
+    if (y < (box.top + box.bottom) / 2) return i;
+  }
+  const last = half.indices[half.indices.length - 1];
+  return last + 1 < boxes.length ? last + 1 : -1;
+}
+
+// src/masonry.ts
+var DOUBLE_COLUMN_CLASS = "base-board-column--double";
+function isInDoubleColumn(cardsEl) {
+  var _a;
+  return !!((_a = cardsEl == null ? void 0 : cardsEl.parentElement) == null ? void 0 : _a.classList.contains(DOUBLE_COLUMN_CLASS));
+}
+function gapOf(cardsEl) {
+  const raw = parseFloat(window.getComputedStyle(cardsEl).columnGap);
+  return Number.isFinite(raw) && raw >= 0 ? raw : MASONRY_GAP;
+}
+function syncMasonryItem(el) {
+  const cardsEl = el.parentElement;
+  if (!cardsEl || !isInDoubleColumn(cardsEl)) {
+    el.style.removeProperty("grid-row-end");
+    return;
+  }
+  const height = el.getBoundingClientRect().height;
+  el.style.setProperty(
+    "grid-row-end",
+    `span ${masonrySpan(height, gapOf(cardsEl))}`
+  );
+}
+var MasonryLayout = class {
+  constructor() {
+    this.observer = null;
+  }
+  getObserver() {
+    if (!this.observer) {
+      this.observer = new ResizeObserver((entries) => {
+        for (const entry of entries) {
+          if (entry.target.instanceOf(HTMLElement)) {
+            syncMasonryItem(entry.target);
+          }
+        }
+      });
+    }
+    return this.observer;
+  }
+  /** Lay out the cards of a column (or undo the layout if not double). */
+  apply(cardsEl) {
+    var _a;
+    const isDouble = isInDoubleColumn(cardsEl);
+    for (const child of Array.from(cardsEl.children)) {
+      if (!child.instanceOf(HTMLElement)) continue;
+      if (isDouble) {
+        this.getObserver().observe(child);
+      } else {
+        (_a = this.observer) == null ? void 0 : _a.unobserve(child);
+      }
+      syncMasonryItem(child);
+    }
+  }
+  destroy() {
+    var _a;
+    (_a = this.observer) == null ? void 0 : _a.disconnect();
+    this.observer = null;
+  }
+};
+
+// src/drag-drop.ts
 var CARD_MIME = "application/x-kanban-card";
 var COLUMN_MIME = "application/x-kanban-column";
 var DragDropManager = class {
@@ -323,6 +426,7 @@ var DragDropManager = class {
       this.placeholderEl.style.height = `${this.draggedCardHeight}px`;
       (_a2 = cardEl.parentElement) == null ? void 0 : _a2.insertBefore(this.placeholderEl, cardEl);
       cardEl.addClass("base-board-card--dragging");
+      syncMasonryItem(this.placeholderEl);
       (_b2 = this.boardEl) == null ? void 0 : _b2.addClass("base-board-board--is-dragging");
       if (isMultiDrag && this.boardEl) {
         this.multiDragEls = Array.from(
@@ -354,7 +458,7 @@ var DragDropManager = class {
     }
   }
   handleCardDragOver(e) {
-    var _a;
+    var _a, _b;
     const closestCardsContainer = e.target.closest(
       ".base-board-cards"
     );
@@ -396,9 +500,16 @@ var DragDropManager = class {
       this.placeholderEl.className = "base-board-card-placeholder";
       this.placeholderEl.style.height = `${this.draggedCardHeight}px`;
     }
-    const afterElement = this.getDragAfterElement(
+    const cardSelector = ".base-board-card:not(.base-board-card--dragging)";
+    const isDouble = !!((_b = cardsContainer.closest(".base-board-column")) == null ? void 0 : _b.classList.contains("base-board-column--double"));
+    const afterElement = isDouble ? this.getGridDragAfterElement(
       cardsContainer,
-      ".base-board-card:not(.base-board-card--dragging)",
+      cardSelector,
+      e.clientX,
+      e.clientY
+    ) : this.getDragAfterElement(
+      cardsContainer,
+      cardSelector,
       e.clientY,
       "vertical"
     );
@@ -412,6 +523,7 @@ var DragDropManager = class {
     } else {
       cardsContainer.appendChild(this.placeholderEl);
     }
+    syncMasonryItem(this.placeholderEl);
   }
   handleColumnDragOver(e) {
     var _a;
@@ -643,6 +755,16 @@ var DragDropManager = class {
    * Find the child in `container` matching `selector` that the dragged
    * element should be inserted *before*.
    */
+  /** Joaco fork: drop position in a two-column mosaic. */
+  getGridDragAfterElement(container, selector, clientX, clientY) {
+    const els = Array.from(container.querySelectorAll(selector));
+    const idx = masonryInsertIndex(
+      els.map((el) => el.getBoundingClientRect()),
+      clientX,
+      clientY
+    );
+    return idx < 0 ? null : els[idx];
+  }
   getDragAfterElement(container, selector, cursorPos, axis) {
     const els = Array.from(container.querySelectorAll(selector));
     let closest = null;
@@ -896,6 +1018,9 @@ var CONFIG_KEY_TIME_ASCENDING = "timeAscending";
 var CONFIG_KEY_SHOW_SEQUENCE = "showSequence";
 var CONFIG_KEY_SEQUENCE_COLUMNS = "sequenceColumns";
 var DEFAULT_SEQUENCE_COLUMNS = "en-revision, en-curso, pendiente, bloqueada, propuesta";
+var CONFIG_KEY_DOUBLE_COLUMNS = "doubleColumns";
+var CONFIG_KEY_DOUBLE_THRESHOLD = "doubleColumnsThreshold";
+var DEFAULT_DOUBLE_THRESHOLD = 10;
 var CONFIG_KEY_SHOW_ID = "showTaskId";
 var CONFIG_KEY_ID_PROPERTY = "taskIdProperty";
 var CONFIG_KEY_SHOW_FILTER_BAR = "showFilterBar";
@@ -1633,6 +1758,10 @@ var ColumnManager = class {
     columnEl.dataset.columnName = columnName;
     columnEl.dataset.columnIndex = String(columnIndex);
     columnEl.classList.toggle("base-board-column--collapsed", isCollapsed);
+    columnEl.classList.toggle(
+      "base-board-column--double",
+      !isCollapsed && this.view.isDoubleColumn(columnName, visibleCards.length)
+    );
     const wipLimit = this.view.getWipLimit(columnName);
     if (wipLimit !== null && entries.length > wipLimit) {
       columnEl.addClass("base-board-column--wip-overflow");
@@ -1773,6 +1902,7 @@ var ColumnManager = class {
       var _a;
       if (!visiblePaths.has((_a = el.dataset.filePath) != null ? _a : "")) el.remove();
     });
+    this.view.masonry.apply(cardsEl);
   }
   showColumnMenu(e, columnName, entries, titleEl, countEl, addCardHeaderBtn, menuBtn) {
     var _a;
@@ -2933,10 +3063,11 @@ var PropertyFilter = class {
 };
 
 // src/kanban-view.ts
+var BOARD_VIEW_TYPE = "tablero-joaquin";
 var KanbanView = class extends import_obsidian9.BasesView {
   constructor(controller, scrollEl, plugin) {
     super(controller);
-    this.type = "kanban";
+    this.type = BOARD_VIEW_TYPE;
     // Required by HoverParent — Obsidian manages the popover lifecycle.
     this.hoverPopover = null;
     this.currentGroups = [];
@@ -2953,6 +3084,8 @@ var KanbanView = class extends import_obsidian9.BasesView {
     /** Local drop intent retained until Bases publishes the matching groups. */
     this.optimisticMoves = /* @__PURE__ */ new Map();
     this.optimisticColumnOrders = /* @__PURE__ */ new Map();
+    /** Joaco fork: mosaic layout of double columns. */
+    this.masonry = new MasonryLayout();
     /** Currently selected card file paths (for batch operations) */
     this.selectedCards = /* @__PURE__ */ new Set();
     this.detailLeaf = null;
@@ -2975,6 +3108,7 @@ var KanbanView = class extends import_obsidian9.BasesView {
   }
   onunload() {
     this.dragDropManager.destroy();
+    this.masonry.destroy();
     if (this.renderTimer) window.clearTimeout(this.renderTimer);
   }
   focus() {
@@ -3157,6 +3291,28 @@ var KanbanView = class extends import_obsidian9.BasesView {
       },
       {
         type: "group",
+        displayName: "Columnas dobles",
+        items: [
+          {
+            key: CONFIG_KEY_DOUBLE_COLUMNS,
+            type: "text",
+            displayName: "Columnas que se dividen en dos",
+            default: "",
+            placeholder: "en-curso"
+          },
+          {
+            key: CONFIG_KEY_DOUBLE_THRESHOLD,
+            type: "slider",
+            displayName: "Dividir cuando tengan m\xE1s de (tarjetas)",
+            default: DEFAULT_DOUBLE_THRESHOLD,
+            min: 2,
+            max: 30,
+            step: 1
+          }
+        ]
+      },
+      {
+        type: "group",
         displayName: "Filtro fijo",
         items: [
           {
@@ -3297,6 +3453,26 @@ var KanbanView = class extends import_obsidian9.BasesView {
     const raw = (_a = this.config) == null ? void 0 : _a.get(CONFIG_KEY_SEQUENCE_COLUMNS);
     const text = typeof raw === "string" && raw.trim() !== "" ? raw : DEFAULT_SEQUENCE_COLUMNS;
     return text.split(",").map((v) => v.trim().toLowerCase()).filter((v) => v !== "");
+  }
+  /** Joaco fork: columns configured to split into two when crowded. */
+  getDoubleColumns() {
+    var _a;
+    return parseColumnList((_a = this.config) == null ? void 0 : _a.get(CONFIG_KEY_DOUBLE_COLUMNS));
+  }
+  /** Joaco fork: visible cards above which a double column splits in two. */
+  getDoubleColumnsThreshold() {
+    var _a;
+    const val = (_a = this.config) == null ? void 0 : _a.get(CONFIG_KEY_DOUBLE_THRESHOLD);
+    return typeof val === "number" && val >= 1 ? Math.floor(val) : DEFAULT_DOUBLE_THRESHOLD;
+  }
+  /** Joaco fork: should this column render its cards in two columns? */
+  isDoubleColumn(columnName, visibleCount) {
+    return isDoubleColumn(
+      columnName,
+      visibleCount,
+      this.getDoubleColumns(),
+      this.getDoubleColumnsThreshold()
+    );
   }
   /** Board-wide sequence number of a card, or null (not numbered). */
   getSequenceNumber(filePath) {
@@ -3988,8 +4164,8 @@ var BaseBoardPlugin = class extends import_obsidian10.Plugin {
   }
   async onload() {
     await this.loadPluginData();
-    this.registerBasesView("kanban", {
-      name: "Kanban",
+    this.registerBasesView(BOARD_VIEW_TYPE, {
+      name: "Tablero Joaqu\xEDn",
       icon: "lucide-kanban",
       factory: (controller, containerEl) => new KanbanView(controller, containerEl, this),
       options: () => KanbanView.getViewOptions()
@@ -4182,7 +4358,7 @@ var BaseBoardPlugin = class extends import_obsidian10.Plugin {
       `  and:`,
       `    - file.inFolder("${tasksFolder}")`,
       `views:`,
-      `  - type: kanban`,
+      `  - type: ${BOARD_VIEW_TYPE}`,
       `    name: ${name}`,
       `    groupBy:`,
       `      property: note.${groupBy}`,

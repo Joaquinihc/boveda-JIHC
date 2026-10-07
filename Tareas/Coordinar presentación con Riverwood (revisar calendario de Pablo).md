@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: gestion
@@ -28,3 +28,4 @@ Revisar el calendario de Pablo para agendar la presentación con Riverwood, en a
 ## Historial
 - 2026-09-24 · Creada desde [[2026-09-24 Reunión — Tablas SoT de ventas POS (Ignacio)]] (propuesta)
 - 2026-10-06 · Mencionada de nuevo en [[2026-10-05 Payback y migración a tablas POS]] (actualizar la presentación de la reunión trimestral con Riverwood y completar los archivos pedidos)
+- 2026-10-07 · Pasó a subtarea de [[Locations POS y reactivaciones]] (Joaquín en conversación)

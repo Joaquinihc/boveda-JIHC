@@ -1,7 +1,7 @@
-/* Ancho de columnas del tablero kanban (plugin Base Board).
-   El plugin las fija en 280px; ajusta el valor a gusto y
-   recarga la pestaña del tablero. */
-.base-board-column,
-.base-board-column-placeholder {
-  flex: 0 0 320px !important;
+/* Ancho de las columnas del tablero (plugin Base Board (Joaco)).
+   Cambia el valor y recarga la pestaña del tablero. Cuando la columna
+   en-curso se divide en dos, mide el doble para que cada mitad conserve
+   este mismo ancho. */
+body {
+  --base-board-column-width: 320px;
 }

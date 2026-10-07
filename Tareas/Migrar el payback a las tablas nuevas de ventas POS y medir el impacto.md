@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: analisis
@@ -12,7 +12,7 @@ temas:
 fuente: "[[2026-10-05 Payback y migración a tablas POS]]"
 fecha_limite:
 creado: 2026-10-05
-revisar: true
+revisar: false
 id: T-088
 ---
 
@@ -31,3 +31,4 @@ Pasar el cálculo del payback a la tabla nueva de ventas POS (columna de compra 
 
 ## Historial
 - 2026-10-06 · Creada desde [[2026-10-05 Payback y migración a tablas POS]] (propuesta)
+- 2026-10-07 · Pasó a subtarea de [[Locations POS y reactivaciones]] (Joaquín en conversación)

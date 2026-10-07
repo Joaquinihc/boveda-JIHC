@@ -1,7 +1,7 @@
 ---
 type: tarea
-estado: propuesta
-prioridad:
+estado: en-curso
+prioridad: media
 tiempo:
 tipo: analisis
 origen: reunion
@@ -28,3 +28,4 @@ Calcular, por país y canal, el % de leads que tenían cuenta creada al momento 
 
 ## Historial
 - 2026-10-02 · Creada desde [[2026-10-01 Leads con cuenta creada y PACE (Matías)]] (propuesta)
+- 2026-10-07 · Aprobada: en curso, prioridad media (Joaquín en conversación)
