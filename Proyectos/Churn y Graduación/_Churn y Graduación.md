@@ -15,6 +15,7 @@ responsable: "[[Joaquín Herrera]]"
 - Correcciones de Pablo Santa Inés (CX) del 11-sep incorporadas: ver [[20260911-01 Correcciones graduación (Pablo Santa Inés)]].
 - Escenarios discutidos el 1-sep: B implementado primero; C (anti-zombies) pendiente de evaluar si la diferencia justifica la complejidad.
 - Metodología base: [[Metodología Churn B2B3]].
+- 2026-10-08 · CX ya filtra `status='cancelled'` en el churn involuntario; Evidence queda 7 logos abajo en sep (542 vs 549) hasta el fix → [[20261008-01 Ajustes de churn en Evidence pedidos por CX (Pablo Santa Inés)]].
 
 ## Próximos pasos
 - [ ] Cerrar las 4 diferencias menores vs reporte de Pablo Santa Inés.
