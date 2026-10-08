@@ -31,6 +31,17 @@ _sistema/            Plantillas y prompts de tareas; no es contenido
 - `revisar`: `false` en tareas creadas a mano (tuyas o de Notion) y en las aprobadas; `true` solo para dudas de clasificación y conflictos del sync.
 - El tablero es `Tareas/Tablero de Tareas.base` (vista «Tablero Joaquín», `type: tablero-joaquin`, del plugin **Base Board (Joaco)**, agrupada por `estado`; no confundir con el diseño «Kanban» nativo de Obsidian, `type: kanban`, que no tiene numeración, ids, colores ni subtareas; dentro de cada columna ordena por prioridad alta → media-alta → media → media-baja → baja → sin prioridad; dentro de la misma prioridad, por `tiempo` de más corta a más larga, sin estimar al final; después el orden manual). Cada tarjeta muestra un **número de orden** (1, 2, 3… recorriendo en-revision → en-curso → pendiente → bloqueada → propuesta; `hecho` no se numera): es solo visual, lo calcula el plugin y no se guarda en ninguna nota. Distinto del `id`, que sí es fijo. Con más de 10 tarjetas, la columna `en-curso` se muestra en dos columnas, como mosaico sin huecos: cada tarjeta va a la mitad más corta (opción «Columnas dobles» de la vista).
 
+## Subtareas (regla para todos los agentes)
+- **Tope**: máximo **3 subtareas abiertas** por tarea; las tachadas (`- [x]`) no cuentan y se quedan donde están. Se puede llegar a **5** solo si la 4.ª y la 5.ª bloquean el cierre de la tarea o tienen fecha o alguien esperando.
+- **Una subtarea vale la pena si cumple las tres**: (1) la hace o la persigue Joaquín; (2) sin ella la tarea no se puede cerrar; (3) se puede marcar como hecha en 1–2 días de trabajo, con un «listo cuando» claro.
+- **Lo que no cumple va a otro lado (nunca se borra)**:
+  - Dudas, ideas, «revisar si…», decisiones de otras personas y pasos para después → `## Notas`, sección `### Pendientes menores`, una línea fechada cada uno.
+  - Trabajo grande (más de ~2 días) o con otro entregable → tarea propia en `propuesta`, enlazada a la madre (o subtarea de otra tarea existente si calza mejor allá).
+  - Pasos chicos del mismo frente → se fusionan en una sola subtarea.
+- **Orden**: arriba la que destraba a las demás.
+- **Cómo elegir cuáles quedan**: a cada una, tres preguntas: ¿bloquea el cierre de la tarea o a otras subtareas? ¿tiene fecha o alguien esperando? ¿es de Joaquín? Quedan las de más «sí»; con empate, la que destraba más.
+- **Ningún agente pasa el tope por su cuenta**: si la tarea ya está en el tope, propone qué reemplazar, fusionar o mover a Notas y espera el OK de Joaquín (en conversación, o «ok» al Monitor). Al quitar o fusionar una subtarea que tiene descripción en Notas (formato `### N. título`), esa descripción se queda y se le agrega a dónde pasó.
+
 ## Política de relaciones (quién linkea qué)
 1. **Hechos → automático, sin preguntar**: tarea extraída de reunión lleva `fuente: [[esa reunión]]`; tarea de Notion lleva `notion_id` + URL; análisis en carpeta de proyecto lleva `proyecto: [[_ese hub]]`; reunión lleva su URL de Notion.
 2. **Inferencias → solo con evidencia textual**: un link automático a proyecto/métrica/persona requiere mención explícita de su nombre en el contenido. La afinidad temática NO basta. Mejor un link faltante que uno falso.

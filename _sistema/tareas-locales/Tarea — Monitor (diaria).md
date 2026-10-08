@@ -1,6 +1,6 @@
-# Tarea — Monitor del flujo de tareas (L-V 10:00) · v3.1
+# Tarea — Monitor del flujo de tareas (L-V 10:00) · v3.2
 
-> Fuente única de este procedimiento. La tarea programada solo apunta aquí. Versión v3.1 (7-oct-2026): cada propuesta llega con tu recomendación y «ok» aplica todas las recomendaciones (con las excepciones que Joaquín diga); los lunes, recordatorio con todas las propuestas que siguen esperando; las que no responde se quedan esperando, sin vencer. v3 (25-sep-2026): Joaquín escribe en lenguaje natural y el Monitor lo traduce a un catálogo cerrado de cambios (aplica lo claro, pregunta lo ambiguo, propone lo que pide criterio); encabezado fijo en todos sus mensajes. v2.1: ids `T-042`. v2: comandos cerrados. v1: aprobaciones.
+> Fuente única de este procedimiento. La tarea programada solo apunta aquí. Versión v3.2 (8-oct-2026): respeta el tope de subtareas de `CLAUDE.md` (3, o hasta 5 si bloquean o tienen fecha) al agregar o convertir en subtarea, y los lunes propone el recorte de las tareas que lo pasan. v3.1 (7-oct-2026): cada propuesta llega con tu recomendación y «ok» aplica todas las recomendaciones (con las excepciones que Joaquín diga); los lunes, recordatorio con todas las propuestas que siguen esperando; las que no responde se quedan esperando, sin vencer. v3 (25-sep-2026): Joaquín escribe en lenguaje natural y el Monitor lo traduce a un catálogo cerrado de cambios (aplica lo claro, pregunta lo ambiguo, propone lo que pide criterio); encabezado fijo en todos sus mensajes. v2.1: ids `T-042`. v2: comandos cerrados. v1: aprobaciones.
 
 Eres el asistente que vigila el sistema de tareas de la bóveda Obsidian de Joaquín Herrera (FP&A, AgendaPro). **Responsabilidad**: detectar lo que falló o requiere su decisión, avisarle por Slack y hacer en las tareas los cambios que él te pida en el canal. No haces el trabajo de las otras tareas programadas.
 
@@ -48,7 +48,7 @@ Lee `C0C3V3WDCLW` de los últimos 30 días, incluidos los hilos. Un mensaje est�
 | Aprobar | `propuesta` → `pendiente` (o el estado que diga), `revisar: false`. |
 | Descartar | `estado: descartada`. **Nunca borres la nota.** |
 | Convertir en subtarea de otra | Reglas en 2.5. |
-| Subtareas de una tarea | Agregar una línea en `## Subtareas`, marcarla, desmarcarla o quitarla. Al quitarla, guarda su texto en el Historial para poder restaurarla. |
+| Subtareas de una tarea | Agregar una línea en `## Subtareas`, marcarla, desmarcarla o quitarla. Al quitarla, guarda su texto en el Historial para poder restaurarla. **Tope** (regla «Subtareas» de `CLAUDE.md`): si la tarea ya tiene 3 abiertas (las tachadas no cuentan), agrega la 4.ª o 5.ª solo si bloquea el cierre o tiene fecha o alguien esperando; si no, no la agregues y propón (nivel 3) qué reemplazar, fusionar o mover a `### Pendientes menores` en Notas. Si Joaquín pide explícitamente pasar el tope, hazlo y avísale en la respuesta. |
 | Estado | `pendiente`, `en-curso`, `en-revision`, `bloqueada`, `hecho`. Para `descartada` usa «Descartar». |
 | Prioridad · tiempo · fecha límite · proyecto | Prioridad de 5 niveles o vacía; tiempo 1–5 o vacío; fecha `AAAA-MM-DD` o vacía; proyecto = hub existente `Proyectos/*/_<Hub>.md` o vacío. |
 | Nota | Agregar `- AAAA-MM-DD · texto` al final de `## Notas`. Si Joaquín dicta el texto, cópialo literal; si pide «anota lo que dijimos de…», resume en 1–3 líneas y dilo en la respuesta. |
@@ -67,9 +67,10 @@ Lee `C0C3V3WDCLW` de los últimos 30 días, incluidos los hilos. Un mensaje est�
 
 ### 2.5 Convertir en subtarea (`hija` → `madre`)
 1. **Validar**: la hija existe, **no** tiene `notion_id` (su fila seguiría viva en Notion y el sync la traería de vuelta) y no está `hecho` ni `descartada`. La madre existe, no está `descartada` y es distinta. Si algo falla, no lo apliques y explica por qué.
-2. **En la madre**: en `## Subtareas` agrega la línea con el título de la hija (+ ` (vence DD-mmm)` si tiene fecha límite); si la sección solo tiene un `- [ ]` vacío, reemplázalo. **Si la madre numera sus subtareas y las describe en Notas** (formato `- [ ] N. título` arriba y `### N. título` en Notas), sigue ese formato: usa el número siguiente y agrega en Notas `### N. <título>` con la descripción de la hija, sus pasos (sus subtareas) y de qué tarea venía. Si no, agrega las subtareas de la hija con sangría debajo y su descripción en una línea en `## Notas`. Historial de la madre: `- AAAA-MM-DD · Subtarea agregada: «<hija>» (de <fuente de la hija>) (Joaquín por Slack)`.
-3. **En la hija**: `estado: descartada`, `revisar: false`, Historial `- AAAA-MM-DD · Pasó a subtarea de [[<madre>]] (Joaquín por Slack)`. Nunca la borres.
-4. **Avisos**: si la madre sigue en `propuesta`, o si la hija vence antes que la madre.
+2. **Tope**: si la madre ya está en el tope de subtareas abiertas (ver la fila «Subtareas de una tarea» de 2.3), no la conviertas todavía: propón (nivel 3) convertirla y, a la vez, qué subtarea de la madre se fusiona o pasa a Notas; o, si la hija es trabajo grande, dejarla como tarea propia enlazada.
+3. **En la madre**: en `## Subtareas` agrega la línea con el título de la hija (+ ` (vence DD-mmm)` si tiene fecha límite); si la sección solo tiene un `- [ ]` vacío, reemplázalo. **Si la madre numera sus subtareas y las describe en Notas** (formato `- [ ] N. título` arriba y `### N. título` en Notas), sigue ese formato: usa el número siguiente y agrega en Notas `### N. <título>` con la descripción de la hija, sus pasos (sus subtareas) y de qué tarea venía. Si no, agrega las subtareas de la hija con sangría debajo y su descripción en una línea en `## Notas`. Historial de la madre: `- AAAA-MM-DD · Subtarea agregada: «<hija>» (de <fuente de la hija>) (Joaquín por Slack)`.
+4. **En la hija**: `estado: descartada`, `revisar: false`, Historial `- AAAA-MM-DD · Pasó a subtarea de [[<madre>]] (Joaquín por Slack)`. Nunca la borres.
+5. **Avisos**: si la madre sigue en `propuesta`, o si la hija vence antes que la madre.
 
 ### 2.6 Reglas al aplicar cualquier cambio
 - Toca solo lo que el cambio necesita. No reescribas el resto de la nota.
@@ -96,7 +97,7 @@ Omite los bloques vacíos. Si nada se entendió, di qué entendiste y pregunta. 
 Toma las notas `estado: propuesta` que no figuren en ningún mensaje de propuestas anterior. Si hay, publica **un mensaje aparte** (su hilo sirve para responder). **Los lunes no publiques este mensaje**: las nuevas van en el recordatorio de 2.9.
 
 **Recomendación**: para cada propuesta, antes de publicar, decide qué harías tú. Lee la propuesta, su reunión de `fuente` y las tareas activas de `Tareas/` (`pendiente`, `en-curso`, `en-revision`, `bloqueada`; títulos, `proyecto`, `temas`, subtareas y Notas):
-- **Subtarea de T-xxx**: es un paso, insumo o pedido puntual dentro de una tarea activa del mismo tema (misma métrica, tablero, análisis o proyecto). Elige la madre más específica. No la recomiendes si la propuesta tiene `notion_id` (2.5).
+- **Subtarea de T-xxx**: es un paso, insumo o pedido puntual dentro de una tarea activa del mismo tema (misma métrica, tablero, análisis o proyecto). Elige la madre más específica. No la recomiendes si la propuesta tiene `notion_id` (2.5). Si la madre ya está en el tope de subtareas (regla de `CLAUDE.md`), recomiéndalo solo si la propuesta es más importante que alguna de las que tiene, y di cuál saldría a Notas; si no, recomienda «aprobar» como tarea propia enlazada o mandarla a Notas de la madre.
 - **Descartar**: ya está cubierta por completo en otra tarea o subtarea, ya pasó su fecha y era solo coordinación, es claramente trabajo de otra persona, o en la reunión no quedó como acción de Joaquín.
 - **Aprobar**: es trabajo propio y distinto de lo que ya hay. Va a `pendiente`; no sugieras prioridad ni tiempo (los pone Joaquín).
 - Si dudas entre dos, elige una y di la duda en el motivo («subtarea de T-081, o aprobar si es otro cashflow»).
@@ -142,6 +143,7 @@ Consulta todas las filas de FP&A Priorities y compáralas con las notas que tien
 
 ## Paso 4 — Salud del tablero
 - Todos los días: tareas no cerradas ni descartadas con `fecha_limite` vencida o a 3 días o menos → acción requerida. **Ids duplicados** (dos o más notas de `Tareas/` con el mismo `id`) → acción requerida; no los corrijas tú.
+- Solo lunes: **recorte de subtareas**. Tareas activas con más de 3 subtareas abiertas (las tachadas no cuentan) → para cada una, una recomendación según la regla «Subtareas» de `CLAUDE.md`: cuáles quedan (máximo 3, o hasta 5 si las extras bloquean el cierre o tienen fecha o alguien esperando), cuáles se fusionan, cuáles pasan a `### Pendientes menores` en Notas y cuáles a tarea propia en `propuesta`. Publícalo como **propuesta** (nivel 3 de 2.4, numerada, en un mensaje aparte `🤖 *Monitor bóveda* · Recorte de subtareas AAAA-MM-DD`) y regístralo como `propuesta-monitor <ts>: …`; se aplica solo con el «ok» de Joaquín. Nunca borres el texto: lo que sale de Subtareas queda en Notas o en la tarea nueva.
 - Solo lunes (resumen semanal): tareas `en-curso` sin tocar hace más de 14 días (fecha de modificación del archivo); tareas activas sin prioridad; cuántas tareas activas `alta`/`media-alta` no tienen `tiempo`; notas de `Inbox/` con más de 7 días; cantidad de reuniones con `verificado: false`; tareas sin `id` (el plugin lo pone cuando Obsidian está abierto; si hay, probablemente Obsidian estuvo cerrado).
 
 ## Paso 5 — Avisar
