@@ -11,11 +11,14 @@ responsable: "[[Joaquín Herrera]]"
 **Objetivo**: Dejar una sola definición de activación (y de Activation Velocity) entre Evidence y dbt: qué reservas cuentan, sobre qué universo y desde qué día, para que el OKR, el board book, CX y los waterfalls midan lo mismo.
 
 ## Contexto
+- 2026-09-23 · CX (`bizops-cx-apps`) pasa a contar solo reservas efectivas (sin canceladas, no-show ni fake) y recalcula toda su serie; según su código, la activación @M4 baja entre 1,2 y 4,4 pp por cohorte. Figura como "decisión de Pablo", sin apellido.
+- 2026-09-28 · CX adopta en su activación del directorio el máximo entre reservas efectivas y cobros, y mueve la ventana del mes 3 al mes 4 desde el primer pago. Figura como "decisión de Pablo", sin apellido. Ver [[20261008-01 Activación en CX (bizops-cx-apps) vs Evidence y dbt]].
 - 2026-09-28 · [[Pablo Lucero]] alinea Activation Velocity con New Merchants B2B3 (PR 769 de Evidence), tras conciliarla con el semanal de CX de [[Pablo Santa Inés]]: primer mes pagado, sin cuentas test, día 0 `start_date_pago_mx`, reservas + clases. Mantiene la ponderación por sedes y no adopta la regla de cobros de CX.
 - 2026-09-29 · PR 772 de Evidence: las mismas reglas en Activation → Retention, Lead → Activación, PMF Fitness y R1. PR 774: curva de Activation Velocity de Fitness (por defecto, todas las inscripciones).
 - 2026-09-29 · PR 412 de dbt: las tablas de velocity entran a la corrida diaria (antes estaban congeladas al 7-sep).
 - 2026-09-30 · PR 414 de dbt: `bookings_count_demand`, sin las reservas importadas de otro software. El PR 415 (abierto al 7-oct) lo usa en `int_company_booking_cohorts` e `int_company_activation_status`.
 - Estado al 2026-10-07: conviven tres definiciones de "activado" (Evidence, reportes dbt de velocity e `int_company_activation_status`). El detalle está en [[Activación — fuentes y definiciones vigentes]].
+- Estado al 2026-10-08: con la del directorio de CX (@M4: cuentas, cobros, meses 0 a 4) son cuatro. CX tiene además su activación de onboarding y comisiones (umbral por nicho y tamaño + 2 ciclos) y su graduación.
 
 ## Próximos pasos
 Las acciones viven en las tareas del proyecto (lista abajo). La principal es [[Arreglar definición de activación]].
