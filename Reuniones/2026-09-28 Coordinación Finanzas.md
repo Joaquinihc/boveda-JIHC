@@ -19,7 +19,7 @@ verificado: false
 - Reminders: la data vive en un microservicio propio (no está en el DWH ni en el Monolith) y no tiene owner claro (según Felipe, debería ser Core Experience). Se pedirá a Israel un export directo (CSV o similar), sin llevarlo al DWH.
 
 **Mis acciones**
-- [ ] Enviar a Mariana el cashflow corregido, indicando que el balance sheet sigue en proceso
+- [x] Enviar a Mariana el cashflow corregido, indicando que el balance sheet sigue en proceso
 - [ ] Revisar con Nicolás Astudillo las inconsistencias entre cashflow y balance sheet (reunión del 29-sep)
 - [ ] Revisar las tareas del cierre ejecutadas por Nicolás Astudillo y ajustar lo necesario
 - [ ] Pedir a Israel que exporte la data de Reminders desde el microservicio (CSV o similar)
