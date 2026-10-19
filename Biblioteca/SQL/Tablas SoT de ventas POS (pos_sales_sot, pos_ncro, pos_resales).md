@@ -21,6 +21,24 @@ fecha: 2026-09-24
 | `dwh.pos_resales` | Ventas posteriores a la primera: reactivaciones y POS adicionales | 1 fila por evento (`sale_id`) | 273 |
 | `dwh.pos_sales_sot` | Tabla maestra = `pos_ncro` ∪ `pos_resales` + checklist de venta efectiva | 1 fila por evento de venta (`sale_id`) | 2.292 |
 
+## 2026-10-06 · Cambios hasta v9 (vigente)
+Lo que sigue más abajo describe la **v4** (23-sep). Desde entonces Ignacio publicó v5 a v9 (commit `9e8c35ff`, 4-oct; PR #425 mergeado el 5-oct, en `dwh.*` desde la corrida de ese día). Lo que cambió:
+- **Canal = el deal POS en todo canal (v7).**
+  - ISR: deal en etapa Vendido (`1448726630`) del pipeline «Ventas POS ISR» (`940437636`). Lo crea el workflow de HubSpot al marcar «¿Contrató POS?», o el backfill del 29-sep (`evidencia_venta_pos`).
+  - KAM: Ganado en «Seguimiento POS Expansión», con owner del roster.
+  - Sin deal = Others. Si hay KAM e ISR, gana KAM.
+  - El placeholder ISR por usuario de Chargebee desapareció. `contrato_pos_check` e `isr_saas_deal_45d` quedan solo como columnas de QA.
+- **Roster KAM de 10:** se suma `valentinaguerrero`.
+- **Una factura, un deal (v9):** cada línea de factura va al deal POS más cercano a ±45 días (empate: el anterior, luego KAM). El deal que queda sin factura es `duplicate_deal`.
+- **Tipo de reventa por hechos (v8):** si lo último antes de la venta fue la baja real de un addon de arriendo y la venta trae algo nuevo (deal o terminal despachado −15/+90 d), es reactivación (`history_evidence = rent_terminated`). Si no, se mira la actividad POS de los 60 días previos. KAM con 0 terminales sobre un comercio activo = `pos_additional_soft` (cambio de tasa, nunca venta).
+- **Fecha efectiva (v9):**
+  - KAM conserva la fecha del deal si la factura se paga a más tardar el día 5 del mes siguiente (también si se pagó antes del deal); si no, la fecha de pago.
+  - ISR y Others: fecha de pago.
+  - Soft: 15 transacciones reales hasta el día 5 (antes era el día 10).
+- **Formulario (v5):** antes del 1-sep-2026, la factura pagada cuenta como formulario completado. Reemplaza el proxy de «≥ 1 trx».
+- **Unidades:** `pos_quantity` = `cantidad_de_terminales` del deal (1 si viene vacío); sin deal, el máximo facturado. **Manda el deal**, aunque la factura diga otra cosa.
+- Diagramas de cómo se cataloga cada venta: [Definición venta de POS Ignacio Embry](https://app.notion.com/p/3f1ab34c233b80a0b057fa52491c7b36) (Notion, 6-oct). Uso en el board book: [[20261006-01 Board book sobre pos_sales_sot — impacto en ventas, attachment y payback]].
+
 ## dwh.pos_ncro — primera venta del comercio
 
 **Modelo**: `models/marts/sales/pos_ncro.sql` (yml compartido `_pos_sales_sot.yml`). Tests: `company_id` unique + not_null, `ncro_date` not_null, accepted_values en `ncro_evidence` y `channel_attribution`.

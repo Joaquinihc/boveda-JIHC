@@ -13,6 +13,7 @@ responsable: "[[Joaquín Herrera]]"
 ## Contexto
 - CECOs: división+área en el CECO, país aparte; PIT-TEC (G2100) / PIT-PRO (G2000); Revenue Sales (G1100); regla de privacidad (ningún CECO de 1 persona). Retroactivo enero→hoy vía agente de Mario.
 - Provisiones/ingresos diferidos: impacto P&L = delta de provisión; tokens IA se redistribuyen por vertical con el informe de tarjetas (asiento mensual de Juanjo).
+- 2026-10-02 · Costos de IA por API key: cuentas G nuevas G0030–G0035 (servicio por equipo, Platform), G0205 (soporte Marketplace) y G2112–G2116 (tecnología por vertical, Development). Reglas y aprobación en [[Imputación contable de costos de IA (API keys)]]; montos en [[20261002-01 Reclasificación contable de costos de API keys de IA]].
 - P&L SaaS: benchmarkear Shopify/Fresha; armar Notion estructura actual vs propuesta; costos de vendedores hoy castigan margen.
 - Guía: [[Guía clasificación de personas (headcount)]]. Tareas Notion: Restructurar P&L, P&L verticales a Board Book, Headcount + clasificación, costos API Keys.
 

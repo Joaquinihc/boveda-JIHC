@@ -31,9 +31,8 @@ Conversar con Ignacio para llegar a las mismas métricas: (1) compañías, locat
 - [ ] 8. Alinear con Ignacio el gráfico «POS activated per week»
 - [ ] 9. Sugerir a Ignacio ajustes a su deck (semana parcial y corte)
 - [ ] 10. Auditar casos borde de las tablas SoT de ventas POS
-- [ ] 11. Incorporar las tablas SoT de ventas POS a dbt y Evidence
+- [ ] 11. Abrir PR del board book y del payback sobre pos_sales_sot
 - [ ] 12. Presentación a Riverwood: ordenar las subtareas y editar el board book
-- [ ] 13. Migrar el payback a las tablas nuevas de ventas POS y medir el impacto
 
 ## Notas
 
@@ -112,7 +111,8 @@ Cada subtarea de arriba tiene aquí su descripción con el mismo número y títu
 - **Resultado esperado**: una lista validada de arreglos y criterios acordados con Ignacio.
 - Venía de la tarea [[Auditar casos borde de las tablas SoT de ventas POS]] (T-071), que pasó a ser esta subtarea el 25-sep.
 
-### 11. Incorporar las tablas SoT de ventas POS a dbt y Evidence
+### 11. Abrir PR del board book y del payback sobre pos_sales_sot
+- 2026-10-19 · Antes «Incorporar las tablas SoT de ventas POS a dbt y Evidence»; se fusionó con la 13 porque la misma rama resuelve las dos. **Listo cuando** el PR esté mergeado con el visto bueno de Pablo Lucero.
 - **Qué es**: dejar las tablas de Ignacio como parte oficial del proyecto dbt y usarlas en el board book. Hoy existen solo en la rama `refactor/postgres-to-redshift` del repo `agendapro/agendapro-dbt` (PRs #396, #400 y #402; no están en `master`) y ningún tablero las usa. Detalle en [[Tablas SoT de ventas POS (pos_sales_sot, pos_ncro, pos_resales)]].
 - **Pasos**: (1) confirmar con Ignacio si los modelos se mergean a la rama principal y quién los mantiene (tests, documentación, frecuencia); (2) agregar la tabla como fuente en `sources/dwh/` de Evidence; (3) reactualizar los gráficos POS del board book para que usen la tabla consolidada como única fuente (va después de la subtarea 10).
 - **Decisiones antes de migrar los gráficos** (del análisis [[20260924-01 Métricas POS del board book vs tablas SoT]]): qué hacer con `Others` (25% de las unidades de ene–ago), sobre todo contra el budget; si «New / Stock» es canal o tipo de compra; si se adopta `is_valid_purchase` (factura pagada + formulario), que cambia el criterio del 7-sep; la exclusión de Tabata y cómo se cuentan las reactivaciones; si «POS activated per week» pasa a grano compañía o se renombra a locales (y el reinicio mensual y el filtro de 12 meses); el payback, que sigue en `country_pos`.
@@ -130,6 +130,21 @@ Cada subtarea de arriba tiene aquí su descripción con el mismo número y títu
 - **Pasos**: (1) verificar qué POS toma hoy el cálculo (solo primera venta o también adicionales y reactivaciones); (2) comparar la cantidad de POS del registro actual vs el nuevo y el efecto en el payback; (3) decidir formalmente si reactivaciones y ventas adicionales entran al payback.
 - **Resultado esperado**: payback calculado con la tabla nueva y el impacto medido.
 - Venía de la propuesta [[Migrar el payback a las tablas nuevas de ventas POS y medir el impacto]] (T-088), de [[2026-10-05 Payback y migración a tablas POS]]. Pasó a ser esta subtarea el 7-oct.
+- 2026-10-19 · Fusionada en la subtarea 11: el payback ya quedó migrado en la misma rama que el board book (ver la sección del 6-oct abajo).
+
+### 2026-10-06 · Board book migrado a pos_sales_sot (sin PR)
+- **Qué se hizo:** ventas POS (slide 8, 5.1i–k, Key Metrics), attachment B2B3 y payback del board book (mensual y trimestral) leen `dwh.pos_sales_sot` v9. Aparece la categoría Others (venta válida sin deal POS). El segundo gráfico de la slide 8 quedó en unidades (8-oct).
+- **Dónde:** repo `agendapro-dashboards-evidence`, worktree `~/Documents/GitHub/agendapro-worktrees/pos-sales-sot-dbt`, rama `feat/board-book-pos-sales-sot`, sin commit al 19-oct. Documento del impacto: `docs/metrics/payments/pos-sales-sot-dbt-migration.md`.
+- **Análisis:** [[20261006-01 Board book sobre pos_sales_sot — impacto en ventas, attachment y payback]] · [[20261006-02 POS vs sedes del plan — tope de unidades y POS de respaldo]].
+- **Definición con diagramas, en Notion:** [Definición venta de POS Ignacio Embry](https://app.notion.com/p/3f1ab34c233b80a0b057fa52491c7b36).
+- **Próximo paso:** visto bueno de Pablo Lucero con el doc [Ventas POS en el board book: migración a pos_sales_sot](https://claude.ai/code/artifact/83cb5d61-79a0-4b3c-bb84-854792fbb144) (19-oct, cifras al 19-oct, con 5 decisiones a aprobar); después, PR.
+
+### Pendientes menores
+- 2026-10-19 · Confirmar con Ignacio si en `pos_quantity` manda el deal o la factura: 8 ventas de 2026 difieren y en 7 el deal dice menos. Contradice lo dicho el 24-sep.
+- 2026-10-19 · Mandarle a Ignacio la lista de las ~60 ventas Others de 2026 para crear los deals que faltan. En México parecen ventas ISR sin «¿Contrató POS?».
+- 2026-10-19 · Revisar los 56 comercios que transaccionan POS (Haulmer/OEL) sin ninguna venta válida en la SoT.
+- 2026-10-19 · Opción: restringir el numerador del attachment a primeras ventas ISR (hoy 0 casos de ISR sobre comercios que ya tenían POS).
+- 2026-10-19 · Antes del PR, integrar `main` en la rama: el board book cambió el 14 y 15-oct (PR #820 y otros).
 
 ## Historial
 - 2026-09-10 · Cuadratura jul–sep 2026 (Chile, ISR) a nivel company_id contra el board book: +9 unidades, con causa identificada caso por caso. 17 company_id investigados en `pos_sales2`, facturas, addons de Chargebee, planilla KAM y HubSpot.
@@ -142,3 +157,4 @@ Cada subtarea de arriba tiene aquí su descripción con el mismo número y títu
 - 2026-09-25 · Subtarea agregada: «Incorporar las tablas SoT de ventas POS a dbt y Evidence», con «Reactualizar los gráficos POS del board book…» como paso 3 (Joaquín por Slack, aplicado en conversación)
 - 2026-10-07 · Subtarea agregada: «Coordinar presentación con Riverwood (revisar calendario de Pablo)», como subtarea 12 (ordenar las subtareas y editar la presentación del board book) (de [[2026-09-24 Reunión — Tablas SoT de ventas POS (Ignacio)]]) (Joaquín en conversación)
 - 2026-10-07 · Subtarea agregada: «Migrar el payback a las tablas nuevas de ventas POS y medir el impacto», como subtarea 13 (de [[2026-10-05 Payback y migración a tablas POS]]) (Joaquín en conversación)
+- 2026-10-19 · Avance desde Claude Code: board book y payback migrados a `pos_sales_sot` en la rama `feat/board-book-pos-sales-sot` (sin PR); subtareas 11 y 13 fusionadas en la 11 (Joaquín en conversación); 5 pendientes menores.

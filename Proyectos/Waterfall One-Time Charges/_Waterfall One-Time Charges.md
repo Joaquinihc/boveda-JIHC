@@ -15,6 +15,8 @@ notion: https://app.notion.com/394ab34c233b8097bd53f205989384b4
 - Problema: ~26 empresas y ~$26K (mar-ago) en quantum/one-time charges fuera del Waterfall; cupones 100% sobre addons generan recurrente nulo.
 - Acordado (1-sep): agregarlos separados del MRR afectando el movimiento de categorías; definir tratamiento de overrides (mes de cobro vs recurrente).
 - Nota histórica relacionada: decisión mrr_pos en revenue_waterfall_saas (Slack #downgrades-monitor, 17-ago).
+- 2026-09-22 (reunión) y 28-sep: comercial ya no vende a 1,5x; el OTC se cobra al precio de la mensualidad por el período de instalación y después entra el recurrente. Beauty cobra USD 370 fijos, Medspa no cobra.
+- 2026-09-28: propuesta a Pablo Lucero de tratar el OTC como MRR del producto con la regla n−1 (no separado del MRR como decía el objetivo original). Pendiente de decisión. Ver [[20260928-01 OTC de AI como MRR — regla n−1]] y [[Reconocimiento de OTC de AI — regla n−1]].
 
 ## Próximos pasos
 - [ ] Implementar OTC separado del MRR en la tabla del Waterfall.

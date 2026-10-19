@@ -17,6 +17,8 @@ responsable: "[[Joaquín Herrera]]"
 - Tablas nuevas de Ignacio (24-sep): [[Tablas SoT de ventas POS (pos_sales_sot, pos_ncro, pos_resales)]] · explicadas en [[2026-09-24 Reunión — Tablas SoT de ventas POS (Ignacio)]]. Su reporte (todavía con la SoT anterior): [[Reporte SoT ProPay de Ignacio (board book recalculado)]].
 - Análisis: [[20260909-01 POS activated per week — board book vs deck de Ignacio]] · [[20260910-01 Cuadre ventas POS ISR jul–sep 2026]] · [[20260924-01 Métricas POS del board book vs tablas SoT]] · [[20260924-02 Auditoría de casos borde de las tablas SoT de ventas POS]].
 - Para repetir la auditoría cuando cambien las tablas: [[Prompt — Auditoría de casos borde de las tablas SoT de ventas POS]].
+- Migración del board book a `pos_sales_sot` v9 (6-oct, sin PR): [[20261006-01 Board book sobre pos_sales_sot — impacto en ventas, attachment y payback]] · definición con diagramas en Notion: [Definición venta de POS Ignacio Embry](https://app.notion.com/p/3f1ab34c233b80a0b057fa52491c7b36).
+- 8-oct · Decisión de Joaquín: el board book cuenta **unidades** de POS sin tope por sedes. El tope por sedes del plan queda para un reporte aparte de utilización de terminales. Base: [[20261006-02 POS vs sedes del plan — tope de unidades y POS de respaldo]].
 - Repos en el Mac (copias locales): `~/Documents/GitHub/agendapro-dashboards-evidence/` (board book; en su raíz, `POS_VENTAS_SOT.md/.sql`, `POS_SALES_DBT_HANDOFF.md`, `POS_RECALCULO_TABLEROS.sql`, `POS_WEEKLY_DASHBOARD.md`) y `~/Documents/GitHub/agendapro-dbt-redshift/` (copia de `agendapro/agendapro-dbt`; los modelos de Ignacio están en la rama `refactor/postgres-to-redshift`).
 
 ## Próximos pasos

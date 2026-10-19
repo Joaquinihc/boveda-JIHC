@@ -15,6 +15,7 @@ revisar: true
 > Borrador cosechado por la tarea PRs (vie). Rama `refactor/postgres-to-redshift`.
 
 **Proyecto**: sin link (el PR no nombra el proyecto; candidato: Waterfall One-Time Charges, por la referencia a `docs/AI_ONE_TIME_CHARGES_WATERFALL_PLAN.md`). `revisar: true`.
+- 2026-10-19 · Confirmado en conversación: pertenece a [[_Waterfall One-Time Charges]]; el split 50/50 se deprecó como paso previo a la propuesta [[20260928-01 OTC de AI como MRR — regla n−1]].
 
 ## Qué cambió
 - Se eliminan de `dwh.mrr_ai` `mrr_with_setup_split` y `mrr_with_setup_split_usd` (34 → 32 columnas).

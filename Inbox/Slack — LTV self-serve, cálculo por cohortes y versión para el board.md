@@ -20,3 +20,5 @@ revisar: false
 Conclusión final: https://agendapro.slack.com/archives/D0B83VD95JT/p1791490159222319
 Primera versión (36 meses): https://agendapro.slack.com/archives/D0B83VD95JT/p1791488998823249
 Versión para board: https://agendapro.slack.com/archives/D0B83VD95JT/p1791492203883459
+
+- 2026-10-19 · Promovido a [[20261008-01 LTV self-serve por cohortes]].
