@@ -29,7 +29,7 @@ Ejemplo sep-26 (DWH del 7-oct): Causal 12.917.103 − 286.527 − 5.079 = 12.625
 
 ## Descuadres conocidos (residuo ≠ cuenta de tesorería)
 - **Jul-26 (−2.101)**: la cuenta **BBVA MX USD** (US$2.100,84 fijos desde may-2025) desapareció de la planilla en julio sin movimiento. Tesorería la volvió a cargar el 8-oct: el residuo de julio pasó de +509 a +2.610 (= cuenta de tesorería). La cuenta está bloqueada con saldo congelado, ver [[Slack — Inconsistencias históricas del cash flow vs Odoo (ene-23 a sep-26)]].
-- **Ago-26 (+34)**: la cuenta de efecto de TC de México se calculó con el TC de julio redondeado a 17,34 en vez de 17,3446. Inmaterial.
+- **Ago-26 (+33,50)**: no es redondeo de TC (diagnóstico corregido el 20-oct). La hoja `Efecto tipo de cambio` de la planilla de tesorería (*Cash Flow 2025*) toma el saldo inicial de cada banco con un SUMIFS sobre la hoja `Auxiliar`, y el QUERY de `Auxiliar` no incluye la pestaña `Shinkansen (MX)` (sí está en `Para Abacum`). Por eso la cuenta abierta en jul-26 (31.518,41 MXN) quedó con efecto de TC 0 en agosto, cuando le correspondían +570,59 MXN = +US$33,50. Arreglo: agregar `'Shinkansen (MX)'!A:F` al QUERY de `Auxiliar`.
 - **Ene-23**: primer mes de la serie; la apertura se toma como Saldo Inicial − cuenta de efecto de TC.
 
 ## Trampas de la planilla de tesorería
