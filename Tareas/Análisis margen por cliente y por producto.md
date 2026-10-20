@@ -22,6 +22,7 @@ revisar: false
 
 ## Subtareas
 - [x] Verificar el plan antes de dejar a Claude desarrollar los modelos dbt
+- [ ] Pasar el margen por compañía a solo P&L en el PR #407: costo IA desde G0030–G0032 a partir de sep-2026 (antes en nulo), sin el registro de API keys — listo cuando el cambio esté en el PR y la cuadratura contra el P&L dé 0
 - [ ] Definir distribución de costos AI por producto
 - [x] Definir proxy de uso de features para SaaS --> usé cantidad de bookings y locations de cada company.
 - [ ] Elegir 46 o 64 columnas y construir `company_margin_by_company_monthly` (una fila por compañía y mes) — listo cuando la tabla esté en un PR
@@ -30,9 +31,21 @@ revisar: false
 
 ### Pendientes menores
 - 2026-10-02 · Antes de que las cuentas G0030–G0035 tengan movimiento en el P&L, agregar reglas en `company_margin_cost_pool_rules` (stream AI, con su vertical) y dejar de usar el registro de API keys en los meses contabilizados. Si no, el costo de modelos IA se cuenta dos veces. Ver [[Imputación contable de costos de IA (API keys)]].
+- 2026-10-20 · El aviso del 2026-10-02 se confirmó con el cierre de septiembre (ver la sección de abajo). Lo cubre la subtarea «Pasar el margen por compañía a solo P&L».
+- 2026-10-20 · Decidir qué hacer con el Azure que queda en G0001 («AWS - Microsoft», facturado con un mes o más de atraso; sep-2026: 6.190 USD, más un abono de reclasificación de +1.153 con detalle «5.2.0 G0001 - AWS»). Si se mantiene como costo IA, pedirle a Contabilidad que el abono de cada reclasificación diga «AI models», como el cargo en G0030.
+- 2026-10-20 · Si el rediseño deja sin uso el modelo `ai_costs_manual_monthly`, sacarlo del PR #407 y borrar la tabla `finance.ai_costs_manual_monthly` (hoy es el seed viejo, ene–ago 2026).
+- 2026-10-20 · Tras el merge del PR #407 ([[Pisar el P&L costos de API Keys, distribuir entre equipos|T-058]]): borrar a mano `finance.ai_api_key_team_assignment` (huérfana, 111 filas, sin vistas dependientes).
+- 2026-10-20 · Ajustar `sources/dwh/finance/company_margin_reconciliation.sql` en Evidence al diseño final (hoy dice «seed manual» y no etiqueta el Azure excluido).
+
+### 2026-10-20 · Revisión del PR #407 y criterio solo P&L
+- **Doble conteo en septiembre.** El P&L real de sep-2026 ya trae G0030 2.531 · G0031 2.859 · G0032 569 USD (corte DWH 14-oct, `finance.profit_and_loss`), iguales al registro de API keys (2.530,61 · 2.859,09 · 568,97). Sin reglas en `company_margin_cost_pool_rules`, esas cuentas caían en Platform → Software, y el pool AI Models sumaba los mismos 5.959 USD desde el registro.
+- **Criterio en definición (Joaquín, 2026-10-20):** el margen por compañía y por stream usa solo el P&L; el registro de API keys queda solo para el AI P&L by vertical. Idea: calcular el margen IA desde sep-2026, primer mes con las cuentas G0030–G0032, y dejarlo en nulo antes.
+- **Pregunta abierta:** qué muestra la línea IA de una compañía antes de sep-2026, y qué pasa con el costo que ya se asigna a IA en esos meses (recorte de plataforma desde AWS, soporte Health G0202).
+- Los arreglos del 2026-10-19 (worktree `agendapro-worktrees/company-margin`, rama `feat/ai-api-key-team-seed`, sin commit) excluían G0030–G0032 y seguían usando el registro; con este criterio quedan obsoletos y hay que rehacerlos.
 
 ## Historial
 - 2026-09-22 · Importada desde Notion (In progress).
 - 2026-09-29 · Notion: In progress → To Review
 - 2026-10-02 · Mencionada de nuevo en [[2026-09-29 FP&A Weekly]] (dejar costos de plataforma como estimación aparte y redondeada)
 - 2026-10-19 · Avance desde Claude Code: propuesta de tabla ancha por compañía (46 o 64 columnas), falta elegir; aviso de doble conteo con las cuentas G0030–G0035.
+- 2026-10-20 · Avance desde Claude Code: revisión del PR #407 (doble conteo sep-2026), criterio solo P&L en definición; 1 subtarea y 5 pendientes menores.
