@@ -15,6 +15,9 @@ notion: https://app.notion.com/321ab34c233b80cdafdad8b83fa163dc
 - Semáforo por completitud de KRs (lógica de colores a replantear); OKRs de People extendidos a 2027 (definir tratamiento).
 - OKR de uso de IA interno → Sebastián Hevia; Core Experience → Pablo (Marambio/Lucero según nota).
 - "No Audit Observations" movido a octubre; responsabilidad por aclarar con Nicolás Astudillo.
+- 2026-10-21 · Javiera Correa mantiene una planilla en Google Sheets con los KRs de People; Joaquín la copia a la planilla OKR que se carga al DWH (los líderes no tienen acceso a la planilla OKR).
+- 2026-10-21 · 6 KRs de People son trimestrales, con meta solo en septiembre y diciembre (KR10.1, KR10.4, KR11.1, KR12.4, KR13.1, KR13.2); sep-26 fue su primera medición.
+- 2026-10-21 · En el Informasayuno del 16-oct no se presentaron los OKRs: el tiempo se usó para presentar el proyecto Pulse y la compra de Reservo.
 
 ## Próximos pasos
 - [ ] Actualización manual de KRs pendientes (Miguel, Alan).
