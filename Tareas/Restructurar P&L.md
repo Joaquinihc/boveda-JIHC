@@ -2,7 +2,7 @@
 type: tarea
 id: T-061
 estado: en-curso
-prioridad: media
+prioridad: alta
 tipo: definicion
 origen: notion
 proyecto: "[[_P&L y Centros de Costo]]"
@@ -10,8 +10,8 @@ temas:
   - pnl
 notion_id: 3dcab34c233b80d9ad30d28f549e43ad
 notion_estado: "In progress"
-notion_prioridad: "Medium"
-notion_actualizado: "2026-09-22T17:33Z"
+notion_prioridad: "High"
+notion_actualizado: "2026-10-20T13:41Z"
 fuente: https://app.notion.com/3dcab34c233b80d9ad30d28f549e43ad
 creado: 2026-09-15
 revisar: false
@@ -34,3 +34,4 @@ Notas de Notion: ¿mover la línea de Expansión a Costos de Adquisición? Bench
 - 2026-09-22 · Importada desde Notion (In progress).
 - 2026-09-23 · Mencionada de nuevo en [[2026-09-22 Reunión — Revenue Waterfall, CAC y bookings]]
 - 2026-10-19 · Avance desde Claude Code: pendiente menor de clasificación (Taxes, G4004, eventos MX) desde el análisis de varianza de sep-26 (Joaquín en conversación)
+- 2026-10-21 · Notion: prioridad Medium → High

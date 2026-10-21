@@ -1,7 +1,7 @@
 ---
 type: tarea
 id: T-044
-estado: en-curso
+estado: bloqueada
 prioridad: alta
 tipo: reporte
 origen: notion
@@ -10,9 +10,9 @@ temas:
   - pnl
   - board
 notion_id: 39dab34c233b80629d2de60f8c9ef019
-notion_estado: In progress
+notion_estado: Blocked
 notion_prioridad: High
-notion_actualizado: 2026-09-29T11:15Z
+notion_actualizado: 2026-10-20T13:45Z
 fuente: https://app.notion.com/39dab34c233b80629d2de60f8c9ef019
 creado: 2026-07-14
 revisar: false
@@ -36,3 +36,4 @@ Arreglar P&L del equipo de Payments. El gasto de API Keys es engorroso (registra
 - 2026-09-22 · Importada desde Notion (In progress).
 - 2026-09-29 · Notion: página editada
 - 2026-10-20 · Avance desde Claude Code: 2 pendientes menores (PR de Evidence del AI P&L y doble conteo del Consolidado).
+- 2026-10-21 · Notion: In progress → Blocked

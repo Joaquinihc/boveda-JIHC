@@ -1,15 +1,15 @@
 ---
 type: tarea
 id: T-069
-estado: en-curso
+estado: bloqueada
 prioridad: alta
 tipo: analisis
 origen: notion
 temas: [ai, revenue]
 notion_id: 3e3ab34c233b800d8fffc2754a57aa73
-notion_estado: "In progress"
+notion_estado: "Blocked"
 notion_prioridad: "High"
-notion_actualizado: "2026-09-23T20:40Z"
+notion_actualizado: "2026-10-20T13:41Z"
 fuente: https://app.notion.com/3e3ab34c233b800d8fffc2754a57aa73
 creado: 2026-09-22
 revisar: false
@@ -31,3 +31,4 @@ https://app.notion.com/p/agendapro/Cobro-de-productos-de-IA-antecedentes-por-ver
 ## Historial
 - 2026-09-22 · Importada desde Notion (In progress).
 - 2026-09-24 · Notion: página editada
+- 2026-10-21 · Notion: In progress → Blocked

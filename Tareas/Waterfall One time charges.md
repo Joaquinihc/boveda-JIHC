@@ -10,7 +10,7 @@ temas: [waterfall, otc]
 notion_id: 394ab34c233b8097bd53f205989384b4
 notion_estado: "In progress"
 notion_prioridad: "High"
-notion_actualizado: "2026-09-09T17:28Z"
+notion_actualizado: "2026-10-20T14:02Z"
 fuente: https://app.notion.com/394ab34c233b8097bd53f205989384b4
 creado: 2026-07-05
 revisar: false
@@ -42,3 +42,4 @@ Hay una propuesta de Claude pendiente de leer (artifact linkeado en Notion).
 ## Historial
 - 2026-09-22 · Importada desde Notion (In progress).
 - 2026-10-19 · Avance desde Claude Code: propuesta n−1 al CFO documentada (3 análisis + metodología); subtarea de implementación reemplazada por presentar y cerrar decisiones.
+- 2026-10-21 · Notion: página editada

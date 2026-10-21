@@ -1,16 +1,16 @@
 ---
 type: tarea
 id: T-056
-estado: en-revision
+estado: en-curso
 prioridad: alta
 tipo: analisis
 origen: notion
 proyecto: "[[_Márgenes por Cliente y Producto]]"
 temas: [margenes]
 notion_id: 3d6ab34c233b805091dde8c188a8591e
-notion_estado: "To Review"
+notion_estado: "In progress"
 notion_prioridad: "High"
-notion_actualizado: "2026-09-29T11:13Z"
+notion_actualizado: "2026-10-20T13:40Z"
 fuente: https://app.notion.com/3d6ab34c233b805091dde8c188a8591e
 creado: 2026-09-09
 revisar: false
@@ -23,6 +23,7 @@ revisar: false
 ## Subtareas
 - [x] Verificar el plan antes de dejar a Claude desarrollar los modelos dbt
 - [ ] Pasar el margen por compañía a solo P&L en el PR #407: costo IA desde G0030–G0032 a partir de sep-2026 (antes en nulo), sin el registro de API keys — listo cuando el cambio esté en el PR y la cuadratura contra el P&L dé 0
+- [ ] Hablar con Nicolás y mandarle el detalle de costos de IA por equipo vertical y por mes (mar–ago 2026), con el desglose por proveedor, cuenta y centro de costo, para que los reclasifique en Odoo (asiento de [[Pisar el P&L costos de API Keys, distribuir entre equipos|T-058]]) — listo cuando Nicolás tenga el detalle y acuerden cómo contabilizarlo
 - [ ] Definir distribución de costos AI por producto
 - [x] Definir proxy de uso de features para SaaS --> usé cantidad de bookings y locations de cada company.
 - [ ] Elegir 46 o 64 columnas y construir `company_margin_by_company_monthly` (una fila por compañía y mes) — listo cuando la tabla esté en un PR
@@ -49,3 +50,6 @@ revisar: false
 - 2026-10-02 · Mencionada de nuevo en [[2026-09-29 FP&A Weekly]] (dejar costos de plataforma como estimación aparte y redondeada)
 - 2026-10-19 · Avance desde Claude Code: propuesta de tabla ancha por compañía (46 o 64 columnas), falta elegir; aviso de doble conteo con las cuentas G0030–G0035.
 - 2026-10-20 · Avance desde Claude Code: revisión del PR #407 (doble conteo sep-2026), criterio solo P&L en definición; 1 subtarea y 5 pendientes menores.
+- 2026-10-21 · Notion: To Review → In progress
+- 2026-10-21 · Avance desde Claude Code: subtarea nueva «Hablar con Nicolás…» a pedido de Joaquín (4 abiertas, con su OK); acordado en la FP&A Weekly del 20-oct (notas en Notion).
+- 2026-10-21 · Avance desde Claude Code: PR #407 con el costo de modelos IA solo desde el P&L (G0030–G0032 por vertical, repartido por uso medido), margen nulo sin revenue o costo y `ai_costs_manual_monthly` eliminado (commit `3da73212`). QA jul–sep sin fallas; la cuadratura contra el P&L da 0.
