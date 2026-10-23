@@ -114,6 +114,7 @@ Decisión del 23-oct: el cálculo del payback POS KAM se arma primero como artif
 - 2026-10-23 · Reporte reescrito (misma URL https://claude.ai/artifact/MkNHu2N99XLQnrGMfKcHJU) para el comité de adquisición: se sacaron los escenarios ≤30/≤90 d; queda solo actual → solo ISR, y un capítulo 4 con la propuesta de dos términos Payments (POS y pago en línea, cada uno con attachment, ARPA y GM propios). Decisión de Joaquín: por ahora el revenue de pagos sigue entrando completo (el POS es 67–72 % del stream). Datos nuevos: cohortes B2B3 ene–jun 2026, Chile 687 nuevos, 32 % cobran en línea en 3 meses vs 11 % con POS, activos m2 20 % / 9 %, ARPA m2 USD 30 / 87; México 664, 23 % / 4 %, 14 % / 4 %, USD 8 / 69 (corte 23-oct). Pendiente: Joaquín revisa el reporte y manda el mensaje al hilo del comité (propuesta de texto en la sesión del 23-oct).
 
 ### Pendientes menores
+- 2026-10-23 · Término Payments = 0 antes de 2026 porque `pos_sold_monthly` parte en 2026-01: extenderla hacia atrás sobre `pos_sales2` exige validar que el canal ISR/KAM se reconstruya en 2025. No es parte del PR #856.
 - 2026-10-22 · Confirmar con Finanzas (Nicolás/Rafael) qué es G0012 Transbank (arriendo mensual vs compra de terminales) y si alguna terminal se capitaliza; con la hipótesis actual el arriendo deja margen negativo (cobra USD 22–27, paga USD 34).
 - 2026-10-22 · Costo real de la terminal OEL en México (planilla asume = precio de venta MXN 2.832; P&L muestra USD 64/unidad desde jun).
 - 2026-10-22 · Qué personas incluye G1125 Payments Expansion (¿solo KAM POS? ¿comisiones en «asignaciones»?) y dónde van los onboarders POS (¿G1124 Ops?).
@@ -136,3 +137,4 @@ Decisión del 23-oct: el cálculo del payback POS KAM se arma primero como artif
 - 2026-10-23 · Mencionada de nuevo en [[2026-10-20 One-time de IA en el MRR y Payback POS (Pablo)]] (supuestos de la planilla de Ignacio, CAC con o sin sueldos KAM, tarjeta en FP&A Priorities)
 - 2026-10-23 · Frente 2: decisión de armar el cálculo como artifact HTML primero; 5 preguntas de costos redactadas para que Joaquín las envíe a Finanzas y Payments.
 - 2026-10-23 · Artifact del payback POS KAM publicado (supuestos editables, CAC con/sin sueldos, estimado vs real por cohorte); pendiente revisión de Joaquín y luego Pablo.
+- 2026-10-23 · Reporte con mensual por defecto; borrador en Slack del mensaje al hilo del comité (Agustín 16-oct), pendiente de envío por Joaquín.
