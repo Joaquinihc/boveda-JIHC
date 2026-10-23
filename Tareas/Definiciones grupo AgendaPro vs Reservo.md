@@ -44,3 +44,5 @@ Hoja de Notion «Definiciones grupo: AgendaPro vs Reservo» (Finance / FP&A) que
 
 ## Historial
 - 2026-10-22 · Creada desde Claude Code: columna AgendaPro reestructurada y aplicada en Notion; quedan el preview a #data-reservo y la columna Reservo.
+- 2026-10-23 · Mencionada de nuevo en [[2026-10-21 Definiciones e infraestructura de datos de Reservo (Christopher)]] (separar definiciones comerciales de técnicas)
+- 2026-10-23 · Mencionada de nuevo en [[2026-10-22 Data AgendaPro — arquitectura de datos para Reservo]] (compartir el Notion de definiciones con Reservo)

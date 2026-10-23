@@ -113,3 +113,4 @@ Nota: hasta jun-2026 el payroll KAM estaba mezclado en G1110 «Remuneraciones Pa
 - 2026-10-22 · Avance desde Claude Code: fix ISR hecho en rama `fix/payback-pos-isr-only` con test (148/148), sin PR aún; planilla identificada; supuestos validados contra DWH y P&L; modelo por país con CAC con y sin sueldos; 5 pendientes menores nuevos.
 - 2026-10-22 · PR #856 abierto (fix ISR, reviewers Pablo y Nicolás) y DM a Pablo con PR, artifact de escenarios New POS e impacto.
 - 2026-10-22 · Segundo DM a Pablo pidiendo revisión del PR #856 y aprobación para el merge: https://agendapro.slack.com/archives/D095G9DL97T/p1792702130644489
+- 2026-10-23 · Mencionada de nuevo en [[2026-10-20 One-time de IA en el MRR y Payback POS (Pablo)]] (supuestos de la planilla de Ignacio, CAC con o sin sueldos KAM, tarjeta en FP&A Priorities)

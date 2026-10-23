@@ -37,3 +37,4 @@ Arreglar P&L del equipo de Payments. El gasto de API Keys es engorroso (registra
 - 2026-09-29 · Notion: página editada
 - 2026-10-20 · Avance desde Claude Code: 2 pendientes menores (PR de Evidence del AI P&L y doble conteo del Consolidado).
 - 2026-10-21 · Notion: In progress → Blocked
+- 2026-10-23 · Mencionada de nuevo en [[2026-10-20 FP&A Weekly]] (reestructurar el P&L de verticales desde marzo; revisar desde qué mes Nicolás reasignó sueldos a centros de costo)

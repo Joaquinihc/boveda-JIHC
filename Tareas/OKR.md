@@ -52,3 +52,4 @@ Fuente: `finance.okr` (DWH), revisado el 15 y el 21-oct. Solo cuentan los KRs co
 - 2026-09-22 · Importada desde Notion (To Review).
 - 2026-10-21 · Avance desde Claude Code: KRs manuales pendientes de septiembre, borradores a Nicolás y Javiera, subtarea de agosto fusionada con septiembre.
 - 2026-10-21 · Avance desde Claude Code: mensaje a Alan enviado, borrador a Pablo Marambio en espera y KRs de Mario reasignados a Javiera.
+- 2026-10-23 · Mencionada de nuevo en [[2026-10-20 FP&A Weekly]] (pedir a Pablo Marambio el avance de septiembre)

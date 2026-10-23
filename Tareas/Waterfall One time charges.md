@@ -43,3 +43,4 @@ Hay una propuesta de Claude pendiente de leer (artifact linkeado en Notion).
 - 2026-09-22 · Importada desde Notion (In progress).
 - 2026-10-19 · Avance desde Claude Code: propuesta n−1 al CFO documentada (3 análisis + metodología); subtarea de implementación reemplazada por presentar y cerrar decisiones.
 - 2026-10-21 · Notion: página editada
+- 2026-10-23 · Mencionada de nuevo en [[2026-10-20 FP&A Weekly]] (analizar los casos más comunes, 80–90%, frente a la pedida de Julio)

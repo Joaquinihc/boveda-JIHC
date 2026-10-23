@@ -53,3 +53,4 @@ revisar: false
 - 2026-10-21 · Notion: To Review → In progress
 - 2026-10-21 · Avance desde Claude Code: subtarea nueva «Hablar con Nicolás…» a pedido de Joaquín (4 abiertas, con su OK); acordado en la FP&A Weekly del 20-oct (notas en Notion).
 - 2026-10-21 · Avance desde Claude Code: PR #407 con el costo de modelos IA solo desde el P&L (G0030–G0032 por vertical, repartido por uso medido), margen nulo sin revenue o costo y `ai_costs_manual_monthly` eliminado (commit `3da73212`). QA jul–sep sin fallas; la cuadratura contra el P&L da 0.
+- 2026-10-23 · Mencionada de nuevo en [[2026-10-20 FP&A Weekly]] (mandar a Nicolás los costos de IA de septiembre para reclasificarlos hacia atrás, suma cero)
