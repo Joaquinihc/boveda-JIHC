@@ -53,7 +53,7 @@ Payback = ───────────────────────�
 ## Defectos conocidos (al 2026-10-21)
 1. **KAM dentro de la cohorte nueva** (Pablo Lucero, 21-oct): `New_POS` suma ISR + KAM, pero los KAM se venden a la base. Infla el margen por merchant nuevo y achica el payback en Chile y México. Fix: `pos_sold_isr` en la CTE `pos` y corregir la nota de metodología de la página. Seguimiento en [[Payback Payments]]. Al 22-oct-2026 el fix está hecho con test en la rama `fix/payback-pos-isr-only` (worktree `agendapro-worktrees/payback-pos-isr`), PR pendiente.
 2. **Término Payments = 0 antes de 2026**: la extracción parte en 2026-01 (observación del PR #844).
-3. **Nota de metodología desactualizada**: dice que la ventana confiable parte en 2024-10 y que 2024-07/08/09 están incompletos; según el PR #837 el caché actual está completo 2024-01 → 2026-09 para los 5 países. Falta confirmar y corregir la nota.
+3. **Nota de metodología desactualizada**: dice que la ventana confiable parte en 2024-10 y que 2024-07/08/09 están incompletos. **Confirmado el 23-oct-2026** sobre el caché reextraído el 22-oct: `payback_base` emite los 33 meses 2024-01 → 2026-09 para los 5 países, y los costos de adquisición de todo 2024 superan el umbral de USD 50k/mes (mínimo USD 133k en ene-2024; jul–sep 2024 entre 173k y 185k). La frase de la página describe una carga parcial que ya se completó. Falta solo corregir el texto (cambio de documentación, sin lógica).
 4. El GM es un % global por mes: la página no distingue margen por país.
 
 ## Relación con otros reportes

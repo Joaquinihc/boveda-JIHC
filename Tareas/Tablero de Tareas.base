@@ -32,7 +32,6 @@ views:
       - en-revision
       - hecho
     collapsedColumns:
-      bloqueada: true
       hecho: true
       propuesta: true
     columnColors:

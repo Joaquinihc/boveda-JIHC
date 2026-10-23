@@ -93,6 +93,18 @@ Nota: hasta jun-2026 el payroll KAM estaba mezclado en G1110 «Remuneraciones Pa
 
 **Decisiones de método que tomé** (corregibles): cohorte por `effective_sale_date` de la primera venta KAM válida con unidades (incluye reactivaciones con compra y POS adicional); activación = GPV POS > 0 en el mes; delivery y POP prorrateados por unidades de todos los canales; onboarding con el supuesto de la planilla.
 
+### 2026-10-23 · Preguntas para destrabar los costos (las manda Joaquín)
+Decisión del 23-oct: el cálculo del payback POS KAM se arma primero como artifact HTML con supuestos editables, para cerrar la metodología con Pablo antes de invertir en una página Evidence. **Artifact publicado el 23-oct** (privado hasta compartirlo): https://claude.ai/artifact/MXK4y1zZwTygVJ2fp7ct6h — metodología, supuestos planilla vs medido editables por país, escenario A/B de hardware, CAC base y fully loaded, payback estimado con curva de ramp-up vs real por cohorte (gráfico y tabla), lectura y abiertos. Con los valores medidos: Chile CAC 14 / 490 USD por POS, contribución 51 USD/mes, payback fully loaded ~8 meses (9,6 en estado estable); México CAC 22 / 178, contribución 15 USD/mes, payback fully loaded ~8 meses con la venta de la terminal en m0 (11,6 en estado estable). Fuente del modelo: `scratchpad/payback-kam/` (cohorts.json, model.py, sql/). Las preguntas no bloquean el modelo (va con escenarios); cierran los supuestos de costo.
+
+**Para Finanzas (Nicolás / Rafael)**
+1. La línea del P&L `5.0.01.10 G0012 - POS y MPOS (ProPay) - TRANSBANK S.A.` (Chile, USD 5,8k en ene-2026 → 7,9k en sep-2026, Payment Processing) ¿qué es? ¿Arriendo mensual de los SmartPOS que AgendaPro re-arrienda a los comercios, compra de terminales en cuotas, u otra cosa? Dividida por los comercios con arriendo vigente da USD 32–37 por terminal al mes, más que los CLP 21–23k (USD 22–27) que se cobran de arriendo. ¿Hay terminales capitalizadas en el balance (activo fijo) que no pasen por el P&L?
+2. México: ¿cuál es el costo de la terminal OEL por unidad y dónde se registra? En el P&L solo aparece `501.08.003 G0012 - POS y MPOS (ProPay) - OPERACIONES EN LINEA` desde jun-2026 (USD 1,35–1,38k/mes ≈ USD 64 por unidad vendida); la planilla asume MXN 2.832 (≈USD 166) y antes de junio no hay línea.
+3. ¿Quiénes están en `G1125 - Payroll Payments Expansion` (Chile USD 13,4k/mes jul–sep; México USD 2,2k en sep)? ¿Solo los KAM de POS? ¿Las comisiones van dentro de «asignaciones»? ¿Y los onboarders de POS están en `G1124 Payments Ops` o en el onboarding de SaaS (G1200)?
+
+**Para Payments (Ignacio)**
+4. Delivery México: DHL (`G0013`) suma USD 5,3k ene–sep 2026, USD 33 por unidad vendida, contra USD 5 supuestos en la planilla. ¿Qué más viaja por DHL además de terminales (devoluciones, POP, reposiciones)?
+5. Chile: ¿la promo «POS sin cargo» en comodato para cierres ISR (hilo del 15-oct en #comité-adquisición) aplica también a ventas KAM? Afecta el arriendo del cohort en el modelo.
+
 ### Pendientes menores
 - 2026-10-22 · Confirmar con Finanzas (Nicolás/Rafael) qué es G0012 Transbank (arriendo mensual vs compra de terminales) y si alguna terminal se capitaliza; con la hipótesis actual el arriendo deja margen negativo (cobra USD 22–27, paga USD 34).
 - 2026-10-22 · Costo real de la terminal OEL en México (planilla asume = precio de venta MXN 2.832; P&L muestra USD 64/unidad desde jun).
@@ -114,3 +126,5 @@ Nota: hasta jun-2026 el payroll KAM estaba mezclado en G1110 «Remuneraciones Pa
 - 2026-10-22 · PR #856 abierto (fix ISR, reviewers Pablo y Nicolás) y DM a Pablo con PR, artifact de escenarios New POS e impacto.
 - 2026-10-22 · Segundo DM a Pablo pidiendo revisión del PR #856 y aprobación para el merge: https://agendapro.slack.com/archives/D095G9DL97T/p1792702130644489
 - 2026-10-23 · Mencionada de nuevo en [[2026-10-20 One-time de IA en el MRR y Payback POS (Pablo)]] (supuestos de la planilla de Ignacio, CAC con o sin sueldos KAM, tarjeta en FP&A Priorities)
+- 2026-10-23 · Frente 2: decisión de armar el cálculo como artifact HTML primero; 5 preguntas de costos redactadas para que Joaquín las envíe a Finanzas y Payments.
+- 2026-10-23 · Artifact del payback POS KAM publicado (supuestos editables, CAC con/sin sueldos, estimado vs real por cohorte); pendiente revisión de Joaquín y luego Pablo.
