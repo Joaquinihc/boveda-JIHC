@@ -20,6 +20,7 @@ responsable: "[[Joaquín Herrera]]"
 - Migración del board book a `pos_sales_sot` v9 (6-oct, sin PR): [[20261006-01 Board book sobre pos_sales_sot — impacto en ventas, attachment y payback]] · definición con diagramas en Notion: [Definición venta de POS Ignacio Embry](https://app.notion.com/p/3f1ab34c233b80a0b057fa52491c7b36).
 - 8-oct · Decisión de Joaquín: el board book cuenta **unidades** de POS sin tope por sedes. El tope por sedes del plan queda para un reporte aparte de utilización de terminales. Base: [[20261006-02 POS vs sedes del plan — tope de unidades y POS de respaldo]].
 - Repos en el Mac (copias locales): `~/Documents/GitHub/agendapro-dashboards-evidence/` (board book; en su raíz, `POS_VENTAS_SOT.md/.sql`, `POS_SALES_DBT_HANDOFF.md`, `POS_RECALCULO_TABLEROS.sql`, `POS_WEEKLY_DASHBOARD.md`) y `~/Documents/GitHub/agendapro-dbt-redshift/` (copia de `agendapro/agendapro-dbt`; los modelos de Ignacio están en la rama `refactor/postgres-to-redshift`).
+- 28-oct · **Evidence ya lee `pos_sales_sot`** en el payback mensual y el board book: PRs #856 (payback cuenta solo ISR), #860 (`pos_sold_monthly` sobre la SoT, desde 2024-01, con Others aparte) y #832 (board book: unidades, Key Metrics, attachment y payback) mergeados en `main`. Siguen en legacy 15 extracciones (OKR, MBR, CEO dashboard, Payments Weekly, cohortes): [[Migrar el resto de Evidence a pos_sales_sot]]. Detalle y cifras en [[Payback Payments]].
 
 ## Próximos pasos
 - [ ] Auditar facturas emitidas pendientes de pago (criterio oficial de registro) — mío.

@@ -31,7 +31,7 @@ Conversar con Ignacio para llegar a las mismas métricas: (1) compañías, locat
 - [ ] 8. Alinear con Ignacio el gráfico «POS activated per week»
 - [ ] 9. Sugerir a Ignacio ajustes a su deck (semana parcial y corte)
 - [ ] 10. Auditar casos borde de las tablas SoT de ventas POS
-- [ ] 11. Abrir PR del board book y del payback sobre pos_sales_sot
+- [x] 11. Abrir PR del board book y del payback sobre pos_sales_sot
 - [ ] 12. Presentación a Riverwood: ordenar las subtareas y editar el board book
 
 ## Notas
@@ -158,3 +158,4 @@ Cada subtarea de arriba tiene aquí su descripción con el mismo número y títu
 - 2026-10-07 · Subtarea agregada: «Coordinar presentación con Riverwood (revisar calendario de Pablo)», como subtarea 12 (ordenar las subtareas y editar la presentación del board book) (de [[2026-09-24 Reunión — Tablas SoT de ventas POS (Ignacio)]]) (Joaquín en conversación)
 - 2026-10-07 · Subtarea agregada: «Migrar el payback a las tablas nuevas de ventas POS y medir el impacto», como subtarea 13 (de [[2026-10-05 Payback y migración a tablas POS]]) (Joaquín en conversación)
 - 2026-10-19 · Avance desde Claude Code: board book y payback migrados a `pos_sales_sot` en la rama `feat/board-book-pos-sales-sot` (sin PR); subtareas 11 y 13 fusionadas en la 11 (Joaquín en conversación); 5 pendientes menores.
+- 2026-10-28 · Avance desde Claude Code: subtarea 11 hecha. PR #832 (board book) mergeado en `main` el 28-oct (`3bf3a159`), junto con #856 (payback solo ISR) y #860 (`pos_sold_monthly` sobre la SoT). Detalle en [[Payback Payments]]; lo que falta migrar, en [[Migrar el resto de Evidence a pos_sales_sot]].

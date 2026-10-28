@@ -39,6 +39,18 @@ Lo que sigue más abajo describe la **v4** (23-sep). Desde entonces Ignacio publ
 - **Unidades:** `pos_quantity` = `cantidad_de_terminales` del deal (1 si viene vacío); sin deal, el máximo facturado. **Manda el deal**, aunque la factura diga otra cosa.
 - Diagramas de cómo se cataloga cada venta: [Definición venta de POS Ignacio Embry](https://app.notion.com/p/3f1ab34c233b80a0b057fa52491c7b36) (Notion, 6-oct). Uso en el board book: [[20261006-01 Board book sobre pos_sales_sot — impacto en ventas, attachment y payback]].
 
+## 2026-10-28 · Quién las lee y rezago del mes en curso
+- **Consumidores en Evidence** (`agendapro-dashboards-evidence`, `main` desde el 28-oct-2026): `sources/dwh/payments_weekly/pos_sold_monthly.sql` (PR #860: payback mensual, `payments-sales`, `budget-2026-follow-up`) y `sources/dwh/payments/country_pos_sot.sql` (PR #832: board book mensual y trimestral). Las otras 15 extracciones de ventas POS siguen en `pos_sales2`/`pos_sales`: [[Migrar el resto de Evidence a pos_sales_sot]].
+- **Rezago del mes en curso**: el 23-oct-2026 `pos_sales_sot` no tenía ninguna fila ISR con fecha de octubre aunque los 12 deals Vendido ISR de octubre existían en HubSpot con `company_id_agendapro` y `fecha_de_venta_pos` (sus compañías quedaban en `pos_ncro` como Others con `deal_id` nulo); los deals KAM de octubre y el lote ISR del 30-sep sí matcheaban. El 28-oct la tabla ya traía 13 ISR, 24 KAM y 4 Others válidos de octubre (última venta 26-oct). Lectura: las ventas ISR entran semanas después de cerrarse; cualquier métrica del mes abierto sobre la SoT subestima ISR. Chequeo rápido:
+```sql
+SELECT channel_attribution, COUNT(*) AS n, SUM(pos_quantity) AS units, MAX(effective_sale_date) AS max_d
+FROM dwh.pos_sales_sot
+WHERE is_valid_purchase AND effective_sale_date >= DATE_TRUNC('month', CURRENT_DATE)
+GROUP BY 1;
+```
+- **Países**: solo `CL` y `MX` con compras válidas; las 4 filas restantes (Nicaragua, Venezuela, 2 nulos) son inválidas. `pos_sales2` desde 2024 tampoco tiene Argentina ni Colombia.
+- **México jul–sep 2026** (corte 28-oct): ISR 14 / KAM 42 / Others 3 unidades; frente al legacy (ISR 28) la diferencia es reatribución a KAM por el deal, no Others.
+
 ## dwh.pos_ncro — primera venta del comercio
 
 **Modelo**: `models/marts/sales/pos_ncro.sql` (yml compartido `_pos_sales_sot.yml`). Tests: `company_id` unique + not_null, `ncro_date` not_null, accepted_values en `ncro_evidence` y `channel_attribution`.

@@ -25,7 +25,7 @@ id: T-097
 Objetivo: rehacer el cálculo de payback de Payments y desafiar sus supuestos (el cálculo de referencia está en una página enlazada desde la fila de Notion). Alcance acordado con Pablo Lucero (weekly 20-oct-2026): el payback de **pagos como venta de POS a la base** (flujo KAM, clientes del stock), separado del payback de adquisición (flujo ISR, que ya está dentro del payback mensual de Evidence) y del de IA ([[Payback AI]]).
 
 ## Subtareas
-- [ ] 1. Corregir el término Payments del payback mensual en Evidence: `pos_sold_isr` en la CTE `pos` de `payback_base`, nota de metodología («New_POS = POS sold in the month (ISR + KAM)») y correr `npm run test:sql` (`scripts/test/payback-window.test.mjs`). Listo cuando el PR esté abierto y Pablo lo apruebe.
+- [x] 1. Corregir el término Payments del payback mensual en Evidence: `pos_sold_isr` en la CTE `pos` de `payback_base`, nota de metodología («New_POS = POS sold in the month (ISR + KAM)») y correr `npm run test:sql` (`scripts/test/payback-window.test.mjs`). Listo cuando el PR esté abierto y Pablo lo apruebe.
 - [ ] 2. Validar con datos los supuestos de la planilla de Ignacio: % de cierres que compran terminal (hoy 67%), costo POS + delivery + POP por país, activación y GPV por cohorte.
 - [ ] 3. Armar el cálculo por país (CL y MX) con las dos versiones de CAC (con y sin sueldos KAM) y la comparación payback estimado al inicio vs real por cohorte mes a mes.
 
@@ -139,7 +139,15 @@ Fuente: `account.analytic.line` ene–sep 2026 vía la librería de `mcp-odoo-ag
 - Artifact del modelo actualizado (v2, 25-oct) con estos valores y el input de SIM: https://claude.ai/artifact/MXK4y1zZwTygVJ2fp7ct6h
 - Preguntas del 23-oct: la 1 queda respondida en su parte Transbank (arriendo) y abierta en Haulmer/Cavara/Boxhosting; la 4 queda respondida en el costo por envío y abierta en qué más se despacha.
 
+### 2026-10-28 · Los tres PRs mergeados (#856 → #860 → #832)
+- **Merges en `main` de `agendapro-dashboards-evidence`** (28-oct, los hizo Joaquín): #856 `ff636af9` (12:41 UTC, payback solo ISR), #860 `56d3b1c2` (13:27, `pos_sold_monthly` sobre `pos_sales_sot`), #832 `3bf3a159` (13:27, board book). Orden respetado: #856 primero porque #860 cambia la fuente que lee su CTE; #832 al final porque su término Payments asume la regla solo ISR. Borrador del PR del board book: [[PR 832 — POS sales, attachment and payback on dwh.pos_sales_sot (board book)]].
+- **Review de Nicolás (bot `nicofrem-agpro`) en #860**, pedía cambios el 23-oct: (1) conservar Argentina y Colombia en `country_group` (el `ELSE 'Otros'` cambiaba el contrato); (2) sacar del header la narración de consumidores. Aplicado en `14e82d4b`: ramas `AR`/`CO` restauradas con filas de prueba AR, CO y un código no mapeado, header solo con regla de conteo, canal y columnas, main mergeado en la rama; `npm run test:sql` 254/254. Evidencia dada en el hilo: ni `pos_sales2` (desde 2024) ni la SoT tienen ventas fuera de Chile y México (la SoT trae 4 filas Nicaragua/Venezuela/nulo, todas inválidas), así que las ramas son vocabulario, no datos. El bot aprobó 20 min después de re-pedir la review.
+- **El «gap ISR de octubre» era rezago, no bug**: el 23-oct la SoT no tenía ninguna venta ISR con fecha de octubre aunque los 12 deals Vendido existían en HubSpot (quedaban en `pos_ncro` como Others con `deal_id` nulo). El 28-oct la tabla ya traía 13 ISR, 24 KAM y 4 Others válidos de octubre (última venta 26-oct). Lectura: el mes en curso llega a la SoT con semanas de rezago (la venta se valida al pagarse la factura y al matchear el deal), así que payback y attachment de un mes abierto subestiman ISR. No hizo falta preguntarle a Ignacio.
+- **México, corrección a la nota del 23-oct**: la caída de ISR jul–sep (legacy 28 → SoT 14) es reatribución a KAM por el deal, no Others. SoT jul–sep 2026 (corte 28-oct): Chile ISR 110 / KAM 73 / Others 14; México ISR 14 / KAM 42 / Others 3. Descripción del PR corregida.
+- **Qué queda en legacy**: en `main` solo `pos_sold_monthly` y `country_pos_sot` leen `pos_sales_sot`; 15 extracciones siguen en `pos_sales2`/`pos_sales` (`country_pos` y attachment, Payments Weekly, cohortes). Sigue en [[Migrar el resto de Evidence a pos_sales_sot]].
+
 ### Pendientes menores
+- 2026-10-28 · Avisar a Miguel Cárdenas: `fintech/payments-sales` mezcla real de la SoT (vía `pos_sold_monthly`, con Others en el total) con el forecast del mes de `pos_sold_current.sql`, que sigue en `pos_sales2`, hasta migrar esa extracción.
 - 2026-10-23 · Término Payments = 0 antes de 2026 porque `pos_sold_monthly` parte en 2026-01: extenderla hacia atrás sobre `pos_sales2` exige validar que el canal ISR/KAM se reconstruya en 2025. No es parte del PR #856.
 - 2026-10-22 · Confirmar con Finanzas (Nicolás/Rafael) qué es G0012 Transbank (arriendo mensual vs compra de terminales) y si alguna terminal se capitaliza; con la hipótesis actual el arriendo deja margen negativo (cobra USD 22–27, paga USD 34).
 - 2026-10-22 · Costo real de la terminal OEL en México (planilla asume = precio de venta MXN 2.832; P&L muestra USD 64/unidad desde jun).
@@ -168,3 +176,4 @@ Fuente: `account.analytic.line` ene–sep 2026 vía la librería de `mcp-odoo-ag
 - 2026-10-23 · Plan de migración a pos_sales_sot aprobado por Joaquín; PR #860 abierto; PR #832 actualizado con merge de main, corregido (Others fuera) y listo para revisión.
 - 2026-10-25 · Revisión en Odoo de G0012/G0013/G0016 y demás cuentas de costo: Transbank confirmado como arriendo, delivery CL 12,5 y MX 16,5 por envío, SIM México al margen; artifact v2.
 - 2026-10-28 · Notion: página editada
+- 2026-10-28 · Avance desde Claude Code: PRs #856, #860 y #832 mergeados en `main` (en ese orden); cambios de la review del bot aplicados en #860; el gap ISR de octubre era rezago de la SoT (13 ISR al 28-oct); subtarea 1 hecha; 1 pendiente menor (aviso a Miguel); tarea nueva en propuesta para el resto de la migración.

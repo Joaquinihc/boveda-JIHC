@@ -498,6 +498,8 @@ Proyecto: [[_SoT Ventas POS]]. El número que yo registro sale del **Board Book*
 | Refrescar parquet | `npm run sources -- --queries "dwh.country_pos_sot"` |
 | Otro consumidor | `pages/finance/board-book/quarterly/index.md` |
 
+- 2026-10-28 · `country_pos_sot.sql` fue reescrito sobre `dwh.pos_sales_sot` (PR #832 mergeado): mismas columnas de salida, categorías New (ISR) / Stock (KAM) / Others (sin deal) / Reactivacion, sin `pos_additional_soft`. Lo que sigue abajo describe la versión anterior (port del SoT en SQL). Tablas: [[Tablas SoT de ventas POS (pos_sales_sot, pos_ncro, pos_resales)]].
+
 `country_pos_sot.sql` es el **port al repo del SoT de Ignacio** ([[SoT Ventas POS (documento base)]], raíz `POS_VENTAS_SOT.sql`), adoptado el 7-sep-2026. `country_pos.sql` quedó intacto a propósito porque lo leen otras 5 páginas y el denominador de payback.
 
 Tablas del DWH que toca: `dwh.pos_sales2` (grano compañía × mes, trae el agente), `dwh.pos_sales` (facturas), `dwh.int_chargebee__subscription_addon_changes` (altas/bajas de addon POS), `dwh.pos_v2` (planilla KAM), `dwh.companies` y `staging.stg_hubspot__deals` / `__contacts` / `__deal_stages` / `__owners`.
