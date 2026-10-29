@@ -1,7 +1,7 @@
 ---
 type: metodologia
 temas: [cierre-mensual, definiciones, reportes, board]
-actualizado: 2026-10-23
+actualizado: 2026-10-29
 ---
 
 # Cash flow — estructura nueva vs formato Causal
@@ -35,6 +35,7 @@ Ejemplo sep-26 (DWH del 7-oct): Causal 12.917.103 − 286.527 − 5.079 = 12.625
 ## Trampas de la planilla de tesorería
 - **Amount USD sin fórmula en las últimas filas** de la hoja Dataset: esas filas llegan al DWH con 0 USD. El 8-oct, la cuenta de efecto de TC de sep-26 estaba en −10.215 en el DWH y en −15.892 en la planilla (6 filas: Global66 CL −301, Working Capital Propay −5.332, BBVA FI CO −44). Recalcular siempre USD = monto local ÷ TC de la hoja Exchange rates. Sep-26 resuelto: Joaquín extendió la fórmula el 20-oct; el 21-oct `finance.cash_flow` traía la cuenta en −15.891,56 contra un residuo de −15.891,53.
 - **Rescate del DAP BICE de ene-24** (522,6 MM CLP, US$561,5k) registrado como "Financiamiento": la estructura nueva lo trata como préstamo y el FCF de ene-24 da −676,7k en vez de −115,2k (Q1'24 −0,855M vs −0,293M). En el archivo de Riverwood se reclasificó a Other; en Evidence sigue como préstamo hasta que tesorería lo corrija.
+- **Recargas Bice → Global66 (CL)** para pagar proveedores (cuenta que usa RRHH): Bice registra la salida como "Pago a Proveedores" y Global66 la entrada como "Tranferencia entre Cuentas", así que la línea de transferencias de Chile no netea y Suppliers queda sobreestimado por el mismo monto; el FCF no cambia. Ago-26: +8,5 M CLP (US$ 9,1k) en tres abonos de 1,5 / 1,0 / 6,0 M. Confirmado por Rafael Rodriguez el 19-oct; se deja así (período cerrado). Detalle: [[20261029-01 Inconsistencias del cash flow — respuestas de Rafa y caso Global66 ago-26]].
 
 ## Por qué la caja de cierre difiere entre formatos
 Encadenando trimestres desde Q1'24, el formato Causal llega a **12,581M** en Q3'26 y la estructura nueva a **12,641M** (datos del 7-oct; 12,643M con la cuenta BBVA MX USD restaurada). Los +60,2k:
