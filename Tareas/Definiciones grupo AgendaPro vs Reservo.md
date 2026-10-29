@@ -41,6 +41,7 @@ Hoja de Notion «Definiciones grupo: AgendaPro vs Reservo» (Finance / FP&A) que
 - 2026-10-22 · «Clientes nuevos» suma el `plan_quantity` vigente de `dwh.merchants_segments`, no el del mes del alta; quedó así a propósito, tenerlo presente cuando Reservo pregunte.
 - 2026-10-22 · El checkout local de `refactor/postgres-to-redshift` en `agendapro-dbt-redshift` está al 7-sep; `origin` va al 19-oct. Validar siempre contra `origin`.
 - 2026-10-22 · Métricas propuestas para sumar a la hoja más adelante (orden de relevancia): ARR y New MRR, NRR, reactivaciones/upgrades/downgrades, CAC y Payback, activación a Mes 3, GMV, Payments (GPV, take rate, POS vendidos, attachment, activación POS), AI (ARR por vertical, companies únicas, ASP), NPS y Soporte, financieros (P&L, EBITDA, Rule of 40, caja), market share, marketplace.
+- 2026-10-29 · El P&L de Reservo en Odoo todavía no es comparable con el de AgendaPro (sin nómina 2026 ni cost center; cuentas cajón). Seguimiento en [[Revisar P&L de Reservo gasto por gasto (cuentas Odoo)]].
 
 ## Historial
 - 2026-10-22 · Creada desde Claude Code: columna AgendaPro reestructurada y aplicada en Notion; quedan el preview a #data-reservo y la columna Reservo.
