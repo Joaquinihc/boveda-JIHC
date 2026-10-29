@@ -30,5 +30,8 @@ Pasar a `dwh.pos_sales_sot` las 15 extracciones de ventas POS de `agendapro-dash
 - Reglas de referencia ya mergeadas: `sources/dwh/payments_weekly/pos_sold_monthly.sql` (mes × país × canal) y `sources/dwh/payments/country_pos_sot.sql` (categorías New/Stock/Others/Reactivacion). Cómo están construidas las tablas: [[Tablas SoT de ventas POS (pos_sales_sot, pos_ncro, pos_resales)]].
 - Caveat para el mes en curso: la SoT llega con semanas de rezago (ver nota del 28-oct en [[Payback Payments]]); las extracciones diarias y el forecast del mes necesitan una regla propia o seguir en legacy hasta que Ignacio lo resuelva.
 
+### Pendientes menores
+- 2026-10-29 · Enfriar o borrar páginas de Fintech recién después del PR C, cuando todas lean la SoT: ver [[Apagar o enfriar reportes poco consultados en Evidence]].
+
 ## Historial
 - 2026-10-28 · Creada desde Claude Code (propuesta) tras el merge de #856, #860 y #832.
