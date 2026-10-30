@@ -56,3 +56,4 @@ revisar: false
 - 2026-10-23 · Mencionada de nuevo en [[2026-10-20 FP&A Weekly]] (mandar a Nicolás los costos de IA de septiembre para reclasificarlos hacia atrás, suma cero)
 - 2026-10-28 · Notion: página editada
 - 2026-10-30 · Mencionada de nuevo en [[2026-10-28 Márgenes por negocio, compañías y cash flow]] (vincular costos a producto y cuenta Odoo/P&L, criterios de distribución y tabla intermedia por cliente; además Companies Sales Months, payroll comercial de Payments a CAC, costos IA sin vertical con Jonathan, conciliación con el P&L y tablero en Evidence)
+- 2026-10-30 · Avance desde Claude Code: tres subpáginas en Notion (costos por stream, tablas y variables, plan de avance y merge del PR #407); verificado que Payments no doble cuenta (costo medido solo es llave de reparto); carve-out IA de AWS marcado como único supuesto fuera del P&L, decisión abierta.
