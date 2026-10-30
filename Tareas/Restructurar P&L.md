@@ -35,3 +35,4 @@ Notas de Notion: ¿mover la línea de Expansión a Costos de Adquisición? Bench
 - 2026-09-23 · Mencionada de nuevo en [[2026-09-22 Reunión — Revenue Waterfall, CAC y bookings]]
 - 2026-10-19 · Avance desde Claude Code: pendiente menor de clasificación (Taxes, G4004, eventos MX) desde el análisis de varianza de sep-26 (Joaquín en conversación)
 - 2026-10-21 · Notion: prioridad Medium → High
+- 2026-10-30 · Mencionada de nuevo en [[2026-10-27 FP&A Weekly]] (enviar la propuesta con Mapping 1.0 y Mapping 2.0)

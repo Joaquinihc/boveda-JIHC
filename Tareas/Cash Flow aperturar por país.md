@@ -27,3 +27,4 @@ id: T-081
 
 ## Historial
 - 2026-09-30 · Importada desde Notion (In progress)
+- 2026-10-30 · Mencionada de nuevo en [[2026-10-29 Réplica del cash flow por país para conciliar con Odoo (Rafa)]] (replicar el cash flow por país en moneda local en Google Sheets y compartirlo con Rafa)

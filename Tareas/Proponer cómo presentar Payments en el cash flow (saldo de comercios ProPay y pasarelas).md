@@ -28,3 +28,5 @@ El saldo de comercios ProPay en el Santander (~318 M CLP) es plata en tránsito 
 
 ## Historial
 - 2026-10-27 · Creada desde [[2026-10-26 Cash flow en Odoo — diferencias con Evidence (Rafa y Pablo)]] (propuesta)
+- 2026-10-30 · Mencionada de nuevo en [[2026-10-27 FP&A Weekly]] (revisar perímetro y definiciones: pasarelas, cuentas ProPay)
+- 2026-10-30 · Mencionada de nuevo en [[2026-10-27 Cash flow en Odoo — FCF, estructura y Payments (Rafa)]] (revisar los EEFF de dLocal para validar la estructura: bloque Evidence arriba y bloque ProPay/Payments abajo; pendiente saldo vs movimiento de pasarelas)
