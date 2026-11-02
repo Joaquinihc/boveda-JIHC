@@ -26,3 +26,6 @@ revisar: false
 
 ## Relacionado
 - `Inbox/PR 384 — publish two graduation classifications side by side (initial + CX-aligned v2)` y [[2026-09-22 Reunión — Revenue Waterfall, CAC y bookings]] (activación suma bookings y enrollments por igual).
+
+## Seguimiento
+- 2026-11-02 · (Mantenimiento) Desde el PR 415 (mergeado el 19-oct) `int_company_activation_status` lee `bookings_count_demand`: deja fuera los bookings importados de otro software al contratar (marca «Creada vía archivo .csv» y la carga de la company 514942). La ficha y la skill siguen sin esa regla; se suma a lo de arriba. Ver `Inbox/PR 415 — …`.

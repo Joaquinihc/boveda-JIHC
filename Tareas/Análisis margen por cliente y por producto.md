@@ -10,7 +10,7 @@ temas: [margenes]
 notion_id: 3d6ab34c233b805091dde8c188a8591e
 notion_estado: "In progress"
 notion_prioridad: "High"
-notion_actualizado: "2026-10-27T13:08Z"
+notion_actualizado: "2026-10-30T16:09Z"
 fuente: https://app.notion.com/3d6ab34c233b805091dde8c188a8591e
 creado: 2026-09-09
 revisar: false
@@ -57,3 +57,4 @@ revisar: false
 - 2026-10-28 · Notion: página editada
 - 2026-10-30 · Mencionada de nuevo en [[2026-10-28 Márgenes por negocio, compañías y cash flow]] (vincular costos a producto y cuenta Odoo/P&L, criterios de distribución y tabla intermedia por cliente; además Companies Sales Months, payroll comercial de Payments a CAC, costos IA sin vertical con Jonathan, conciliación con el P&L y tablero en Evidence)
 - 2026-10-30 · Avance desde Claude Code: tres subpáginas en Notion (costos por stream, tablas y variables, plan de avance y merge del PR #407); verificado que Payments no doble cuenta (costo medido solo es llave de reparto); carve-out IA de AWS marcado como único supuesto fuera del P&L, decisión abierta.
+- 2026-11-02 · Notion: página editada
