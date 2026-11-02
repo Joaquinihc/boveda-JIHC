@@ -68,3 +68,28 @@ Es donde Odoo registra hoy la factura (AgendaPro Inc):
 - **Cuenta igual en origen y destino** (G2104 → G2104): solo cambia la analítica.
 - **Montos de consumo, no de factura.** Odoo registra la factura cuando llega. Conviene reclasificar lo contabilizado del mes y repartirlo con el mix de consumo.
 - **Margen por compañía:** cuando G0030–G0035 tengan movimiento en el P&L, hay que agregar reglas en la macro de pools de `company_margin_*`. Si no, el costo de modelos IA se cuenta dos veces.
+
+## 2026-11-02 · Cómo queda en Odoo y cómo se prepara el asiento
+- **Los G-codes de IA no son cuentas en Odoo.** G0030–G0035, G0205 y G2112–G2116 son analíticas del plan «Centros» (id 26). El nombre es el CECO sin BU (BTY-PLAT) o el G-code (G2113); la referencia lleva el G-code («G0030 - AI models Beauty Service»). En la Master sí están como códigos, en Mappings.
+- **Cuentas reales en AgendaPro Inc:** Platform → 5.2.73 Platform IA · Customer Support → 5.2.8 G0204 · Sales → 5.2.16 G1104 · Development → 5.2.25 G2104 · Administration → 5.2.57 G3015 o 5.2.59 G3017.
+- **Analítica de la línea de débito, según el centro de costo:**
+
+| Centro de costo | Analítica |
+|---|---|
+| BTY-, HLT-, MSP-, MKP-, PAY- y P&T-PLAT-HQ | BTY-PLAT, HLT-PLAT, MSP-PLAT, MKP-PLAT, PAY-PLAT y P&T-PLAT |
+| MKP-SUPP-HQ | MKP-SUPP |
+| REV-SUPP-HQ · REV-SALES-HQ | G0204 · G1104 |
+| BTY-TECH-HQ | G2112 (por crear al 2-nov) |
+| HLT-TECH-HQ | G2113 |
+| MSP-TECH-HQ | G2114 (por crear al 2-nov) |
+| MKP-TECH-HQ | G2115 |
+| PAY-TECH-HQ | PAY-TECH |
+| P&T-TECH-HQ | G2104 |
+| ADM-HQ | G3015 o G3017, la misma de su cuenta |
+
+- **No usar las analíticas con nombre de CECO de personas** (HLT-TECH, MKP-TECH, MSP-TECH, BTY-TECH, REV-SUPP, REV-SALES, ADM-HQ, P&T-TECH): su referencia es el G-code de remuneraciones.
+- **Servicio y desarrollo separados desde oct-2026** (decisión de Joaquín, 2-nov). En sep-2026 (asientos MISC/2026/09/0008–0010) todo el desarrollo quedó con la analítica G2104, y no se corrige.
+- **El asiento:** uno por proveedor, con fecha del último día del mes y ref «API Key Cost Reclass». El monto es el consumo del mes con IVA (así se hizo en sep y oct), no lo contabilizado. Lo contabilizado sirve de control, para ver que alcance para la resta: Claude = partners Anthropic y Claude en 5.2.25 (sin ChatGPT, que va con partner OPENAI); OpenAI en 5.2.22; Microsoft en 5.2.0. La línea Claude de P&T-TECH (G2104 → G2104, con analítica G2104) no se mueve.
+- **Plazo:** el cierre automático de períodos corre el día 3 de cada mes a las 9:50. Si el asiento se registra después, hay que desbloquear el mes.
+- **Quién lo prepara:** la skill `prepare-ai-api-costs-reclass` (`~/.claude/skills/`, nivel usuario), la segunda parte después de `update-ai-api-costs`. Agrega el mes a la planilla «API Keys Costs 2026», la alinea con Odoo y deja en borrador el DM a [[Nicolás Astudillo]]. Necesita los conectores de claude.ai (Google Sheets, Slack y DWH) y leer `~/Documents/GitHub/mcp-odoo-agendapro` (su `.venv` y su `.env`); por eso conviene abrir la sesión en `~/Documents/GitHub`. No necesita el repo dbt, porque el mes sale de `finance.ai_api_key_usage_monthly`. Odoo es solo lectura y Slack, solo borradores.
+- **Desde la corrida de noviembre,** la columna del mes de la planilla se calcula sobre la pestaña «Registro DWH» con SUMPRODUCT+EXACT, porque SUMIFS no distingue «Default project» de «Default Project» (sumaba 122,70 dos veces).

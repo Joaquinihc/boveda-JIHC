@@ -29,6 +29,7 @@ Notas de Notion: ¿mover la línea de Expansión a Costos de Adquisición? Bench
 ## Notas
 ### Pendientes menores
 - 2026-10-07 · Clasificación en la Master del P&L (del análisis de varianza de sep-26): la categoría Taxes no tiene sección en Mappings y queda en `#N/A` fuera del P&L (−30,3k ago, −6,7k sep; incluye el Impuesto Sobre Nómina de México, que es costo de personal); G4004 (diferencias de cambio) está dentro del EBITDA y explicó −11,9k de la variación del mes, así que hay que evaluar bajarla a Financing; los eventos de México (13,0k) están en G1006 Google Ads. Ver [[20261007-01 Varianza P&L septiembre vs agosto 2026]].
+- 2026-11-02 · Códigos repetidos de remuneraciones: la Master quedó recodificada con G1207–G1210 y G1128, a la espera de los códigos que defina Contabilidad en Odoo. Si difieren, hay que recodificarla de nuevo. Ver [[Claude Code — Códigos G repetidos en la Master del P&L]].
 
 ## Historial
 - 2026-09-22 · Importada desde Notion (In progress).
@@ -36,3 +37,4 @@ Notas de Notion: ¿mover la línea de Expansión a Costos de Adquisición? Bench
 - 2026-10-19 · Avance desde Claude Code: pendiente menor de clasificación (Taxes, G4004, eventos MX) desde el análisis de varianza de sep-26 (Joaquín en conversación)
 - 2026-10-21 · Notion: prioridad Medium → High
 - 2026-10-30 · Mencionada de nuevo en [[2026-10-27 FP&A Weekly]] (enviar la propuesta con Mapping 1.0 y Mapping 2.0)
+- 2026-11-02 · Avance desde Claude Code: pendiente menor de seguimiento de los códigos de remuneraciones recodificados en la Master (Joaquín en conversación)

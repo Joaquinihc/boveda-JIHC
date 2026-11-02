@@ -17,6 +17,7 @@ responsable: "[[Joaquín Herrera]]"
 - P&L SaaS: benchmarkear Shopify/Fresha; armar Notion estructura actual vs propuesta; costos de vendedores hoy castigan margen.
 - Guía: [[Guía clasificación de personas (headcount)]]. Tareas Notion: Restructurar P&L, P&L verticales a Board Book, Headcount + clasificación, costos API Keys.
 - 2026-10-29 · Reservo entró a Odoo el 19-oct-2026 como dos sociedades, SC3 SpA (Chile) y SOFTWARE RESERVO (México), con planes de cuentas clonados de AgendaPro Chile y México y cargadas por [[Nicolás Astudillo]] el 22 y 23-oct; sin nómina 2026 ni cost center HQ/país, y varias cuentas cajón con criterio distinto. Detalle en [[20261029-01 Revisión del P&L de Reservo en Odoo vs estructura AgendaPro]]; seguimiento en [[Revisar P&L de Reservo gasto por gasto (cuentas Odoo)]].
+- 2026-11-02 · Costos de IA en Odoo: desde octubre, servicio y desarrollo van separados. El desarrollo usa la analítica de su vertical sobre 5.2.25 G2104, y septiembre se queda con G2104 ([[Imputación contable de costos de IA (API keys)]]). Para los códigos de remuneraciones repetidos, la Master quedó recodificada con G1207–G1210 y G1128, a la espera de los que defina Contabilidad en Odoo ([[Claude Code — Códigos G repetidos en la Master del P&L]]).
 
 ## Próximos pasos
 - [ ] Notion con estructura actual del P&L vs propuesta + benchmark de públicos.
