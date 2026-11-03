@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: cuadratura
@@ -34,3 +34,4 @@ Los Merchants totales de Reservo de octubre ya cuadran (4.119 sucursales), pero 
 ## Historial
 - 2026-11-03 · Creada desde [[2026-11-02 Conciliación de clientes e ingresos de Reservo (Christopher)]] (propuesta)
 - 2026-11-03 · Mencionada de nuevo en [[2026-11-02 New Merchants de Reservo — primer pago y los 173 de agosto (Pablo)]] (de ahí salen las subtareas 1 y 2 y los pendientes menores)
+- 2026-11-03 · Pasó a subtarea de [[Integrar los datos de revenue de Reservo (vistas AgendaPro, Reservo y combinada)]] (Joaquín en conversación con Claude Code). Trabajo cerrado el 3-nov: [[20261103-01 New Merchants y Merchants de Reservo — definiciones finales y cuadre con Pablo Saintard]]

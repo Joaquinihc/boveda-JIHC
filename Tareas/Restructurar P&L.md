@@ -30,6 +30,7 @@ Notas de Notion: ¿mover la línea de Expansión a Costos de Adquisición? Bench
 ### Pendientes menores
 - 2026-10-07 · Clasificación en la Master del P&L (del análisis de varianza de sep-26): la categoría Taxes no tiene sección en Mappings y queda en `#N/A` fuera del P&L (−30,3k ago, −6,7k sep; incluye el Impuesto Sobre Nómina de México, que es costo de personal); G4004 (diferencias de cambio) está dentro del EBITDA y explicó −11,9k de la variación del mes, así que hay que evaluar bajarla a Financing; los eventos de México (13,0k) están en G1006 Google Ads. Ver [[20261007-01 Varianza P&L septiembre vs agosto 2026]].
 - 2026-11-02 · Códigos repetidos de remuneraciones: la Master quedó recodificada con G1207–G1210 y G1128, a la espera de los códigos que defina Contabilidad en Odoo. Si difieren, hay que recodificarla de nuevo. Ver [[Claude Code — Códigos G repetidos en la Master del P&L]].
+- 2026-11-03 · Códigos de remuneraciones: Odoo ya tiene G1207–G1210 y G1128 (rename de Nicolás, 3-nov) y la Master cuadra. Quedan: 4 BHE de Honorarios Beauty con analítica REV-EXP (¿se corrige en Odoo o en la Master?), meses previos a jun/jul sin G1210/G1128 si se re-exporta, nombre de G1210 en español, 31 filas con nombre cruzado G1115/G1125 en Mappings col C, categoría de G1210 por confirmar, y actualizar Evidence (`headcount_fin_payroll.sql` y listas de costos del GM). Ver [[Claude Code — Códigos G repetidos en la Master del P&L]].
 
 ## Historial
 - 2026-09-22 · Importada desde Notion (In progress).
@@ -38,3 +39,4 @@ Notas de Notion: ¿mover la línea de Expansión a Costos de Adquisición? Bench
 - 2026-10-21 · Notion: prioridad Medium → High
 - 2026-10-30 · Mencionada de nuevo en [[2026-10-27 FP&A Weekly]] (enviar la propuesta con Mapping 1.0 y Mapping 2.0)
 - 2026-11-02 · Avance desde Claude Code: pendiente menor de seguimiento de los códigos de remuneraciones recodificados en la Master (Joaquín en conversación)
+- 2026-11-03 · Avance desde Claude Code: verificado el rename en Odoo y el cuadre de la Master; pendiente menor con los descuadres (Joaquín en conversación)
