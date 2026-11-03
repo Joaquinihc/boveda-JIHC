@@ -29,3 +29,4 @@ Prioridad #1 del equipo en la FP&A Weekly del 27-oct: traer los datos de revenue
 
 ## Historial
 - 2026-10-30 · Creada desde [[2026-10-27 FP&A Weekly]] (propuesta)
+- 2026-11-03 · Mencionada de nuevo en [[2026-11-02 Conciliación de clientes e ingresos de Reservo (Christopher)]] (serie mensual de revenue con BAMBE y comisiones de Mercado Pago)
