@@ -33,7 +33,6 @@ views:
       - hecho
     collapsedColumns:
       hecho: true
-      propuesta: true
     columnColors:
       en-curso: "#3243c8"
       en-revision: "#eeda59"
