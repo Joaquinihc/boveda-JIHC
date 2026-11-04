@@ -12,7 +12,7 @@ temas:
 notion_id: 3ffab34c233b801ea61ccc9c31579316
 notion_estado: In progress
 notion_prioridad: High
-notion_actualizado: 2026-10-27T13:36Z
+notion_actualizado: 2026-11-03T13:06Z
 fuente: https://app.notion.com/3ffab34c233b801ea61ccc9c31579316
 fecha_limite:
 creado: 2026-10-20
@@ -177,3 +177,4 @@ Fuente: `account.analytic.line` ene–sep 2026 vía la librería de `mcp-odoo-ag
 - 2026-10-25 · Revisión en Odoo de G0012/G0013/G0016 y demás cuentas de costo: Transbank confirmado como arriendo, delivery CL 12,5 y MX 16,5 por envío, SIM México al margen; artifact v2.
 - 2026-10-28 · Notion: página editada
 - 2026-10-28 · Avance desde Claude Code: PRs #856, #860 y #832 mergeados en `main` (en ese orden); cambios de la review del bot aplicados en #860; el gap ISR de octubre era rezago de la SoT (13 ISR al 28-oct); subtarea 1 hecha; 1 pendiente menor (aviso a Miguel); tarea nueva en propuesta para el resto de la migración.
+- 2026-11-04 · Notion: página editada

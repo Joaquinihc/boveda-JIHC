@@ -11,7 +11,7 @@ temas:
 notion_id: 3dcab34c233b80d9ad30d28f549e43ad
 notion_estado: "In progress"
 notion_prioridad: "High"
-notion_actualizado: "2026-10-20T13:41Z"
+notion_actualizado: "2026-11-03T12:45Z"
 fuente: https://app.notion.com/3dcab34c233b80d9ad30d28f549e43ad
 creado: 2026-09-15
 revisar: false
@@ -40,3 +40,4 @@ Notas de Notion: ¿mover la línea de Expansión a Costos de Adquisición? Bench
 - 2026-10-30 · Mencionada de nuevo en [[2026-10-27 FP&A Weekly]] (enviar la propuesta con Mapping 1.0 y Mapping 2.0)
 - 2026-11-02 · Avance desde Claude Code: pendiente menor de seguimiento de los códigos de remuneraciones recodificados en la Master (Joaquín en conversación)
 - 2026-11-03 · Avance desde Claude Code: verificado el rename en Odoo y el cuadre de la Master; pendiente menor con los descuadres (Joaquín en conversación)
+- 2026-11-04 · Notion: página editada
