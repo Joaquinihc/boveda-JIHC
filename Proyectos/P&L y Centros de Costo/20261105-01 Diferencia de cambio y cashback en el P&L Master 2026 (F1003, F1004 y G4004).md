@@ -64,7 +64,7 @@ En el DWH, G4004 por año es 15.439 USD en 2022, 11.266 en 2023, 7.323 en 2024 y
   - La 5.3.0.00.10 ya tenía el rubro «Gains (losses) on exchange differences».
 - **Brex:**
   - La línea de octubre (x5497/2026/00009, 7.736,04 USD) es reward (cash redemption).
-  - El canje del 4-feb (≈2.508,79 USD) no está en Odoo: solo está en la fila manual del Master.
+  - El canje del 4-feb-2026 (2.508,78 USD) está en Odoo, pero sin efecto en resultados: el UPLOA/2026/02/0072 (3-feb, «Brex») tiene las dos líneas en la 5.2.35 G2106, una al debe y otra al haber. El P&L solo lo trae por la fila manual del Master (G4004, febrero). Esa fila se mantiene y se saca solo si Contabilidad registra el canje en Odoo como cashback (Joaquín, 5-nov).
 
 ### Argentina (Rafael Rodríguez, 5-nov)
 Odoo tiene el efecto completo: sueldos en USD, valuación de las cuentas en USD y compra y venta de dólares. La revaluación intercompañía va en F1003. El Master solo tomaba la compra y venta y la valuación. En los tres casos se usa lo de Odoo:
