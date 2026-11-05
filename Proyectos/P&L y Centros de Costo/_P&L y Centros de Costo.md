@@ -20,6 +20,15 @@ responsable: "[[Joaquín Herrera]]"
 - 2026-11-02 · Costos de IA en Odoo: desde octubre, servicio y desarrollo van separados. El desarrollo usa la analítica de su vertical sobre 5.2.25 G2104, y septiembre se queda con G2104 ([[Imputación contable de costos de IA (API keys)]]). Para los códigos de remuneraciones repetidos, la Master quedó recodificada con G1207–G1210 y G1128, a la espera de los que defina Contabilidad en Odoo ([[Claude Code — Códigos G repetidos en la Master del P&L]]).
 - 2026-11-03 · Contabilidad ([[Nicolás Astudillo]]) renombró en Odoo las cuentas y analíticas de remuneraciones de verticales con los códigos propuestos (G1207–G1210 y G1128); la Master ya cuadra, sin recodificar de nuevo. El G-code de la nómina llega desde la analítica del plan Centros, no desde la cuenta contable. Descuadres menores y pendientes en [[Claude Code — Códigos G repetidos en la Master del P&L]].
 - 2026-11-05 · Revenue de Reservo en la planilla de conciliación y el P&L: tres flujos, por moneda en que Reservo cobra. Software = pagos de suscripción por moneda de pago; Vambe = 25 % de los planes activos al día 1 del mes siguiente, factura en CLP con IVA dentro, neto por mes de servicio; Mercado Pago = solo Chile, variación del saldo total de la cuenta mientras no haya liquidaciones. Detalle y pendientes en [[20261105-01 Revenue share de Vambe y comisiones de Mercado Pago en el cierre de octubre de Reservo]].
+- 2026-11-04 · Criterios de la revisión del P&L de octubre:
+  - Las terminales POS de México se difieren a 6 meses como costo de venta, igual que la compra anterior. Lo aprobó Julio Guzmán: BILL/2026/10/0020, 6 cuotas de 23.600 MXN de oct-26 a mar-27 en 501.08.003 G0012.
+  - Marketplace Chile: la 4.0.00.11 Ingresos Marketplace queda en 0 por diseño, porque el cofinanciamiento del banco se compensa en la misma cuenta. G1011 Marketing Marketplace es el costo por fraude en la alianza con bancos.
+- 2026-11-05 · Diferencia de cambio y cashback (decisión de [[Pablo Lucero]]):
+  - La diferencia de cambio va siempre debajo del EBITDA, en Financial expenses, con F1003 (intercompañía) y F1004 (terceros, código nuevo). Las comisiones bancarias, los cashbacks y otros van dentro del EBITDA.
+  - G4004 vuelve a «Cashback tarjetas corporativas» (Other Corporate), que es su uso en el Master desde 2021. G4005 nunca se usó.
+  - [[Nicolás Astudillo]] alineó Odoo el 5-nov; el Master está pendiente.
+  - Criterio general (Pablo, 4-nov, a propósito del IMSS de México): cuando el Master y Odoo difieren, manda Odoo.
+  - Detalle en [[20261105-01 Diferencia de cambio y cashback en el P&L Master 2026 (F1003, F1004 y G4004)]].
 
 ## Próximos pasos
 - [ ] Notion con estructura actual del P&L vs propuesta + benchmark de públicos.

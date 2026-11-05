@@ -218,6 +218,14 @@ Matriz alineada a las cuentas **ya existentes en Odoo** (verificado 2026-07-06: 
 - **Cambio de equipo**: recalcular solo Business (y BU si cambió el alcance). La categoría solo cambia si cambió la **función**.
 - Revisión mensual: cruzar headcount vs P&L (el `agent_bu_reviewer` audita la dimensión BU; las dimensiones Categoría y Business se auditan con el export de este mismo análisis).
 
+> **2026-11-04 · El país del headcount es donde vive la persona, no la sociedad que le paga.**
+> - En el P&L, G1100 (Payroll Sales) tiene gasto en México y en USA, pero en el headcount no hay nadie de Sales en esos países.
+> - Son personas del centro REV-SALES-HQ: una se paga por la nómina de México y otra por Deel desde AgendaPro Inc. En `finance.headcount` las dos figuran con país Chile, BU HQ y categoría Sales.
+> - Para cruzar el headcount con el P&L, filtrar por centro (REV-SALES-HQ), no por país.
+> - Además, en octubre-2026 esas dos personas vienen con `division` y `business` concatenados (por ejemplo, «Revenue,ISR,ISR HQ») y con `area` vacío, lo que puede afectar los filtros por esos campos.
+>
+> Fuente: [[Nicolás Astudillo]] en #finance, 4-nov-2026.
+
 > **Cómo se lleva esta clasificación a la contabilidad de cada sociedad**
 > (patrones por país, plan de cuentas, reglas de privacidad y el flujo validado):
 > ver [`payroll-centralization-methodology.md`](payroll-centralization-methodology.md).
