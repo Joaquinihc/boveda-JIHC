@@ -15,12 +15,13 @@ metricas: []
 > - **Desde mayo, el gasto del IMSS estaba doble.** La nómina provisiona el IMSS del empleador todos los meses, y además las facturas bimestrales del IMSS se registraron como gasto. Contabilidad lo corrigió en Odoo el 17-sep y el 27-oct, cuando el Master ya estaba cerrado.
 > - **Criterio: manda Odoo** ([[Pablo Lucero]], 4-nov). Por eso septiembre queda con el IMSS en positivo: ahí cae la reversa de los duplicados de mayo y julio.
 > - **El Master quedó alineado el 5-nov.** De junio a octubre, la nómina de México por área es igual a Odoo. La única diferencia es Marketing de julio: 1.383 MXN (≈79 USD).
-> - **Efecto enero–octubre** (USD, P&L current FX al 5-nov):
->   - EBITDA: +49.607. Se compone de IMSS +40.466, nómina de julio +9.584 y ajustes SIPARE −443.
+> - **El 6-nov se agregaron en mayo los finiquitos de Sales ISR** (272.139,97 MXN, ≈15.720 USD). La baja de 167.392 MXN de julio son finiquitos de mayo que Odoo pasó a su mes al rehacer la nómina; los otros 104.748 MXN son dos finiquitos de mayo registrados en Odoo el 2-oct. El Master no los tenía en ningún mes.
+> - **Efecto enero–octubre** (USD, P&L current FX al 6-nov):
+>   - EBITDA: +33.887. Se compone de IMSS +40.466, nómina de julio +9.584, finiquitos de mayo −15.720 y ajustes SIPARE −443.
 >   - Taxes: −6.895, por el Impuesto sobre Nómina.
->   - Net income: +42.712.
+>   - Net income: +26.992.
 > - **Antes de agregar líneas de Odoo al Master, comparar el total por área, no cuenta por cuenta.** La nómina original de julio trae las cargas del empleador dentro de las líneas de remuneraciones (601.01.05x). Agregar además el IMSS por área de julio lo contó dos veces. Se detectó y se corrigió en la misma sesión.
-> - **Abierto:** al rehacer la nómina de julio (1-sep), Sales y Sales ISR bajaron 167.392 MXN en total. La consulta a [[Nicolás Astudillo]] está en borrador en su DM (5-nov).
+> - **Cuando Odoo rehace un asiento después del cierre, buscar asientos creados después del cierre en cualquier mes.** Lo que baja en el mes rehecho puede haberse movido a otro: así aparecieron los finiquitos de julio en mayo.
 
 ## Método
 - **Odoo**, vía XML-RPC (solo lectura), el 4 y el 5-nov: cuentas 601.26.001 (IMSS), 601.26.002 (Cesantía y Vejez), 601.27.001 (INFONAVIT), 601.28.001 (SAR), 601.29.001 (ISN) y remuneraciones de México, por mes y analítica.
@@ -64,7 +65,26 @@ Odoo rehízo la nómina de julio el 1-sep (SLR/2026/07/0003), después del cierr
 | G1108 Sales ISR | −778.577 | −488.243,14 | 290.333,86 |
 | **Total** | **−841.143** | **−673.750,71** | **167.392,29** (≈ 9.584 USD) |
 
-Parte del costo pasó de ISR a Sales, y además el total bajó. La causa de la baja está consultada a Contabilidad.
+Parte del costo pasó de ISR a Sales, y además el total bajó. La baja son finiquitos de mayo: la nómina original de julio los traía y, al rehacerla, Contabilidad los pasó a mayo (ver la sección siguiente).
+
+### Finiquitos de mayo (agregados el 6-nov)
+En Odoo (consulta del 6-nov, XML-RPC), mayo tiene tres asientos de finiquitos en G1108, todos creados después del cierre:
+- **SLR/2026/05/0002** «Centraliza finiquitos 2026-05»: 167.391,68 MXN (Indemnización 90 días 141.810,30 y Prima de antigüedad 25.581,38). Se creó el 1-sep a las 18:48, 44 minutos antes que el SLR/2026/07/0003. Es la baja de julio; los 0,61 MXN de diferencia vienen del redondeo de la nómina original en el Master.
+- **SLR/2026/05/0003**, finiquito de Stephanie Padilla: 73.948,00 MXN (2-oct).
+- **SLR/2026/05/0004**, finiquito de Mauricio López, «complemento SLR/2026/05/0002»: 30.800,29 MXN (2-oct).
+
+En el Master, Padilla y López figuraban solo con su sueldo mensual de enero a mayo, y no había filas de finiquito entre enero y junio. Con el OK de Joaquín, el 6-nov se agregaron 5 filas en mayo (Financials DB 25023–25027; Mexico / Mexico / G1108; respaldo previo en Drive, 1T6n1CrvXLk89s81HzO6WGgGiRrtTJqZHTVtDmi9cxqI):
+
+| Detail | MXN |
+|---|---:|
+| 601.07.011 Indemnización 90 días \| Payroll ISR | −203.160,97 |
+| 601.07.010 Prima de Antigüedad \| Payroll ISR | −36.805,38 |
+| 601.06.001 Vacaciones \| Payroll ISR | −19.667,81 |
+| 601.12.001 Aguinaldo \| Payroll ISR | −7.187,53 |
+| 601.07.001 Prima Vacacional \| Payroll ISR | −5.318,28 |
+| **Total** | **−272.139,97** |
+
+P&L (current FX), mayo: EBITDA de (181.421) a (197.141) y Net income de (136.860) a (152.579) USD. Los 167.392 MXN solo cambian de mes (efecto neto −85 USD por la tasa de mayo frente a la de julio); lo nuevo para el año son los finiquitos del 2-oct (≈−6.050 USD).
 
 ### Doble conteo de julio: cómo se detectó
 - El plan del 4-nov agregaba en julio la provisión del IMSS por área, igual que en junio (6 filas, −74.410 MXN). Se aplicó en la etapa 7.
@@ -76,4 +96,4 @@ Parte del costo pasó de ISR a Sales, y además el total bajó. La causa de la b
 - `Correcciones IMSS Mexico 2026.md` (4-nov) está desactualizado en dos partes: en julio agrega el IMSS por área, y el anexo agrega las 36 filas de cargas por área. No usarlo para reaplicar.
 - Marketing de julio difiere de Odoo en 1.383 MXN (≈79 USD). No se ajustó.
 - G4009 está en Mappings como «G4009 - Other taxes», en la categoría Taxes. Por eso el ISN mueve el Net income y no el EBITDA.
-- La nómina de enero a mayo del Master se armó por persona y no se tocó, salvo la fila del CEAV duplicado de mayo.
+- La nómina de enero a mayo del Master se armó por persona y no se tocó, salvo el CEAV duplicado y los finiquitos de mayo. Odoo rehízo completas la nómina de abril (SLR/2026/04/0001, 21-sep) y la de mayo (SLR/2026/05/0001, 1-sep). Solo se comparó Sales e ISR (G1100, G1107 y G1108 del Master contra G1100, G1108 y G1128 de Odoo): abril difiere ≈8 mil MXN, y mayo ≈3 mil después de agregar los finiquitos. El resto de las áreas de enero a mayo no se comparó.

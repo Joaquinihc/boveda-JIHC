@@ -20,7 +20,7 @@ metricas: []
 >   - EBITDA: −16,4 (de −2.013,7 a −2.030,1).
 >   - Financial expenses: −146,9. Entran −152,8 de diferencia de cambio, de los que −146,9 son intercompañía, y salen +5,9 de las filas manuales F0001 de Argentina.
 >   - Resultado neto: −163,3.
-> - **Con el IMSS y la nómina de México** ([[20261105-02 IMSS y nómina de México en el P&L Master 2026]]), el efecto total del 5-nov es (USD mil): EBITDA +33,2, Financial expenses −146,9, Taxes −6,9 y Net income −120,6. El Brex no mueve el EBITDA, porque G4011 y G4004 están los dos en Other Corporate.
+> - **Con el IMSS, la nómina de México y los finiquitos de mayo agregados el 6-nov** ([[20261105-02 IMSS y nómina de México en el P&L Master 2026]]), el efecto total es (USD mil): EBITDA +17,5, Financial expenses −146,9, Taxes −6,9 y Net income −136,3. El Brex no mueve el EBITDA, porque G4011 y G4004 están los dos en Other Corporate.
 
 ## Método
 - **Odoo**, vía XML-RPC (solo lectura), del 3 al 5-nov:

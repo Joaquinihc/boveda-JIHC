@@ -40,6 +40,13 @@ Comparar cuenta por cuenta engaña cuando el Master tiene una estructura de cuen
 - **Ejemplo (México, julio 2026):** la nómina original trae las cargas del empleador dentro de las líneas de remuneraciones (601.01.05x). Por eso la 601.26.001 (IMSS) del Master parecía corta frente a Odoo, y agregar el IMSS por área lo contó dos veces.
 - **Regla:** antes de agregar, sumar todas las cuentas de nómina por área y mes, en el Master y en Odoo. Solo se agrega lo que falta en el total.
 
+## Si Odoo rehízo un asiento después del cierre, buscar en todos los meses
+Lo que baja en el mes rehecho puede haberse movido a otro mes, no desaparecido.
+
+- **Ejemplo (México, 2026):** al rehacer la nómina de julio el 1-sep, Sales e ISR bajaron 167.392 MXN. Esa diferencia apareció en mayo como finiquitos (SLR/2026/05/0002, creado 44 minutos antes). Si se deja julio igual a Odoo y no se toca mayo, el costo desaparece del Master. Se corrigió el 6-nov ([[20261105-02 IMSS y nómina de México en el P&L Master 2026]]).
+- **Cómo:** en Odoo, buscar las líneas del área con `create_date` posterior al cierre del Master, en cualquier `date`, y agrupar por asiento y mes.
+- **Cuidado:** en México las analíticas del plan Centros se llaman por su sigla (por ejemplo, «REV-ISR»). El G-code está en el campo `code` de `account.analytic.account`, no en `name`.
+
 ## Revisar la categoría antes de afirmar el efecto
 Antes de decir si un código mueve el EBITDA o solo el resultado, hay que mirar su categoría en Mappings.
 
