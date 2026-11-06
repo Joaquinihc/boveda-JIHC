@@ -15,11 +15,12 @@ metricas: []
 > - **La diferencia de cambio va siempre debajo del EBITDA, en Financial expenses** (decisión de [[Pablo Lucero]], 5-nov-2026). Va en dos códigos: **F1003** para la intercompañía (existe desde el 2-nov) y **F1004** para la de terceros (código nuevo, creado el 5-nov). Las comisiones bancarias, los cashbacks y otros quedan dentro del EBITDA.
 > - **G4004 vuelve a ser «Cashback tarjetas corporativas»**, dentro del EBITDA (Other Corporate). Es lo que el Master trae desde 2021: cashback de Jeeves, Tribal, SVB y Brex, más algunos cargos de tarjeta. G4005 «Cashback» nunca tuvo filas.
 >   - El error venía de la fila 68 de Mappings, que decía «G4004 - Diferencias de Cambio» en la columna B y «G4005 - Cashback» en la C. El 3-feb, [[Nicolás Astudillo]] corrigió la C a «G4004 - Exchange rate».
-> - **Odoo quedó alineado el 5-nov** (Nico; verificado el mismo día). **El Master todavía no:** los cambios están listos (15 filas modificadas, 9 eliminadas y 54 agregadas) y falta aplicarlos.
-> - **Efecto enero–octubre 2026** (USD mil, sobre el Master (6) del 3-nov):
+> - **Odoo quedó alineado el 5-nov** (Nico; verificado el mismo día). **El Master también, el mismo día**, por etapas que Joaquín revisó: 18 filas de diferencia de cambio modificadas y 76 agregadas, sin eliminar filas existentes. El plan del 4-nov decía 15, 9 y 54; se rehízo para no eliminar filas y dejar una fila por cuenta y mes, como el export. F1003 + F1004 cuadran con Odoo por país y mes. Documento para el equipo: [Ajustes P&L cierre octubre](https://app.notion.com/p/agendapro/Ajustes-P-L-cierre-octubre-40fab34c233b803f8850e2432b10ee9c) (Notion).
+> - **Efecto enero–octubre 2026** (USD mil; estimado sobre el Master (6) del 3-nov y confirmado en la planilla en vivo al aplicarlo el 5-nov):
 >   - EBITDA: −16,4 (de −2.013,7 a −2.030,1).
 >   - Financial expenses: −146,9. Entran −152,8 de diferencia de cambio, de los que −146,9 son intercompañía, y salen +5,9 de las filas manuales F0001 de Argentina.
->   - Resultado neto: ≈ −163.
+>   - Resultado neto: −163,3.
+> - **Con el IMSS y la nómina de México** ([[20261105-02 IMSS y nómina de México en el P&L Master 2026]]), el efecto total del 5-nov es (USD mil): EBITDA +33,2, Financial expenses −146,9, Taxes −6,9 y Net income −120,6. El Brex no mueve el EBITDA, porque G4011 y G4004 están los dos en Other Corporate.
 
 ## Método
 - **Odoo**, vía XML-RPC (solo lectura), del 3 al 5-nov:
@@ -74,7 +75,19 @@ Odoo tiene el efecto completo: sueldos en USD, valuación de las cuentas en USD 
 
 Después de los cambios, el Master cuadra con Odoo de enero a octubre: −20.419.528,66 ARS en la 5.3.0.00.01 y +12.234.682,20 en la 5.3.0.00.02.
 
-### Cambios en el Master (pendientes de aplicar)
+### Cambios en el Master (aplicados el 5-nov)
+- **Lo aplicado** (planilla en vivo, 5-nov):
+  - **Diferencia de cambio:** 18 filas modificadas y 76 agregadas, sin eliminar filas.
+    - Argentina: 13 modificadas y 16 agregadas.
+    - Chile: 1 y 21.
+    - Colombia: 3 y 24.
+    - México: 1 y 15.
+  - **Bienes de uso de Argentina:** 4 filas pasan a G4011, y se agrega una de 856 ARS (decimales de agosto).
+  - **Brex:** el de mayo y el de octubre pasan de G4011 a G4004.
+  - **Reservo Chile (SC3):** 18 filas F1004 de enero a septiembre, con Type «Reservo». Suman −2.683.914 CLP (−2.959 USD) y afectan solo P&L (Reservo).
+  - **Bitácora por etapa:** `Bitácora cambios P&L Master 2026-11-05.md`, en la carpeta de Octubre.
+  - **Respaldo previo:** copia del Master en Drive, del 5-nov.
+- **Plan original** (referencia):
 - **Mappings:**
   - Fila 68 (G4004): pasa a «G4004 - Cashback tarjetas corporativas» / «G4004 - Corporate card cashback» y sigue en Other Corporate.
   - Fila 167 (F1003): pasa a Financial expenses.
@@ -83,11 +96,11 @@ Después de los cambios, el Master cuadra con Odoo de enero a octubre: −20.419
   - 15 filas modificadas: 9 de diferencia de cambio pasan a F1004, con los montos de Odoo; 4 de Argentina pasan a G4011; y en la 6.1.1 de Inc, el Brex de mayo y el de octubre pasan a G4004.
   - 9 filas eliminadas: 3 de Colombia, que son intercompañía cargadas como G4004, y 6 F0001 de Argentina.
   - 54 filas agregadas: 35 F1003, 18 F1004 y 1 G4004.
-- **Hallazgo aparte:** la baja de activo de Argentina de abril (5.3.0.00.07) cambió en Odoo el 6-oct. El Master tiene −303.270,30 y Odoo, −222.398,22.
+- **Hallazgo aparte:** la baja de activo de Argentina de abril (5.3.0.00.07) cambió en Odoo el 6-oct. El Master tenía −303.270,30 y Odoo, −222.398,22. Se corrigió en el Master el 5-nov.
 - **Detalle fila por fila:** `/Users/joaquinherreracabrejos/Documents/Cierre de mes/P&L/Octubre/`, archivos `Correcciones diferencia de cambio 2026.md` y `Ajustes diferencia de cambio 2026 v2.xlsx`. Usan la numeración del Master (6); en la planilla en vivo las filas están corridas.
 
 ## Caveats
-- El efecto se calculó sobre el Master (6) del 3-nov. La planilla en vivo tiene filas nuevas (Reservo y Colombia de octubre), así que la base del EBITDA puede diferir. El delta de −16,4 mil USD no depende de eso.
+- El efecto se calculó sobre el Master (6) del 3-nov. La planilla en vivo tiene filas nuevas (Reservo y Colombia de octubre), así que la base del EBITDA puede diferir. El delta de −16,4 mil USD no depende de eso: al aplicarlo en la planilla en vivo dio lo mismo.
 - **Pendientes de Odoo que no mueven el Master:**
   - la 6.0.00.02 de Chile y la 641000 de Inc tienen el rubro de consolidación «Operating Expenses», no el de diferencia de cambio;
   - la 5.3.0.00.10 no tiene la etiqueta «CFM: Exchange Rate»;
