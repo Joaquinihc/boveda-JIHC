@@ -31,3 +31,4 @@ id: T-100
 - 2026-10-30 · Mencionada de nuevo en [[2026-10-27 Cash flow en Odoo — FCF, estructura y Payments (Rafa)]] (cerrar el cash flow por país y luego el consolidado, objetivo 30-oct)
 - 2026-10-30 · Mencionada de nuevo en [[2026-10-28 Márgenes por negocio, compañías y cash flow]] (preparar la comparación Evidence vs Odoo y consultar a Rafa por las visualizaciones)
 - 2026-10-30 · Mencionada de nuevo en [[2026-10-29 Réplica del cash flow por país para conciliar con Odoo (Rafa)]] (avance para la reunión con Pablo; documentar diferencias y listado de cambios Odoo vs Evidence)
+- 2026-11-06 · Mencionada de nuevo en [[2026-11-05 Diferencia de tipo de cambio y cierre del P&L de octubre (Pablo)]] (revisar con Rafa el cierre del cash flow de octubre el 5-nov; da 3,1 vs 2,8 por Vambe y otros ítems)

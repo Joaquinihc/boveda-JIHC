@@ -53,3 +53,4 @@ Llevar al P&L Master 2026 el plan de diferencia de cambio acordado el 5-nov: F10
 - 2026-11-05 · Creada desde Claude Code (Joaquín en conversación)
 - 2026-11-05 · Avance desde Claude Code: borrador a Nico con las cuentas sin asignar; Brex de febrero anotado (la fila manual se queda mientras Odoo no lo registre como cashback)
 - 2026-11-05 · Avance desde Claude Code: Master alineado con Odoo (diferencia de cambio, IMSS y nómina de México, Brex); documentado en Notion; consulta a Nico por Sales e ISR de julio en borrador; estado → en-revision (pedido de Joaquín)
+- 2026-11-06 · Mencionada de nuevo en [[2026-11-05 Diferencia de tipo de cambio y cierre del P&L de octubre (Pablo)]] (devolver la cuenta de comisiones bancarias a su nombre, ajustar los registros de diferencia de cambio, cuenta nueva intercompany vs externos y documentar los cambios del mes)
