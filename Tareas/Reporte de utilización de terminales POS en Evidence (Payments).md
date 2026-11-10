@@ -50,3 +50,4 @@ Nace de [[20261006-02 POS vs sedes del plan — tope de unidades y POS de respal
 ## Historial
 - 2026-10-19 · Creada desde Claude Code (conversación con Joaquín del 8-oct)
 - 2026-11-10 · estado: pendiente → descartada. Fuera del tablero por ahora; las decisiones de diseño quedan en esta nota. (Joaquín en conversación)
+- 2026-11-10 · El mapa de fuentes pasó a [[SQL — SoT Ventas POS#Terminales POS: stock, uso y proveedor]] y la idea quedó en Próximos pasos de [[_SoT Ventas POS]] (Joaquín en conversación)

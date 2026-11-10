@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: hecho
 prioridad:
 tiempo:
 tipo: reporte
@@ -29,3 +29,4 @@ El conteo de septiembre (3.366 compañías) excluye compañías con MRR cero que
 
 ## Historial
 - 2026-10-30 · Creada desde [[2026-10-28 Márgenes por negocio, compañías y cash flow]] (propuesta)
+- 2026-11-10 · estado: propuesta → hecho. Joaquín la da por hecha. Es un pendiente de AgendaPro (conteo de compañías), no de las definiciones de Reservo (Joaquín en conversación)

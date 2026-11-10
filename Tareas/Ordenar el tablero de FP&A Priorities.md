@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: gestion
@@ -25,3 +25,4 @@ Sacar del tablero las tareas que ya están listas o que ya no se trabajan. En la
 
 ## Historial
 - 2026-10-23 · Creada desde [[2026-10-20 FP&A Weekly]] (propuesta)
+- 2026-11-10 · Pasó a [[Por clasificar]] (estado: propuesta → descartada) (Joaquín en conversación)

@@ -13,6 +13,7 @@ fuente: "[[2026-11-09 Coordinación Finanzas]]"
 fecha_limite:
 creado: 2026-11-10
 revisar: false
+alcance: "Todo lo del cierre de octubre 2026: ajustes del P&L y del Master, P&L y headcount de Reservo, métricas que se reportan (waterfall, New Merchants); el cash flow del cierre va en T-100"
 id: T-123
 ---
 
@@ -37,5 +38,11 @@ Lo que falta para cerrar octubre de 2026, el primer mes con Reservo consolidado 
 ### Relacionadas
 - [[Aplicar en el P&L Master las correcciones de diferencia de cambio y cashback de 2026]] (T-117, en revisión) · [[Integrar los datos de revenue de Reservo (vistas AgendaPro, Reservo y combinada)]] (T-111: revenue de Reservo de octubre) · [[Cash flow en Odoo]] (T-100: cuadre del cash flow de octubre).
 
+### Pendientes menores
+- 2026-11-10 · Avisarle a [[Nicolás Astudillo]] que la columna de `finance.headcount` se llama `employer` (no `company`): sus agentes de revisión de nómina deben filtrar por ella. Viene de [[Definir cómo clasificar a las personas de Reservo en la planilla de headcount]] (T-112).
+- 2026-11-10 · Regenerar los espejos sin datos personales (`perfiles/generar_espejos.py --escribir`) ahora que `raw__headcount` trae `employer`; hoy lo dejan fuera. Viene de T-112.
+
 ## Historial
 - 2026-11-10 · Creada para agrupar el cierre de octubre: absorbe T-119, T-122, T-109, T-121 y T-118 (Joaquín en conversación).
+- 2026-11-10 · Pendientes menores de headcount de Reservo, traídos desde T-112 (Joaquín en conversación)
+- 2026-11-10 · `alcance` agregado (modelo de frentes) (Joaquín en conversación)

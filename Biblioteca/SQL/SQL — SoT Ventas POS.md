@@ -505,3 +505,16 @@ Proyecto: [[_SoT Ventas POS]]. El número que yo registro sale del **Board Book*
 Tablas del DWH que toca: `dwh.pos_sales2` (grano compañía × mes, trae el agente), `dwh.pos_sales` (facturas), `dwh.int_chargebee__subscription_addon_changes` (altas/bajas de addon POS), `dwh.pos_v2` (planilla KAM), `dwh.companies` y `staging.stg_hubspot__deals` / `__contacts` / `__deal_stages` / `__owners`.
 
 **Cómo reproducir a nivel company_id**: tomar `country_pos_sot.sql`, borrar el `SELECT` agregado final y reemplazarlo por `SELECT * FROM clasificado WHERE country_group='Chile' AND date = DATE '2026-08-01'`. Para ver el porqué de cada clasificación hay que agregar `canal, fuente, agent_email, vendedor, sale_day` a la proyección del CTE `clasificado`, que por defecto no los expone. Queries relacionadas en [[SQL — SoT Ventas POS]].
+
+## Terminales POS: stock, uso y proveedor
+> Agregado el 2026-11-10 desde [[Reporte de utilización de terminales POS en Evidence (Payments)]] (T-096, en pausa). Es el mapa de fuentes que se armó el 8-oct con Claude Code para medir la utilización de terminales, y sirve para cualquier análisis de terminales POS.
+
+- **Sedes que transaccionan con POS**: `dwh.location_sales_months` (`pos_payment_count` por sede y mes; trae también el GPV por proveedor). `company_sales_months` es por comercio y no permite contar sedes.
+- **Sedes del plan**: `dwh.mrr.venues` por mes (`is_active`).
+- **Terminales en arriendo y en cuotas**: eventos de `dwh.int_chargebee__subscription_addon_changes`, con `old_quantity` y `new_quantity` desde 2023. El campo `addons` de `staging.stg_chargebee__subscriptions_monthly` es texto JSON y no se desanida directo. Ids de addon:
+  - Chile: `smart-pos-arriendo_2025-cl` y `smart-pos-cuotas_2023-cl`.
+  - México: `terminal-getnet-renta_2023-mx`, `terminal-getnet-cuotas_2024-mx` y `terminal-oel-renta_2025-mx`.
+- **Compras al contado**: líneas one-time de factura (catálogo en `int_pos_terminals_monthly.sql` de dbt). Un terminal en cuotas es propio: la baja de las cuotas es fin de pago y el terminal sigue en el stock.
+- **Proveedor y terminal usado**: `haulmer_augmented_transactions` y `oel_augmented_transactions` traen `pos_serial` y `pos_location_id`.
+- **Lo que ya existe en Evidence**: `fintech/pos-usage` mide comercios activos sobre comercios que alguna vez compraron, y `pos_penetration_merchants` mide sedes con GPV POS sobre todas las sedes pagadas. Ninguno usa como denominador las sedes con POS disponible.
+- **Pregunta abierta si se retoma**: cuánto dura un terminal comprado. La recomendación fue contarlo mientras el comercio tenga plan activo; descartar el corte por N meses sin transacciones, porque infla la utilización.

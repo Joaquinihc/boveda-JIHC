@@ -26,6 +26,7 @@ responsable: "[[Joaquín Herrera]]"
 - [ ] Auditar facturas emitidas pendientes de pago (criterio oficial de registro) — mío.
 - [ ] Cuadrar la cifra de 104 POS entre reportes.
 - [ ] Separar en reportes la reactivación comercial de la financiera.
+- 2026-11-10 · En pausa: reporte de utilización de terminales POS en Evidence (Payments). Diseño en [[Reporte de utilización de terminales POS en Evidence (Payments)]] (T-096) y fuentes en [[SQL — SoT Ventas POS#Terminales POS: stock, uso y proveedor]].
 
 ## Notas de este proyecto
 Los análisis viven en esta carpeta con ID de fecha (`YYYYMMDD-NN Título`). Las reuniones relacionadas se linkean desde `Reuniones/` vía frontmatter `proyectos:`.

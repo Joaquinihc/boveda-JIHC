@@ -5,10 +5,10 @@
 | Tarea | Frecuencia (hora Chile) | Archivo | Escribe en |
 |---|---|---|---|
 | Sync Notion ↔ Tareas | L-V 09:15 | `Tarea — Sync Notion-Tareas (diaria).md` | `Tareas/` (+ Done en Notion) |
-| Reuniones → vault | mar y vie 09:40 | `Tarea — Reuniones (martes y viernes).md` | `Reuniones/`, `Tareas/` |
+| Reuniones → vault | mar y vie 09:40 | `Tarea — Reuniones (martes y viernes).md` | `Reuniones/`; en `Tareas/` solo agrega acciones a frentes o a «Por clasificar» (v4: no crea tareas) |
 | PRs → borradores | vie 12:00 | `Tarea — PRs (viernes).md` | `Inbox/` |
 | Slack → sugerencias | vie 12:20 | `Tarea — Slack (viernes).md` | `Inbox/` |
-| Monitor | L-V 10:00 | `Tarea — Monitor (diaria).md` | Slack #tablero-bóveda-jihc, registro; en `Tareas/` solo lo que Joaquín pide en el canal (lenguaje natural, con catálogo cerrado de cambios). v3.1: propuestas con recomendación («ok» las aplica) y recordatorio de pendientes los lunes |
+| Monitor | L-V 10:00 | `Tarea — Monitor (diaria).md` | Slack #tablero-bóveda-jihc, registro; en `Tareas/` lo que Joaquín pide en el canal, la limpieza de la revisión semanal y «Cierre de mes <mes>». v4: revisión semanal los lunes (lo que entró a cada frente, «Por clasificar», recorte y frentes quietos, con «ok»); los otros días solo urgencias |
 | Mantenimiento | día 1 10:00 | `Tarea — Mantenimiento (mensual).md` | `Inbox/`, `Journal/Resumen` (solo reporta) |
 
 Requisitos para que corran: el Mac encendido, con internet y la app de Claude abierta a esa hora, y **la carpeta de la bóveda asociada a cada tarea programada** (si una tarea se recrea, hay que indicarle la carpeta; sin ella el agente no puede entrar y termina sin hacer nada). Los horarios se guardan en UTC: cuando Chile pase a horario de invierno (abril) correrán una hora antes y conviene moverlos.

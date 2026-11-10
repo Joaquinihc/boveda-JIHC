@@ -50,3 +50,4 @@ Las personas de Reservo están en un libro de remuneraciones aparte, sin la estr
 - 2026-11-10 · Avance desde Claude Code: `employer` en vivo; Evidence filtra AgendaPro y suma gráficos de headcount AgendaPro + Reservo (rama sin PR).
 - 2026-11-10 · Avance desde Claude Code: planilla y carga documentadas (Reservo CL, Gender Mapping, QUERY A1, Tax Id provisorio, PRs #481/#482, dbt run del 9-nov); 2 subtareas nuevas (PR de Evidence y RUT).
 - 2026-11-10 · estado: propuesta → hecho. Reservo ya está en `finance.headcount` con `employer` (dbt PR #482, 9-nov) y el board book filtra por esa columna (Evidence PR #892, mergeado el 9-nov). El RUT de las 52 personas no es necesario para el cierre: la llave provisoria `RSV-` funciona. (Joaquín en conversación)
+- 2026-11-10 · Pendientes menores de aviso a Nicolás y de los espejos pasaron a [[Cierre de mes octubre]] (Joaquín en conversación)
