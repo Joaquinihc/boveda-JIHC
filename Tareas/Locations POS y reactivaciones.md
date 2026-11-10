@@ -35,7 +35,6 @@ Conversar con Ignacio para llegar a las mismas métricas: (1) compañías, locat
 - [ ] 12. Presentación a Riverwood: ordenar las subtareas y editar el board book
 
 ## Notas
-
 ### Dónde está el detalle
 - **Referencia técnica** (dónde vive el número del board book, queries, tablas y cómo reproducir a nivel company_id): [[SQL — SoT Ventas POS#Dónde vive el número de ventas POS del Board Book]]
 - [[20260910-01 Cuadre ventas POS ISR jul–sep 2026]]: el cuadre +9 caso por caso (corte 10-sep), el contraste con `dwh.pos_sales_sot` (24-sep) y los arreglos propuestos. Base de las subtareas 2 a 7.
@@ -145,6 +144,7 @@ Cada subtarea de arriba tiene aquí su descripción con el mismo número y títu
 - 2026-10-19 · Revisar los 56 comercios que transaccionan POS (Haulmer/OEL) sin ninguna venta válida en la SoT.
 - 2026-10-19 · Opción: restringir el numerador del attachment a primeras ventas ISR (hoy 0 casos de ISR sobre comercios que ya tenían POS).
 - 2026-10-19 · Antes del PR, integrar `main` en la rama: el board book cambió el 14 y 15-oct (PR #820 y otros).
+- 2026-11-10 · Documentar la estructura de productos POS (venta, renta, cuotas, regalado) y las reglas de cupones en Chargebee, con casos típicos y la acción recomendada, y compartirlo con los otros tres asistentes. Venía de [[Documentar estructura de productos POS y reglas de cupones en Chargebee]] (T-094), de [[2026-10-07 Definición venta y renta POS en Chargebee]].
 
 ## Historial
 - 2026-09-10 · Cuadratura jul–sep 2026 (Chile, ISR) a nivel company_id contra el board book: +9 unidades, con causa identificada caso por caso. 17 company_id investigados en `pos_sales2`, facturas, addons de Chargebee, planilla KAM y HubSpot.
@@ -159,3 +159,5 @@ Cada subtarea de arriba tiene aquí su descripción con el mismo número y títu
 - 2026-10-07 · Subtarea agregada: «Migrar el payback a las tablas nuevas de ventas POS y medir el impacto», como subtarea 13 (de [[2026-10-05 Payback y migración a tablas POS]]) (Joaquín en conversación)
 - 2026-10-19 · Avance desde Claude Code: board book y payback migrados a `pos_sales_sot` en la rama `feat/board-book-pos-sales-sot` (sin PR); subtareas 11 y 13 fusionadas en la 11 (Joaquín en conversación); 5 pendientes menores.
 - 2026-10-28 · Avance desde Claude Code: subtarea 11 hecha. PR #832 (board book) mergeado en `main` el 28-oct (`3bf3a159`), junto con #856 (payback solo ISR) y #860 (`pos_sold_monthly` sobre la SoT). Detalle en [[Payback Payments]]; lo que falta migrar, en [[Migrar el resto de Evidence a pos_sales_sot]].
+- 2026-11-10 · Mencionada de nuevo en [[2026-11-09 Coordinación Finanzas]] (cerrar el 9-nov los pendientes del reporte enviado a Riverwood)
+- 2026-11-10 · Pendiente menor de T-094 (documento de productos POS y cupones en Chargebee) (Joaquín en conversación)

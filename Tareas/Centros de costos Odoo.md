@@ -1,7 +1,7 @@
 ---
 type: tarea
 id: T-050
-estado: en-curso
+estado: hecho
 prioridad:
 tipo: gestion
 origen: notion
@@ -25,3 +25,4 @@ revisar: false
 
 ## Historial
 - 2026-09-22 · Importada desde Notion (In progress).
+- 2026-11-10 · estado: en-curso → hecho. Odoo ya tiene el plan analítico «Centros» con G-code al 100 % en las facturas de compra 2026, y Nicolás ajustó la regla HQ/país el 2-nov. El resto sigue en [[Restructurar P&L]]. (Joaquín en conversación)

@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: definicion
@@ -28,3 +28,4 @@ Unos ~40 merchants con la promo 3x1 tienen MRR 0 y por eso no cuentan como activ
 
 ## Historial
 - 2026-11-06 · Creada desde [[2026-11-05 Diferencia de tipo de cambio y cierre del P&L de octubre (Pablo)]] (propuesta)
+- 2026-11-10 · Pasó a subtarea de [[Cierre de mes octubre]] (estado: propuesta → descartada) (Joaquín en conversación)

@@ -1,7 +1,7 @@
 ---
 type: tarea
 id: T-049
-estado: en-curso
+estado: descartada
 prioridad:
 tipo: analisis
 origen: notion
@@ -25,3 +25,4 @@ revisar: false
 
 ## Historial
 - 2026-09-22 · Importada desde Notion (In progress).
+- 2026-11-10 · estado: en-curso → descartada. En curso en Notion desde agosto, sin contenido ni avance. (Joaquín en conversación)

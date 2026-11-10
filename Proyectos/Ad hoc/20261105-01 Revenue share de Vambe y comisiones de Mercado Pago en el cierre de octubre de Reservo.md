@@ -76,3 +76,8 @@ Confirma los dos casos que describió Pablo Saintard: venta Reservo más revenue
 - Mercado Pago: solo hay cartas de sep y oct; para la historia pro forma hacen falta las anteriores o el módulo de reportes al que Sebastián Concha invitó a Joaquín el 5-nov.
 - Fuentes de conversación: #data-reservo (4 y 5-nov, hilo de Pablo Saintard del 5-nov 09:55 con Sebastián Cruzat) y DM con Sebastián Concha (5-nov). Carpeta Drive de Cruzat: `drive.google.com/drive/folders/1Ssc9goOLcCaxcLRWo06UTTHTmmjjZZAK` (solo lectura). Planilla de conciliación: Google Sheet de Julio Guzmán `1YopV0kc8t5-GT9shGZrIYdy6EQHI-pvbvKYdbiN1BzQ`, hoja Reservo.
 - Relacionado: [[20261103-01 New Merchants y Merchants de Reservo — definiciones finales y cuadre con Pablo Saintard]] y [[Reservo en Evidence — semilla xlsx, merchants, revenue y consolidación]].
+
+## Actualización 2026-11-09
+- El archivo que Sebastián Cruzat actualizó el 9-nov («Query Vambe - Reservo (Septiembre 2026)», carpeta «Vambe pagos») trae los clientes activos al **01-10**: 102 clientes, planes por 71.927 USD. 25 % × 71.927 = 17.981,75 USD con IVA, igual al centavo que la factura 129780 de **septiembre**. Confirma la regla: la foto al 01-MM es la factura del mes anterior.
+- La factura de octubre sale de la foto al 01-11, que Sebastián calcula cerca del 15 (hilo de #data-reservo del 5-nov).
+- El archivo «Reservo <> Vambe - Reservo (Septiembre 2026)» (Matías, 9-nov) es la misma lista con «Discount 30 %» y «Monto Prisma» = 70 % del plan. Parece un escenario de paso a Prisma con descuento, no el revenue share: no sirve para el P&L.

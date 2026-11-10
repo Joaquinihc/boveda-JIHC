@@ -1,7 +1,7 @@
 ---
 type: tarea
 id: T-022
-estado: pendiente
+estado: descartada
 prioridad: baja
 tipo: reporte
 origen: notion
@@ -24,3 +24,4 @@ revisar: false
 
 ## Historial
 - 2026-09-22 · Importada desde Notion (Not started).
+- 2026-11-10 · estado: pendiente → descartada. Fila de Notion sin empezar y sin contenido. (Joaquín en conversación)

@@ -99,6 +99,25 @@ Después de los cambios, el Master cuadra con Odoo de enero a octubre: −20.419
 - **Hallazgo aparte:** la baja de activo de Argentina de abril (5.3.0.00.07) cambió en Odoo el 6-oct. El Master tenía −303.270,30 y Odoo, −222.398,22. Se corrigió en el Master el 5-nov.
 - **Detalle fila por fila:** `/Users/joaquinherreracabrejos/Documents/Cierre de mes/P&L/Octubre/`, archivos `Correcciones diferencia de cambio 2026.md` y `Ajustes diferencia de cambio 2026 v2.xlsx`. Usan la numeración del Master (6); en la planilla en vivo las filas están corridas.
 
+## 2026-11-09 y 10 · F1005: la revaluación del saldo intercompañía, aparte
+**Decisión (9-nov, Joaquín, acordado con [[Pablo Lucero]]):** la diferencia de cambio intercompañía se divide en dos códigos.
+
+| Código | Qué lleva | Dónde va en el Master |
+|---|---|---|
+| F1003 | Diferencia de cambio de los movimientos intercompañía del mes: USD × dólar de cierre − monto local registrado | Financial expenses, como hasta ahora |
+| F1005 (nuevo) | Revaluación del saldo de la deuda: USD adeudados al cierre anterior × variación del dólar en el mes | Fuera del resultado neto. Categoría por confirmar en Mappings: una existente, como «Other Income / Expenses», igual que F1001 y F1002 |
+
+- **Por qué:** revaluar una deuda en USD no es un gasto financiero de gestión. En el consolidado, esa pérdida casi se compensa con la conversión de Chile a USD, que va a patrimonio.
+- **Las filas de revaluación se quedan en el Master.** Lo que las saca del resultado es el mapeo, no borrarlas. Así se mantiene el cuadre con Odoo por cuenta y mes, y el export las seguirá trayendo cada mes.
+- **Cifras de la propuesta (9-nov, Chile–Inc, USD):** de los −225 mil del año, unos −153 mil son revaluación del saldo y −71 mil movimientos del mes. Octubre: −44 mil y −50 mil. Septiembre: −79 mil y −1 mil. El 9-nov se le mandaron a Nico por Slack los montos de enero a octubre para todos los pares.
+- **Odoo (verificado el 10-nov, solo lectura):**
+  - Analítica F1005: id 366.
+  - Cuentas: Chile 6.0.01.05; México 701.01.004 y 702.01.003; Colombia 42102004 y 53052604; Argentina 5.3.0.00.11.
+  - Enero a octubre ya reclasificados: 56 líneas, todas creadas el 10-nov. En Chile, la 6.0.01.05 suma 129,7 MM CLP de pérdida en enero–octubre.
+- **Repo `mcp-odoo-agendapro`:** el PR #935 de Nico (mergeado el 10-nov) hace que Rule 57 proponga dos líneas, F1003 y F1005. También corrige en `config/intercompany_accounts.json` (`ajustes_por_par`) las cuentas de Chile–México y Chile–Argentina, que pasan a la 6.0.01.02 y la 6.0.01.03.
+- **Octubre:** los asientos MISC/2026/10/0069 (Chile–México, +378 USD) y 0070 (Chile–Argentina, −12 USD) quedaron en la 6.0.01.04, que es la de USA. No cambia el P&L, porque las cuatro cuentas son F1003.
+- **Pendiente:** aplicarlo en el Master (subtarea de [[Aplicar en el P&L Master las correcciones de diferencia de cambio y cashback de 2026]]) y revisar que Evidence no sume F1005 en el resultado neto.
+
 ## Caveats
 - El efecto se calculó sobre el Master (6) del 3-nov. La planilla en vivo tiene filas nuevas (Reservo y Colombia de octubre), así que la base del EBITDA puede diferir. El delta de −16,4 mil USD no depende de eso: al aplicarlo en la planilla en vivo dio lo mismo.
 - **Pendientes de Odoo que no mueven el Master:**

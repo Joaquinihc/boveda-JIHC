@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: analisis
@@ -12,7 +12,7 @@ temas:
 fuente: "[[2026-10-27 Alianzas con bancos — fraude, devoluciones y capital de trabajo]]"
 fecha_limite:
 creado: 2026-10-27
-revisar: true
+revisar: false
 id: T-113
 ---
 
@@ -29,3 +29,4 @@ AgendaPro adelanta al comercio el 80% del ticket y los bancos pagan con ~45 día
 
 ## Historial
 - 2026-10-30 · Creada desde [[2026-10-27 Alianzas con bancos — fraude, devoluciones y capital de trabajo]] (propuesta)
+- 2026-11-10 · estado: propuesta → descartada. En la reunión no quedó claro que fuera de Joaquín. (Joaquín en conversación)

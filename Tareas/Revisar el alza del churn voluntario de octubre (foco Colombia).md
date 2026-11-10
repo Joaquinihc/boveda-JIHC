@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: analisis
@@ -27,3 +27,4 @@ El churn voluntario venía bajando jul–sep (mes cerrado), pero octubre va cami
 
 ## Historial
 - 2026-10-27 · Creada desde [[2026-10-26 Coordinación Finanzas]] (propuesta)
+- 2026-11-10 · Pasó a subtarea de [[Churn — correcciones y análisis]] (estado: propuesta → descartada) (Joaquín en conversación)

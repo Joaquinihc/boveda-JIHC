@@ -18,3 +18,5 @@ revisar: false
 - Relacionada: [[Definir cómo clasificar a las personas de Reservo en la planilla de headcount]].
 
 Hilos: https://agendapro.slack.com/archives/D095G9DL97T/p1793733451084779 · https://agendapro.slack.com/archives/D09C9SSG4HJ/p1793733597904209 · https://agendapro.slack.com/archives/D0A3UHZ8ABW/p1793732713051569 · https://agendapro.slack.com/archives/D09C9SSG4HJ/p1793895377576109
+
+- 2026-11-09 · Aplicado: la columna quedó como `employer` (no `company`) y Reservo ya está en `finance.headcount`. Ver [[Definir cómo clasificar a las personas de Reservo en la planilla de headcount]] y [[20261109-01 Auditoría del informe de cierre sobre finance.headcount (octubre 2026)]].

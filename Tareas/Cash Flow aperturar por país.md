@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: en-curso
+estado: hecho
 prioridad: media
 tiempo:
 tipo: reporte
@@ -28,3 +28,4 @@ id: T-081
 ## Historial
 - 2026-09-30 · Importada desde Notion (In progress)
 - 2026-10-30 · Mencionada de nuevo en [[2026-10-29 Réplica del cash flow por país para conciliar con Odoo (Rafa)]] (replicar el cash flow por país en moneda local en Google Sheets y compartirlo con Rafa)
+- 2026-11-10 · estado: en-curso → hecho. Evidence ya tiene la página `financial-performance/cash-flow-by-country`; la conciliación por país con Odoo sigue en [[Cash flow en Odoo]]. (Joaquín en conversación)

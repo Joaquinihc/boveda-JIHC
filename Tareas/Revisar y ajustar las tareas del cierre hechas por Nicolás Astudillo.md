@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: pendiente
+estado: descartada
 prioridad:
 tiempo:
 tipo: gestion
@@ -27,3 +27,4 @@ Las tareas del cierre están registradas, pero Nicolás Astudillo ejecutó varia
 ## Historial
 - 2026-09-29 · Creada desde [[2026-09-28 Coordinación Finanzas]] (propuesta)
 - 2026-10-07 · Aprobada: pendiente (Joaquín en conversación)
+- 2026-11-10 · estado: pendiente → descartada. Era del cierre de septiembre. (Joaquín en conversación)

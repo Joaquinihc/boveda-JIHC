@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: definicion
@@ -12,7 +12,7 @@ temas:
 fuente: "[[2026-10-07 Definición venta y renta POS en Chargebee]]"
 fecha_limite:
 creado: 2026-10-07
-revisar: true
+revisar: false
 id: T-094
 ---
 
@@ -30,3 +30,4 @@ Documento con los tipos de POS (venta, renta, cuotas, regalado), reglas de cupon
 
 ## Historial
 - 2026-10-14 · Creada desde [[2026-10-07 Definición venta y renta POS en Chargebee]] (propuesta)
+- 2026-11-10 · Pasó a Pendientes menores de [[Locations POS y reactivaciones]] (estado: propuesta → descartada) (Joaquín en conversación)

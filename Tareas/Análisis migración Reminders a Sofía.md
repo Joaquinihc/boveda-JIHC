@@ -1,7 +1,7 @@
 ---
 type: tarea
 id: T-057
-estado: en-curso
+estado: descartada
 prioridad: media
 tipo: analisis
 origen: notion
@@ -29,3 +29,4 @@ Chatwoot. Analizar competencia: ¿han enviado aviso?
 ## Historial
 - 2026-09-22 · Importada desde Notion (In progress).
 - 2026-10-07 · Subtarea agregada: «Pedir a Israel export de la data de Reminders desde el microservicio» (de [[2026-09-28 Coordinación Finanzas]]) (Joaquín en conversación)
+- 2026-11-10 · estado: en-curso → descartada. Sin avance desde el 9-sep (ni en la bóveda, ni en Slack, ni en los repos). (Joaquín en conversación)

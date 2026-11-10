@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: reporte
@@ -12,7 +12,7 @@ temas:
 fuente: "[[2026-10-06 Revisión cierre de septiembre — cashflow y headcount]]"
 fecha_limite:
 creado: 2026-10-06
-revisar: true
+revisar: false
 id: T-092
 ---
 
@@ -29,3 +29,4 @@ Al cashflow le falta la parte de capex (los computadores son capex); se integra 
 
 ## Historial
 - 2026-10-14 · Creada desde [[2026-10-06 Revisión cierre de septiembre — cashflow y headcount]] (propuesta)
+- 2026-11-10 · Pasó a [[Cash flow en Odoo]] como subtarea o pendiente menor (estado: propuesta → descartada) (Joaquín en conversación)

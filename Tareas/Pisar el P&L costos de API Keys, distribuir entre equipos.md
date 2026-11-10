@@ -59,3 +59,4 @@ revisar: false
 - 2026-10-19 · Avance desde Claude Code: imputación contable de las API keys (cuentas G nuevas, centro de costo y cuentas en el registro, PR #407 commit 5bfed446); 3 subtareas nuevas.
 - 2026-10-20 · Avance desde Claude Code: full-refresh del seed ya corrido; 2 pendientes menores (tests del registro y errores del script de la skill).
 - 2026-11-02 · Avance desde Claude Code: octubre cargado en la planilla API Keys Costs 2026 y planilla alineada con Odoo; borrador para Nicolás; skill `prepare-ai-api-costs-reclass`. La subtarea de cuentas y analíticas se reemplazó por la de G2112/G2114 y el asiento de octubre (Joaquín en conversación).
+- 2026-11-10 · Mencionada de nuevo en [[2026-11-09 Coordinación Finanzas]] (Pablo pide redistribuir hacia atrás, no solo oct–nov, los costos de modelos de IA de los equipos verticales; enviar la lista de cuentas con los montos a restar)

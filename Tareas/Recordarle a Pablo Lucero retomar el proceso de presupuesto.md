@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: presupuesto
@@ -11,7 +11,7 @@ temas:
 fuente: "[[2026-10-21 Kick Off proceso de práctica Finanzas]]"
 fecha_limite:
 creado: 2026-10-21
-revisar: true
+revisar: false
 id: T-102
 ---
 
@@ -28,3 +28,4 @@ El proceso de presupuesto no ha partido (la idea era empezarlo en octubre) y que
 
 ## Historial
 - 2026-10-23 · Creada desde [[2026-10-21 Kick Off proceso de práctica Finanzas]] (propuesta)
+- 2026-11-10 · estado: propuesta → descartada. Ya no hace falta: en la Coordinación del 9-nov se dijo que el presupuesto parte esa semana. (Joaquín en conversación)

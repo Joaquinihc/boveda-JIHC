@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: gestion
@@ -28,3 +28,4 @@ El cash flow debe incluirse en el proceso de cierre; desde la adquisición de Re
 
 ## Historial
 - 2026-10-27 · Creada desde [[2026-10-26 Coordinación Finanzas]] (propuesta)
+- 2026-11-10 · Pasó a [[Cash flow en Odoo]] como subtarea o pendiente menor (estado: propuesta → descartada) (Joaquín en conversación)

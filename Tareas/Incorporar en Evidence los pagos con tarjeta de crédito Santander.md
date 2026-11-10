@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: reporte
@@ -27,3 +27,4 @@ Pagos a proveedores con la tarjeta de crédito del Santander se debitan de esa c
 
 ## Historial
 - 2026-10-27 · Creada desde [[2026-10-26 Cash flow en Odoo — diferencias con Evidence (Rafa y Pablo)]] (propuesta)
+- 2026-11-10 · Pasó a [[Cash flow en Odoo]] como subtarea o pendiente menor (estado: propuesta → descartada) (Joaquín en conversación)

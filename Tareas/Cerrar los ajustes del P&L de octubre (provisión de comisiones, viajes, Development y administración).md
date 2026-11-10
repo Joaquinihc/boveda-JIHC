@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: gestion
@@ -30,3 +30,4 @@ Ajustes pendientes para cerrar el P&L de octubre según la revisión con Pablo d
 ## Historial
 - 2026-11-06 · Creada desde [[2026-11-05 Diferencia de tipo de cambio y cierre del P&L de octubre (Pablo)]] (propuesta)
 - 2026-11-06 · Mencionada de nuevo en [[2026-11-05 Vuelos de TAM — cobro doble y reclasificación de viajes (Álvaro)]] (mover 3 de los 4 vuelos de TAM a la línea de viajes de cada equipo y dejar el cuarto en gasto corporativo; reversar el próximo mes si TAM devuelve el cobro doble)
+- 2026-11-10 · Pasó a subtarea de [[Cierre de mes octubre]] (estado: propuesta → descartada) (Joaquín en conversación)

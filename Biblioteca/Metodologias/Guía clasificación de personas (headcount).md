@@ -226,6 +226,13 @@ Matriz alineada a las cuentas **ya existentes en Odoo** (verificado 2026-07-06: 
 >
 > Fuente: [[Nicolás Astudillo]] en #finance, 4-nov-2026.
 
+> **2026-11-09 · Reservo entra a `finance.headcount` y la concatenación de octubre quedó corregida.**
+> - La concatenación que menciona la nota anterior era un separador nuevo de la planilla (coma sin espacio) en 162 filas de octubre; el modelo ya la acepta y los tests de `business` y `area` pasan a `error` (PR #481 de dbt).
+> - Desde el 9-nov la tabla trae también a Reservo (52 personas) con la columna `employer` = AgendaPro | Reservo. Las personas de Reservo se clasifican con los mismos códigos y dos nuevos de soporte dedicado a un mercado: REV-SUPP-AR y REV-SUPP-MX (confirmado con [[Pablo Saintard]], 2-nov). Su país es Chile, por la moneda de la nómina.
+> - Para cruzar con el P&L de AgendaPro, filtrar `employer = 'AgendaPro'`.
+>
+> Referencia: [[finance.headcount — employer, clave de persona y carga desde la planilla]].
+
 > **Cómo se lleva esta clasificación a la contabilidad de cada sociedad**
 > (patrones por país, plan de cuentas, reglas de privacidad y el flujo validado):
 > ver [`payroll-centralization-methodology.md`](payroll-centralization-methodology.md).

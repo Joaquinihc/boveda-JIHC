@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: analisis
@@ -11,7 +11,7 @@ temas:
 fuente: "[[2026-10-06 Revisión cierre de septiembre — cashflow y headcount]]"
 fecha_limite:
 creado: 2026-10-06
-revisar: true
+revisar: false
 id: T-093
 ---
 
@@ -54,3 +54,4 @@ Revisar en detalle cómo se calcula el efecto tipo de cambio del cashflow (posib
 - 2026-10-14 · Creada desde [[2026-10-06 Revisión cierre de septiembre — cashflow y headcount]] (propuesta)
 - 2026-10-19 · Avance desde Claude Code: cálculo del efecto de TC explicado (subtarea 1 hecha); nueva subtarea sobre el impacto por país; duda de hablantes resuelta; menciones a «Claudio» cambiadas a «Claude» (Joaquín en conversación)
 - 2026-10-23 · Avance desde Claude Code: cuenta de tesorería = residuo tras los arreglos de ago y sep-26; nueva subtarea sobre la presentación del FX rate effect (3/3 abiertas); 3 pendientes menores (Joaquín en conversación)
+- 2026-11-10 · Pasó a [[Cash flow en Odoo]] como subtarea o pendiente menor (estado: propuesta → descartada) (Joaquín en conversación)

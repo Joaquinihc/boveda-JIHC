@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: en-curso
+estado: descartada
 prioridad: media
 tiempo:
 tipo: cuadratura
@@ -51,3 +51,4 @@ Revisar línea por línea los gastos 2026 de las dos sociedades de Reservo en Od
 
 ## Historial
 - 2026-10-29 · Creada desde Claude Code (revisión de Odoo del 26-oct, repo `mcp-odoo-agendapro`, sin cambios de código).
+- 2026-11-10 · Pasó a subtarea de [[Cierre de mes octubre]] (estado: en-curso → descartada) (Joaquín en conversación)

@@ -31,6 +31,7 @@ Llevar al P&L Master 2026 el plan de diferencia de cambio acordado el 5-nov: F10
   - que el ajuste Inc–México de Rule 57 no caiga en octubre.
   - 2026-11-05: borrador en el hilo de #finance con los puntos 1 a 3, los rubros de cashback, SC3 y Software Reservo sin rubros, y el Brex de febrero. Falta que Joaquín lo envíe.
   - 2026-11-05: enviado; Nico respondió.
+- [ ] Aplicar F1005 (revaluación del saldo intercompañía) en el Master: confirmar su categoría en Mappings, volver a exportar enero a octubre y separar las filas F1003 en F1003 + F1005 sin borrar filas. Listo cuando F1003 y F1005 cuadren con Odoo por país y mes. Detalle en [[20261105-01 Diferencia de cambio y cashback en el P&L Master 2026 (F1003, F1004 y G4004)]], sección del 9 y 10-nov.
 
 ## Notas
 - **Documento para el equipo:** Notion, [Ajustes P&L cierre octubre](https://app.notion.com/p/agendapro/Ajustes-P-L-cierre-octubre-40fab34c233b803f8850e2432b10ee9c) (5-nov). Explica cada ajuste y su efecto por línea y mes en EBITDA, Financial expenses y Net income.
@@ -49,10 +50,17 @@ Llevar al P&L Master 2026 el plan de diferencia de cambio acordado el 5-nov: F10
 - 2026-11-05 · Marketing de México de julio difiere de Odoo en 1.383 MXN (≈79 USD). No se ajustó.
 - 2026-11-05 · Financials DB, filas 4150 y 4151 (DLA Piper Stock Options): la fecha tiene #REF! y no caen en ningún mes.
 - 2026-11-05 · P&L (AP+Reservo): sus fórmulas filtran solo Type «Real», así que no suma Reservo.
+- 2026-11-10 · F1005, pendientes de [[Nicolás Astudillo]]:
+  - La fórmula de Rule 57 cuenta como revaluación las transferencias que están en tránsito entre dos meses. Ejemplo: los 170 mil de Inc del 27-feb que Chile recibió el 2-mar. Se le pidió una propuesta.
+  - México–Chile (Gunei): falta la reversa de la «pérdida falsa» de febrero.
+  - Colombia, octubre: Vario/0028 y Vario/0029.
+- 2026-11-10 · Octubre: los ajustes Chile–México (MISC/2026/10/0069, +378 USD) y Chile–Argentina (0070, −12 USD) quedaron en la 6.0.01.04, que es la de USA. El PR #935 corrigió la configuración desde noviembre. Si se reclasifican, hay que volver a exportar octubre. No mueve el P&L, porque las cuatro cuentas son F1003.
+- 2026-11-10 · Evidence: el borrador del CEO Dashboard suma todo lo que no está en una lista. Revisar que F1005 no se cuele en el resultado neto.
 
 ## Historial
 - 2026-11-05 · Creada desde Claude Code (Joaquín en conversación)
 - 2026-11-05 · Avance desde Claude Code: borrador a Nico con las cuentas sin asignar; Brex de febrero anotado (la fila manual se queda mientras Odoo no lo registre como cashback)
 - 2026-11-05 · Avance desde Claude Code: Master alineado con Odoo (diferencia de cambio, IMSS y nómina de México, Brex); documentado en Notion; consulta a Nico por Sales e ISR de julio en borrador; estado → en-revision (pedido de Joaquín)
 - 2026-11-06 · Avance desde Claude Code: la baja de Sales e ISR de julio eran finiquitos de mayo; se agregaron en mayo del Master (5 filas, 272.140 MXN) y se actualizó Notion
+- 2026-11-10 · Avance desde Claude Code: F1005 separado de F1003. Odoo reclasificó enero a octubre el 10-nov y el PR #935 se mergeó. Subtarea nueva para aplicarlo en el Master.
 - 2026-11-06 · Mencionada de nuevo en [[2026-11-05 Diferencia de tipo de cambio y cierre del P&L de octubre (Pablo)]] (devolver la cuenta de comisiones bancarias a su nombre, ajustar los registros de diferencia de cambio, cuenta nueva intercompany vs externos y documentar los cambios del mes)

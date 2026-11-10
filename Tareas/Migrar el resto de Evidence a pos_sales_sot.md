@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: pendiente
 prioridad: media
 tiempo:
 tipo: reporte
@@ -35,3 +35,4 @@ Pasar a `dwh.pos_sales_sot` las 15 extracciones de ventas POS de `agendapro-dash
 
 ## Historial
 - 2026-10-28 · Creada desde Claude Code (propuesta) tras el merge de #856, #860 y #832.
+- 2026-11-10 · estado: propuesta → pendiente (Joaquín en conversación)

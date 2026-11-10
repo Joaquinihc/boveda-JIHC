@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: propuesta
+estado: descartada
 prioridad:
 tiempo:
 tipo: definicion
@@ -30,3 +30,4 @@ Odoo calcula FCF = operacional + financiero (incluye Loan y ESOP); Evidence FCF 
 ## Historial
 - 2026-10-27 · Creada desde [[2026-10-26 Cash flow en Odoo — diferencias con Evidence (Rafa y Pablo)]] (propuesta)
 - 2026-10-30 · Mencionada de nuevo en [[2026-10-27 Cash flow en Odoo — FCF, estructura y Payments (Rafa)]] (se confirmó excluir Loan y ESOP: FCF = operaciones + inversión; intercompany neteado)
+- 2026-11-10 · Pasó a [[Cash flow en Odoo]] como subtarea o pendiente menor (estado: propuesta → descartada) (Joaquín en conversación)

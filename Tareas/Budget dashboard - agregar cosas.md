@@ -1,7 +1,7 @@
 ---
 type: tarea
 id: T-021
-estado: en-curso
+estado: hecho
 prioridad: media
 tipo: reporte
 origen: notion
@@ -24,3 +24,4 @@ revisar: false
 
 ## Historial
 - 2026-09-22 · Importada desde Notion (In progress).
+- 2026-11-10 · estado: en-curso → hecho. Lo que pedía la fila de Notion (waterfall de net MRR y cortes por país y vertical) salió con el PR #822 de Evidence (Waterfall SaaS y AI vs Budget, 15-oct). (Joaquín en conversación)
