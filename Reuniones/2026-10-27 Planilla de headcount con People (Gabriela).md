@@ -19,6 +19,6 @@ verificado: false
 - Gabriela instaló la skill de Claude de clasificación de centros de costo de personas (incluye la regla de no dejar a una persona sola en un centro de costo). [[Pablo Lucero]] revisa la versión final de la planilla.
 
 **Mis acciones**
-- [ ] Responder en el hilo de Slack sobre la clasificación de las personas de Reservo, mencionando a Javi
+- [x] Responder en el hilo de Slack sobre la clasificación de las personas de Reservo, mencionando a Javi
 
 > Detalle completo: [Transcripción en Notion](https://app.notion.com/p/406ab34c233b815ca1a9dc35245d039b).

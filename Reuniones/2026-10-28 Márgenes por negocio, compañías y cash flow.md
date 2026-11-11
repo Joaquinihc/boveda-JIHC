@@ -20,7 +20,7 @@ verificado: false
 
 **Mis acciones**
 - [ ] Vincular cada concepto de costo con su producto y cuenta de Odoo/P&L, documentar criterios de distribución y armar la tabla intermedia por cliente
-- [ ] Corregir el filtro de MRR positivo del workbook de compañías (cadenas pagadoras), publicar el PR y mandarle el resultado a Pablo Saintard
+- [x] Corregir el filtro de MRR positivo del workbook de compañías (cadenas pagadoras), publicar el PR y mandarle el resultado a Pablo Saintard
 - [ ] Preparar la comparación del cash flow Evidence vs Odoo y consultar a Rafa por las visualizaciones disponibles
 
 > Detalle completo: [Transcripción en Notion](https://app.notion.com/p/407ab34c233b8027bea2e4aa80a47a1c). Título en Notion: «Reunión». Sin asistentes registrados; las acciones sin responsable se asignaron por contexto.

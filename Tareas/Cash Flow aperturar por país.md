@@ -8,9 +8,9 @@ origen: notion
 proyecto:
 temas: []
 notion_id: 3eaab34c233b806d904ddf49e4f4535c
-notion_estado: In progress
+notion_estado: Done
 notion_prioridad: Medium
-notion_actualizado: 2026-09-29T14:47Z
+notion_actualizado: 2026-11-11T12:20Z
 fuente: https://app.notion.com/3eaab34c233b806d904ddf49e4f4535c
 fecha_limite:
 creado: 2026-09-29
@@ -29,3 +29,4 @@ id: T-081
 - 2026-09-30 · Importada desde Notion (In progress)
 - 2026-10-30 · Mencionada de nuevo en [[2026-10-29 Réplica del cash flow por país para conciliar con Odoo (Rafa)]] (replicar el cash flow por país en moneda local en Google Sheets y compartirlo con Rafa)
 - 2026-11-10 · estado: en-curso → hecho. Evidence ya tiene la página `financial-performance/cash-flow-by-country`; la conciliación por país con Odoo sigue en [[Cash flow en Odoo]]. (Joaquín en conversación)
+- 2026-11-11 · Cerrada en el tablero → Done en Notion

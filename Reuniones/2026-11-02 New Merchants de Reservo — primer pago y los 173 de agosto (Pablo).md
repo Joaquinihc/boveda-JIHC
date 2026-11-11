@@ -22,6 +22,6 @@ revisar: true
 **Mis acciones**
 - [ ] Rehacer el cruce del Excel (pagos con estado 0, variable activo y fecha de creación de sucursal) hasta cuadrar los 173 de agosto
 - [ ] Pedir a Christopher el detalle completo de pagos (incluidos los de estado 0) y cómo calculó los otros meses
-- [ ] Distribuir por mercado las remuneraciones de Daniela Droguet (Argentina) e Ignacio Monsalve (México)
+- [x] Distribuir por mercado las remuneraciones de Daniela Droguet (Argentina) e Ignacio Monsalve (México)
 
 > Detalle completo: [Transcripción en Notion](https://app.notion.com/p/40cab34c233b81ee95abca98924b79e6). Título en Notion: «Pablo - Joaquín». Pablo habla como parte de Reservo («fue malo para nosotros»); no se linkea persona porque el apellido no aparece. Sigue a [[2026-11-02 Conciliación de clientes e ingresos de Reservo (Christopher)]].
