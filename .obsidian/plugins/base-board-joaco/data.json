@@ -10,5 +10,40 @@
         "hecho"
       ]
     }
+  },
+  "cardOrders": {
+    "Tareas::tablero-joaquín::estado": {
+      "Tareas/Agregar P&L verticales a Board Book.md": "V0",
+      "Tareas/Overages AI.md": "V1",
+      "Tareas/Revisar con Nicolás Astudillo inconsistencias entre cashflow y balance sheet.md": "V2",
+      "Tareas/Cash flow en Odoo.md": "V5",
+      "Tareas/Análisis margen por cliente y por producto.md": "V0",
+      "Tareas/Cierre de mes octubre.md": "V1",
+      "Tareas/Definiciones grupo AgendaPro vs Reservo.md": "V2",
+      "Tareas/Integrar los datos de revenue de Reservo (vistas AgendaPro, Reservo y combinada).md": "V3",
+      "Tareas/Payback AI.md": "V4",
+      "Tareas/Payback Payments.md": "V6",
+      "Tareas/Restructurar P&L.md": "V7",
+      "Tareas/Waterfall One time charges.md": "V8",
+      "Tareas/Arreglar definición de activación.md": "V9",
+      "Tareas/Bookings fitness.md": "VA",
+      "Tareas/Bookings vs enrollments.md": "VB",
+      "Tareas/Cruce de leads con cuenta creada por país y canal.md": "VC",
+      "Tareas/Locations POS y reactivaciones.md": "VD",
+      "Tareas/Pisar el P&L costos de API Keys, distribuir entre equipos.md": "VE",
+      "Tareas/Refinar análisis MDR AE Change.md": "VF",
+      "Tareas/Reorganizar la documentación del repo Evidence.md": "VG"
+    }
+  },
+  "taskIds": {
+    "enabled": true,
+    "folder": "Tareas",
+    "typeProperty": "type",
+    "typeValue": "tarea",
+    "idProperty": "id",
+    "prefix": "T-",
+    "pad": 3,
+    "dateProperty": "creado",
+    "desktopOnly": true
   }
 }

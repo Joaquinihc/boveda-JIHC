@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: en-curso
+estado: bloqueada
 prioridad: alta
 tiempo:
 tipo: cuadratura

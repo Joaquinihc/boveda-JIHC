@@ -25,7 +25,7 @@ id: T-097
 Objetivo: rehacer el cálculo de payback de Payments y desafiar sus supuestos (el cálculo de referencia está en una página enlazada desde la fila de Notion). Alcance acordado con Pablo Lucero (weekly 20-oct-2026): el payback de **pagos como venta de POS a la base** (flujo KAM, clientes del stock), separado del payback de adquisición (flujo ISR, que ya está dentro del payback mensual de Evidence) y del de IA ([[Payback AI]]).
 
 ## Subtareas
-- [x] 1. Corregir el término Payments del payback mensual en Evidence: `pos_sold_isr` en la CTE `pos` de `payback_base`, nota de metodología («New_POS = POS sold in the month (ISR + KAM)») y correr `npm run test:sql` (`scripts/test/payback-window.test.mjs`). Listo cuando el PR esté abierto y Pablo lo apruebe.
+- [ ] 1. Corregir el término Payments del payback mensual en Evidence: `pos_sold_isr` en la CTE `pos` de `payback_base`, nota de metodología («New_POS = POS sold in the month (ISR + KAM)») y correr `npm run test:sql` (`scripts/test/payback-window.test.mjs`). Listo cuando el PR esté abierto y Pablo lo apruebe.
 - [ ] 2. Validar con datos los supuestos de la planilla de Ignacio: % de cierres que compran terminal (hoy 67%), costo POS + delivery + POP por país, activación y GPV por cohorte.
 - [ ] 3. Armar el cálculo por país (CL y MX) con las dos versiones de CAC (con y sin sueldos KAM) y la comparación payback estimado al inicio vs real por cohorte mes a mes.
 

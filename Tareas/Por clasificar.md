@@ -22,6 +22,7 @@ Bandeja de acciones nuevas que los agentes (Reuniones, Claude Code, Cowork) no p
 
 ## Subtareas
 - [ ] Ordenar el tablero de FP&A Priorities (Notion) — de [[2026-10-20 FP&A Weekly]] · 2026-10-20
+- [ ] Repartir en dbt el revenue del pack Pro AI Beauty entre software e IA por componentes (`dwh.mrr_saas`, `dwh.mrr_ai` y waterfalls) (posible frente nuevo) — de [[Claude Code — Conciliación AI revenue Beauty y reasignación de verticales]] · 2026-11-16
 
 ## Notas
 
@@ -29,3 +30,4 @@ Bandeja de acciones nuevas que los agentes (Reuniones, Claude Code, Cowork) no p
 - 2026-11-10 · Creada con el modelo de frentes (Joaquín en conversación). Primera línea: [[Ordenar el tablero de FP&A Priorities]] (T-101), propuesta de legado.
 - 2026-11-10 · El plugin le asignó T-123, ya usado por «Cierre de mes octubre» (dos notas cambiaron al mismo tiempo). Se quitó el id duplicado para que el plugin asigne el siguiente (Joaquín en conversación)
 - 2026-11-10 · Corrección: la causa del id repetido fue el `alcance` sin comillas de «Cierre de mes octubre» (el «: » rompía su frontmatter y el plugin no veía su T-123). Con las comillas, el plugin le asignó T-124 a esta nota (Joaquín en conversación)
+- 2026-11-16 · Agregada línea: reparto software/IA del pack Pro AI Beauty en dbt, desde [[Claude Code — Conciliación AI revenue Beauty y reasignación de verticales]] (Claude Code)
