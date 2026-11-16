@@ -34,6 +34,8 @@ Tarea general de churn. Incluye los tres ajustes que pidió [[Pablo Santa Inés]
 - El churn voluntario venía bajando jul–sep (mes cerrado), pero octubre iba camino a ser el peor de los últimos 13 meses, con un alza fuerte en Colombia. Venía de [[Revisar el alza del churn voluntario de octubre (foco Colombia)]] (T-103), de [[2026-10-26 Coordinación Finanzas]].
 
 ### Pendientes menores
+
+### Archivo
 - 2026-10-08 · Responderle a Pablo con el plan (le respondí «Lo reviso!» en el hilo).
 - 2026-10-08 · Cuando el fix del dedup esté en producción, corregir el grano en la skill `finance-metric-definitions` (hoy dice «most recent cancellation per subscription»), de donde sale [[Churn voluntario vs involuntario]].
 - 2026-10-08 · CX ya aplicó el fix 1 desde el 8-oct: hasta el deploy, su involuntario queda ~7 logos sobre Evidence en sep.
@@ -41,3 +43,4 @@ Tarea general de churn. Incluye los tres ajustes que pidió [[Pablo Santa Inés]
 ## Historial
 - 2026-10-08 · Creada desde Claude Code (diagnóstico del pedido de Pablo Santa Inés).
 - 2026-11-10 · Pasa a ser la tarea general de churn: título «Ajustes de churn en Evidence pedidos por Pablo Santa Inés» → «Churn — correcciones y análisis»; las tres correcciones se fusionan en una subtarea (detalle en Notas) y se suma el análisis del alza de octubre de T-103 (Joaquín en conversación)
+- 2026-11-16 · 3 pendientes menores pasaron a Archivo (Monitor)

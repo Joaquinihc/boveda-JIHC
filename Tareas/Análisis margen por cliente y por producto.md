@@ -31,7 +31,6 @@ revisar: false
 ## Notas
 
 ### Pendientes menores
-- 2026-10-02 · Antes de que las cuentas G0030–G0035 tengan movimiento en el P&L, agregar reglas en `company_margin_cost_pool_rules` (stream AI, con su vertical) y dejar de usar el registro de API keys en los meses contabilizados. Si no, el costo de modelos IA se cuenta dos veces. Ver [[Imputación contable de costos de IA (API keys)]].
 - 2026-10-20 · El aviso del 2026-10-02 se confirmó con el cierre de septiembre (ver la sección de abajo). Lo cubre la subtarea «Pasar el margen por compañía a solo P&L».
 - 2026-10-20 · Decidir qué hacer con el Azure que queda en G0001 («AWS - Microsoft», facturado con un mes o más de atraso; sep-2026: 6.190 USD, más un abono de reclasificación de +1.153 con detalle «5.2.0 G0001 - AWS»). Si se mantiene como costo IA, pedirle a Contabilidad que el abono de cada reclasificación diga «AI models», como el cargo en G0030.
 - 2026-10-20 · Si el rediseño deja sin uso el modelo `ai_costs_manual_monthly`, sacarlo del PR #407 y borrar la tabla `finance.ai_costs_manual_monthly` (hoy es el seed viejo, ene–ago 2026).
@@ -43,6 +42,9 @@ revisar: false
 - **Criterio en definición (Joaquín, 2026-10-20):** el margen por compañía y por stream usa solo el P&L; el registro de API keys queda solo para el AI P&L by vertical. Idea: calcular el margen IA desde sep-2026, primer mes con las cuentas G0030–G0032, y dejarlo en nulo antes.
 - **Pregunta abierta:** qué muestra la línea IA de una compañía antes de sep-2026, y qué pasa con el costo que ya se asigna a IA en esos meses (recorte de plataforma desde AWS, soporte Health G0202).
 - Los arreglos del 2026-10-19 (worktree `agendapro-worktrees/company-margin`, rama `feat/ai-api-key-team-seed`, sin commit) excluían G0030–G0032 y seguían usando el registro; con este criterio quedan obsoletos y hay que rehacerlos.
+
+### Archivo
+- 2026-10-02 · Antes de que las cuentas G0030–G0035 tengan movimiento en el P&L, agregar reglas en `company_margin_cost_pool_rules` (stream AI, con su vertical) y dejar de usar el registro de API keys en los meses contabilizados. Si no, el costo de modelos IA se cuenta dos veces. Ver [[Imputación contable de costos de IA (API keys)]].
 
 ## Historial
 - 2026-09-22 · Importada desde Notion (In progress).
@@ -58,3 +60,4 @@ revisar: false
 - 2026-10-30 · Mencionada de nuevo en [[2026-10-28 Márgenes por negocio, compañías y cash flow]] (vincular costos a producto y cuenta Odoo/P&L, criterios de distribución y tabla intermedia por cliente; además Companies Sales Months, payroll comercial de Payments a CAC, costos IA sin vertical con Jonathan, conciliación con el P&L y tablero en Evidence)
 - 2026-10-30 · Avance desde Claude Code: tres subpáginas en Notion (costos por stream, tablas y variables, plan de avance y merge del PR #407); verificado que Payments no doble cuenta (costo medido solo es llave de reparto); carve-out IA de AWS marcado como único supuesto fuera del P&L, decisión abierta.
 - 2026-11-02 · Notion: página editada
+- 2026-11-16 · 1 pendiente menor pasó a Archivo (Monitor)
