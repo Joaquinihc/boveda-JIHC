@@ -48,3 +48,4 @@ Dejar un solo método para asignar vertical y macro nicho a cada compañía: la 
 
 ## Historial
 - 2026-11-16 · Creada desde Claude Code (conversación con Joaquín): conciliación del AI revenue de Beauty con Sabrina y primer lote de overrides.
+- 2026-11-17 · Mencionada de nuevo en [[2026-11-13 Preparación de la presentación de resultados de octubre (Pablo)]]: «hablar con Sabri por la diferencia de Beauty en septiembre-octubre» (ya la cubre la conciliación del 13 al 16-nov) (Reuniones)
