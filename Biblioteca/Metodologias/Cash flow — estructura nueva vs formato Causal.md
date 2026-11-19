@@ -70,4 +70,5 @@ Pregunta de Joaquín: presentar el efecto de TC como la cuenta de reevaluación 
 
 ## Cómo reproducir
 - Evidence: `cash_flow_detail` / `fp_cash_flow_table` (board book 5.4). Archivo mensual armado con scripts locales (sesión del 7–8 oct, no versionados en el repo); la convención está en la hoja Notes de `2. Cash Flow Statement - nueva estructura.xlsx` (carpeta `~/Documents/Análisis/RW-Quarterly-Requests/`; la versión de `To send/` va sin Notes).
+- Comparación con el cash flow de Odoo (v2, nov-2026) y cómo sacar las dos fotos: [[Cash flow en Odoo (v2) — estructura, mapa a Evidence y cómo reproducir]].
 - Uso en el reporte trimestral: [[Reporte trimestral Riverwood (PortCo, P&L y Cash Flow)]]. Decisión de FCF y caja Q3: [[Slack — Cash Flow nuevo formato, FCF excluye Loan y Equity y caja Q3 cuadra a 12,64M]].

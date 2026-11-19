@@ -46,3 +46,4 @@ P&L Real ene–oct 2026 (`finance.profit_and_loss`, bloque 2- Service Costs), `d
 - La plataforma de AI es una estimación de Infra de ago-2026, no una factura.
 - En la comparación de llaves de terminales POS faltó la parte de México (1,3k USD) por un cruce de nombres de país.
 - Los permisos de lectura del esquema `finance` no se pudieron listar.
+- 2026-11-19 · Corrección: la cadena en producción tiene 23 reglas; las 27 de la Conclusión son del PR #407. Lo que se decidió después (llaves de Software, país, una sola tabla) está en [[20261119-01 Llaves de Software, país y ejecución — hallazgos versión 1]].

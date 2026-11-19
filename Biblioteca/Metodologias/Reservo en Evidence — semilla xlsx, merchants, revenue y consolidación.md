@@ -11,6 +11,8 @@ fecha: 2026-11
 Cómo entran los datos de Reservo (empresa adquirida en octubre de 2026) al Board Book y al Flash Revenue mientras no exista conexión al DW de Reservo. Sin cifras: las cifras van en los análisis que las usan, p. ej. [[20261103-01 New Merchants y Merchants de Reservo — definiciones finales y cuadre con Pablo Saintard]].
 
 ## Dónde vive
+> **2026-11-19**: lo de abajo es histórico. Desde el 7-nov el revenue y los New Merchants de Reservo salen del DWH (`reservo_ext` → `reservo.reservo_mrr`; dbt PR #475 y Evidence PR #888); a esa fecha solo el stock seguía en la semilla. Tablas, llaves y horarios: [[reservo_ext y stg_reservo — tablas, llaves y horarios de carga]].
+
 - Reservo **no está en el DWH ni en dbt**. La fuente es el libro `pagos_mensuales_aplanados*.xlsx` que corre Christopher Lagos (Datos, Reservo) y manda por Slack; cada corrida es un snapshot distinto (ventana, hojas y flags pueden cambiar).
 - Repo `agendapro-dashboards-evidence`: fuente CSV `sources/reservo_seed/` (README con la ficha de cada archivo), script `scripts/seed-reservo.py`, tests `scripts/test/test_seed_reservo.py` (`npm run test:seed`) y los tests de página `scripts/test/board-book-reservo.test.mjs` y `scripts/test/flash-revenue-reservo.test.mjs` (`npm run test:sql`). Diseño y decisiones fechadas: `docs/superpowers/specs/2026-10-28-reservo-board-book-design.md`; definiciones en `docs/METRIC_DEFINITIONS.md` (ítems 110–111).
 - Páginas: `pages/finance/board-book/index.md` (slides 5.1, 6 y 7b: merchants, new merchants, revenue y ARR del grupo; 7b pro forma de Reservo por país) y `pages/general/flash-revenue/index.md` (ARR, merchants, new merchants y MRR del grupo con selector de país, bridge FX con Reservo como cuarto stream).

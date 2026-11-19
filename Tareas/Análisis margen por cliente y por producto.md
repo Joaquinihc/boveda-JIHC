@@ -22,19 +22,25 @@ revisar: false
 
 ## Subtareas
 - [x] Verificar el plan antes de dejar a Claude desarrollar los modelos dbt
-- [ ] Pasar el margen por compañía a solo P&L en el PR #407: costo IA desde G0030–G0032 a partir de sep-2026 (antes en nulo), sin el registro de API keys — listo cuando el cambio esté en el PR y la cuadratura contra el P&L dé 0
+- [ ] Aplicar la versión 1 en dbt: PR 1 de la página 3 de Notion (tabla `company_margin_by_company_monthly` en rama nueva desde la base) — listo cuando el PR esté abierto y la cuadratura contra el P&L dé 0
 - [ ] Hablar con Nicolás y mandarle el detalle de costos de IA por equipo vertical y por mes (mar–ago 2026), con el desglose por proveedor, cuenta y centro de costo, para que los reclasifique en Odoo (asiento de [[Pisar el P&L costos de API Keys, distribuir entre equipos|T-058]]) — listo cuando Nicolás tenga el detalle y acuerden cómo contabilizarlo
 - [ ] Definir distribución de costos AI por producto
 - [x] Definir proxy de uso de features para SaaS --> usé cantidad de bookings y locations de cada company.
-- [ ] Cerrar las decisiones abiertas de la versión 1 (A2 y S2 con Pablo; S3, P2, X2 y T1; terminales POS y llave de Software) — listo cuando estén marcadas en la página 0 de Notion
+- [x] Cerrar las decisiones abiertas de la versión 1 (A2 y S2 con Pablo; S3, P2, X2 y T1; terminales POS y llave de Software) — listo cuando estén marcadas en la página 0 de Notion
 
 ## Notas
 
 ### Pendientes menores
+- 2026-11-19 · Decidir la propuesta P4 de la página 0 de Notion: sacar los contracargos de la llave de Payments (no aparecen en el P&L de Payment Processing).
+- 2026-11-19 · Seguimiento con [[Nicolás Astudillo]]: Argentina no tiene procesadores contabilizados en mayo de 2026 (10,2k USD) y Colombia no los tiene desde mayo (unos 0,75k USD al mes).
+- 2026-11-19 · Decidir los cuatro puntos del tablero Company Margin de Evidence (página 4 de Notion, sección 4): costo por línea del P&L, tipo de cambio constante, columnas de contexto y ranking.
+- 2026-11-19 · Reducir el PR #407 al registro de API keys en una rama nueva desde la base y cerrarlo; coordinar antes con los cambios sin commit del worktree `agendapro-worktrees/company-margin`. Ver [[PR 407 — costos IA por vertical desde registro de API keys (reemplaza seed ai_costs_manual_monthly)]].
+- 2026-11-19 · Pasar a «Vista previa» los diagramas nuevos de las páginas 2, 3 y 4 de Notion (quedan en modo código al crearse).
+- 2026-11-19 · Subtarea reemplazada: «Pasar el margen por compañía a solo P&L en el PR #407: costo IA desde G0030–G0032 a partir de sep-2026 (antes en nulo), sin el registro de API keys — listo cuando el cambio esté en el PR y la cuadratura contra el P&L dé 0». La versión 1 se construye en una rama nueva desde la base y ya trae el costo de IA solo desde el P&L; pasó a la subtarea «Aplicar la versión 1 en dbt».
 - 2026-11-18 · Preguntar a Yonathan Durán qué namespaces componen «BEAUTY» en su portal de costos de EKS y los montos actuales de RDS y Valkey por vertical (para refrescar la estimación de plataforma de AI, hoy de ago-2026).
 - 2026-11-18 · Averiguar qué son las cuentas «frust…» de la factura de AWS (unos 13,5k USD en oct-2026) y si la cuenta AgendaPro Payments (1,4k USD) debería ir al stream Payments.
-- 2026-11-18 · Pasar los dos diagramas de la página 2 de Notion («Tablas y variables») al formato que no corta el texto. Ver [[Diagramas Mermaid en Notion]].
-- 2026-11-18 · Investigación de compañías que pagan y no agendan (2.112 en oct-2026; hipótesis de Emilio Latorre sobre el link de pago): en curso; falta dejarla en la hoja de Notion «Análisis inactividad» y escribirle a Emilio por Slack.
+- 2026-11-18 · Pasar los dos diagramas de la página 2 de Notion («Tablas y variables») al formato que no corta el texto. Ver [[Diagramas Mermaid en Notion]]. → Resuelto el 19-nov: la página 2 se reescribió con diagramas en el formato nuevo.
+- 2026-11-18 · Investigación de compañías que pagan y no agendan (2.112 en oct-2026; hipótesis de Emilio Latorre sobre el link de pago): en curso; falta dejarla en la hoja de Notion «Análisis inactividad» y escribirle a Emilio por Slack. → Resuelto el 18-nov: los hallazgos quedaron en esa hoja y se le escribió a Emilio por Slack; el link de pago no explica la inactividad.
 - 2026-11-18 · Revisar por qué cerca de 1.100 compañías pagan menos de 3 USD al mes de Software (quedan con margen negativo con cualquier llave).
 - 2026-11-18 · Subtarea reemplazada: «Elegir 46 o 64 columnas y construir `company_margin_by_company_monthly` (una fila por compañía y mes) — listo cuando la tabla esté en un PR». La elección quedó resuelta con la tabla de 18 columnas de la versión 1; construirla pasa al plan dbt (página 3 de Notion).
 - 2026-10-20 · El aviso del 2026-10-02 se confirmó con el cierre de septiembre (ver la sección de abajo). Lo cubre la subtarea «Pasar el margen por compañía a solo P&L».
@@ -55,6 +61,13 @@ revisar: false
 - En dbt: 27 reglas pasan a 11 en la macro `company_margin_cost_pool_rules`; el motor de reparto no se toca. Tabla nueva `finance.company_margin_by_company_monthly` de 18 columnas (tres ingresos, tres costos, margen en USD y en % por stream).
 - Abierto: llave de Software (propuesta: nube y mensajería por reservas, soporte y retención por sucursales), terminales POS (propuesta: por sucursal con transacciones POS) y las propuestas A2, S2, S3, P2, X2 y T1 de la página 0.
 - Hallazgos con números: [[20261118-01 Costos por stream — hallazgos versión 1]].
+
+### 2026-11-19 · Versión 1 cerrada: decisiones, plan dbt y hojas de Notion
+- **Hojas de Notion de la tarea**: 0 objetivo, reglas y decisiones · 1 reparto por stream · 2 la tabla y cómo se construye · 3 plan para dbt, escrito como guía de tareas · 4 cambios río abajo (Evidence) · 5 ideas para una versión 2. El borrador de pedido a los equipos verticales se eliminó; lo útil quedó en la hoja 5. Todas traen cifras del P&L y no salen de Finanzas.
+- **Decisiones de Joaquín del 18 y 19-nov** (están en la tabla de la hoja 0): terminales POS por sucursal con POS; llaves de Software (mensajería por reservas, nube y soporte mitad sucursales y mitad reservas, retención y resto por sucursales); reservas sin importadas y con tope en el percentil 95 por sucursal; un solo factor mensual en Payments; soporte y retención siempre entre todas las compañías; facturación electrónica por el país de la cuenta; llave de AI, pasarelas y Azure como estaban propuestos. Son 6 llaves y 15 reglas.
+- **Plan en dbt** (hoja 3, aprobado el 19-nov; nada aplicado): una sola tabla `finance.company_margin_by_company_monthly` con dos pasos intermedios ephemeral, en una rama nueva desde la base y no sobre el PR #407. Tres PRs: dbt agrega la tabla, Evidence migra el tablero, dbt borra la cadena antigua. Etapa final: mover la tabla de `finance` a `dwh` cuando esté validada.
+- **Abierto**: propuesta P4 (contracargos en la llave de Payments), que no bloquea. Joaquín todavía no pidió empezar el PR 1.
+- Hallazgos con números: [[20261119-01 Llaves de Software, país y ejecución — hallazgos versión 1]]. Scripts y prototipo: `_analisis/2026-11-company-margin-v1/` (carpeta GitHub).
 
 ### Archivo
 - 2026-10-02 · Antes de que las cuentas G0030–G0035 tengan movimiento en el P&L, agregar reglas en `company_margin_cost_pool_rules` (stream AI, con su vertical) y dejar de usar el registro de API keys en los meses contabilizados. Si no, el costo de modelos IA se cuenta dos veces. Ver [[Imputación contable de costos de IA (API keys)]].
@@ -78,3 +91,4 @@ revisar: false
 - 2026-11-18 · Avance desde Claude Code: auditoría de costos por stream (16-nov) y reorden de las subpáginas de Notion; el árbol antiguo «Cómo está construido el modelo» quedó marcado como desactualizado.
 - 2026-11-18 · Avance desde Claude Code: versión 1 simplificada en Notion (17 y 18-nov): 4 llaves, plataforma de AI dentro del margen, tabla de 18 columnas, diagramas por stream. Subtarea de las 46 o 64 columnas reemplazada por «Cerrar las decisiones abiertas de la versión 1» (con OK de Joaquín; 4 abiertas). 5 pendientes menores.
 - 2026-11-19 · Notion: página editada
+- 2026-11-19 · Avance desde Claude Code: versión 1 cerrada (6 llaves, 15 reglas; decisiones del 18 y 19-nov en la hoja 0 de Notion), plan dbt de una sola tabla aprobado y hojas 4 y 5 nuevas. Subtarea «Cerrar las decisiones abiertas» tachada y «Pasar el margen a solo P&L en el PR #407» reemplazada por «Aplicar la versión 1 en dbt» (con OK de Joaquín; 3 abiertas). 5 pendientes menores.
