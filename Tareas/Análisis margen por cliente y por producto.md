@@ -26,11 +26,17 @@ revisar: false
 - [ ] Hablar con Nicolás y mandarle el detalle de costos de IA por equipo vertical y por mes (mar–ago 2026), con el desglose por proveedor, cuenta y centro de costo, para que los reclasifique en Odoo (asiento de [[Pisar el P&L costos de API Keys, distribuir entre equipos|T-058]]) — listo cuando Nicolás tenga el detalle y acuerden cómo contabilizarlo
 - [ ] Definir distribución de costos AI por producto
 - [x] Definir proxy de uso de features para SaaS --> usé cantidad de bookings y locations de cada company.
-- [ ] Elegir 46 o 64 columnas y construir `company_margin_by_company_monthly` (una fila por compañía y mes) — listo cuando la tabla esté en un PR
+- [ ] Cerrar las decisiones abiertas de la versión 1 (A2 y S2 con Pablo; S3, P2, X2 y T1; terminales POS y llave de Software) — listo cuando estén marcadas en la página 0 de Notion
 
 ## Notas
 
 ### Pendientes menores
+- 2026-11-18 · Preguntar a Yonathan Durán qué namespaces componen «BEAUTY» en su portal de costos de EKS y los montos actuales de RDS y Valkey por vertical (para refrescar la estimación de plataforma de AI, hoy de ago-2026).
+- 2026-11-18 · Averiguar qué son las cuentas «frust…» de la factura de AWS (unos 13,5k USD en oct-2026) y si la cuenta AgendaPro Payments (1,4k USD) debería ir al stream Payments.
+- 2026-11-18 · Pasar los dos diagramas de la página 2 de Notion («Tablas y variables») al formato que no corta el texto. Ver [[Diagramas Mermaid en Notion]].
+- 2026-11-18 · Investigación de compañías que pagan y no agendan (2.112 en oct-2026; hipótesis de Emilio Latorre sobre el link de pago): en curso; falta dejarla en la hoja de Notion «Análisis inactividad» y escribirle a Emilio por Slack.
+- 2026-11-18 · Revisar por qué cerca de 1.100 compañías pagan menos de 3 USD al mes de Software (quedan con margen negativo con cualquier llave).
+- 2026-11-18 · Subtarea reemplazada: «Elegir 46 o 64 columnas y construir `company_margin_by_company_monthly` (una fila por compañía y mes) — listo cuando la tabla esté en un PR». La elección quedó resuelta con la tabla de 18 columnas de la versión 1; construirla pasa al plan dbt (página 3 de Notion).
 - 2026-10-20 · El aviso del 2026-10-02 se confirmó con el cierre de septiembre (ver la sección de abajo). Lo cubre la subtarea «Pasar el margen por compañía a solo P&L».
 - 2026-10-20 · Decidir qué hacer con el Azure que queda en G0001 («AWS - Microsoft», facturado con un mes o más de atraso; sep-2026: 6.190 USD, más un abono de reclasificación de +1.153 con detalle «5.2.0 G0001 - AWS»). Si se mantiene como costo IA, pedirle a Contabilidad que el abono de cada reclasificación diga «AI models», como el cargo en G0030.
 - 2026-10-20 · Si el rediseño deja sin uso el modelo `ai_costs_manual_monthly`, sacarlo del PR #407 y borrar la tabla `finance.ai_costs_manual_monthly` (hoy es el seed viejo, ene–ago 2026).
@@ -42,6 +48,13 @@ revisar: false
 - **Criterio en definición (Joaquín, 2026-10-20):** el margen por compañía y por stream usa solo el P&L; el registro de API keys queda solo para el AI P&L by vertical. Idea: calcular el margen IA desde sep-2026, primer mes con las cuentas G0030–G0032, y dejarlo en nulo antes.
 - **Pregunta abierta:** qué muestra la línea IA de una compañía antes de sep-2026, y qué pasa con el costo que ya se asigna a IA en esos meses (recorte de plataforma desde AWS, soporte Health G0202).
 - Los arreglos del 2026-10-19 (worktree `agendapro-worktrees/company-margin`, rama `feat/ai-api-key-team-seed`, sin commit) excluían G0030–G0032 y seguían usando el registro; con este criterio quedan obsoletos y hay que rehacerlos.
+
+### 2026-11-18 · Versión 1 simplificada (plan en Notion, sin cambios en dbt)
+- Diseño completo en las subpáginas de la tarea en Notion: 0 objetivo, reglas y decisiones · 1 reparto por stream (con diagramas) · 2 tablas y variables · 3 plan dbt · 4 borrador de pedido a los equipos verticales. Las páginas 0 a 3 traen cifras del P&L y no salen de Finanzas.
+- Reparto: Payments = Payment Processing del P&L según el costo medido de `company_sales_months`; AI = modelos (G0030–G0032) más plataforma (tarifa 8,60 / 11,74 / 14,84 USD × compañías con AI, descontada de G0001), por revenue AI dentro de cada vertical; Software = el resto, con pasarelas (G0004) por revenue Software.
+- En dbt: 27 reglas pasan a 11 en la macro `company_margin_cost_pool_rules`; el motor de reparto no se toca. Tabla nueva `finance.company_margin_by_company_monthly` de 18 columnas (tres ingresos, tres costos, margen en USD y en % por stream).
+- Abierto: llave de Software (propuesta: nube y mensajería por reservas, soporte y retención por sucursales), terminales POS (propuesta: por sucursal con transacciones POS) y las propuestas A2, S2, S3, P2, X2 y T1 de la página 0.
+- Hallazgos con números: [[20261118-01 Costos por stream — hallazgos versión 1]].
 
 ### Archivo
 - 2026-10-02 · Antes de que las cuentas G0030–G0035 tengan movimiento en el P&L, agregar reglas en `company_margin_cost_pool_rules` (stream AI, con su vertical) y dejar de usar el registro de API keys en los meses contabilizados. Si no, el costo de modelos IA se cuenta dos veces. Ver [[Imputación contable de costos de IA (API keys)]].
@@ -62,3 +75,5 @@ revisar: false
 - 2026-11-02 · Notion: página editada
 - 2026-11-16 · 1 pendiente menor pasó a Archivo (Monitor)
 - 2026-11-18 · Notion: página editada
+- 2026-11-18 · Avance desde Claude Code: auditoría de costos por stream (16-nov) y reorden de las subpáginas de Notion; el árbol antiguo «Cómo está construido el modelo» quedó marcado como desactualizado.
+- 2026-11-18 · Avance desde Claude Code: versión 1 simplificada en Notion (17 y 18-nov): 4 llaves, plataforma de AI dentro del margen, tabla de 18 columnas, diagramas por stream. Subtarea de las 46 o 64 columnas reemplazada por «Cerrar las decisiones abiertas de la versión 1» (con OK de Joaquín; 4 abiertas). 5 pendientes menores.

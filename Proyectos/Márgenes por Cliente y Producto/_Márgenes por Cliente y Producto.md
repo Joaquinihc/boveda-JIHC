@@ -16,6 +16,8 @@ notion: https://app.notion.com/3d6ab34c233b805091dde8c188a8591e
 - Avance con Claude en modo planning: ~8 modelos dbt propuestos — hay que simplificar.
 - Costos de plataforma se distribuyen en razón de bookings y sucursales como punto de partida; uso de features es difícil de medir (14.000 de ~16.700 activas).
 - Regla acordada: si el impacto retroactivo es significativo, no se corrige hacia atrás.
+- 2026-11-17 · FP&A Weekly con Pablo Lucero: la primera versión lleva por cliente tres ingresos (Software, Payments, AI) y tres costos que sumados cuadren con el P&L; pocas variables en la tabla publicada; CS Expansion queda fuera y no se reabre; soporte completo a Software; los costos de pagos del P&L se reparten en proporción al costo de `company_sales_months`; cada supuesto se anota con lo descartado y la forma ideal. Se publica en `finance` y después se afina con datos de las verticales.
+- 2026-11-18 · Criterio de Joaquín con Carlos Izquierdo: el costo de AI (modelos y plataforma de los agentes) se reparte dentro de cada vertical según lo que paga cada compañía, porque lo cobrado depende de los mensajes disponibles. La plataforma usa la estimación de Infra de ago-2026 como tarifa por compañía × compañías con AI del mes, igual que Evidence. Proyecto futuro: obtener el costo real por equipo desde la contabilidad o desde un registro de Infra.
 
 ## Próximos pasos
 - [ ] Simplificar el diseño de modelos dbt y mandar PR.

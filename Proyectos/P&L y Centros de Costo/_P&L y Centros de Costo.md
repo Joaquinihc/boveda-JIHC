@@ -35,6 +35,8 @@ responsable: "[[Joaquín Herrera]]"
   - **F1003** lleva los movimientos del mes y se queda en Financial expenses.
   - **F1005**, código nuevo, lleva la revaluación del saldo de la deuda y sale del resultado neto.
   - Odoo quedó listo el 10-nov, con enero a octubre reclasificados por [[Nicolás Astudillo]]. Falta aplicarlo en el Master. Detalle en [[20261105-01 Diferencia de cambio y cashback en el P&L Master 2026 (F1003, F1004 y G4004)]].
+- 2026-11-17 · CECOs desde la nómina de noviembre: la carga de noviembre de Headcount - Raw trajo aplicados los cambios acordados con [[Pablo Lucero]] el 11-nov (Janet Lara, Silcris Jaramillo, Karla Lucero, Carla Revello, Sabrina Orellana, Catalina Orbez y todo Reservo: MDR a REV-MDR-HQ, AE a REV-AE-CL/AR/MX, post-venta a REV-ONB). Quedan Ángel Díaz (se queda en PAY-OPS-CL), Aucan Sierra (PAY-OPS-CL, por confirmar), la baja de Romero Figueredo, Ruelas y Saintard. Seed de dbt con los 4 códigos nuevos en el PR #507. Seguimiento en [[Cierre de mes noviembre]]; reglas nuevas en [[Guía clasificación de personas (headcount)]] §8.
+- 2026-11-17 · Las páginas de Notion «Cambios CECOS noviembre 2026» (lo que rige para cierres por venir, con estado por cambio) y «Cambios CECOS hasta octubre 2026» (propuestas sobre julio a octubre, en espera por decisión de Joaquín del 16-nov) son el registro de cambios de CECO. En la segunda está la propuesta de migrar en el seed los 23 códigos de julio 2026 que Buk renombró en agosto; los 7 códigos que se usaron hasta octubre no se migran porque son reclasificaciones de personas.
 
 ## Próximos pasos
 - [ ] Notion con estructura actual del P&L vs propuesta + benchmark de públicos.

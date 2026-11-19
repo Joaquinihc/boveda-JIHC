@@ -233,6 +233,15 @@ Matriz alineada a las cuentas **ya existentes en Odoo** (verificado 2026-07-06: 
 >
 > Referencia: [[finance.headcount — employer, clave de persona y carga desde la planilla]].
 
+> **2026-11-17 · Códigos comerciales de Reservo y reglas que salieron de la carga de noviembre.**
+> - Reservo comercial: calificadores de leads → REV-MDR-HQ (HQ, califican leads de todos los mercados); ejecutivos comerciales → REV-AE-CL / AR / MX (país donde venden). Los cuatro son **Sales** en el seed (PR #507). Contabilidad: MDR y AE de Reservo van a **G1107** (Payroll MDR), aunque la tabla de cuentas de §7 lleve AE a G1100; el P&L separa AgendaPro y Reservo por `Type`, no por cuenta.
+> - Post-venta de Reservo: todos a onboarding (REV-ONB), decisión de [[Pablo Lucero]] del 11-nov. Los analistas dedicados a un mercado conservan el BU del país (REV-ONB-CL / AR / MX) aunque queden solos dentro de Reservo: excepción de Joaquín del 16-nov, que prefiere el país a juntarlos en REV-ONB-HQ. REV-SUPP-AR y REV-SUPP-MX quedan sin personas desde noviembre y siguen en el seed por octubre.
+> - **El CECO sigue al cargo que define People**: Ángel Díaz sigue como Ops Analyst y se queda en PAY-OPS-CL aunque People lo haya movido a PAY-EXPA-CL (Joaquín, 17-nov). Aucan Sierra es Payments Ops de soporte para Chile (Tábata Herrera, 2-nov), así que va a PAY-OPS-CL con Sue Riquelme, no a Expansion; pendiente de confirmar con [[Pablo Santa Inés]].
+> - Ruelas: personal de Reservo en México que se formaliza por la sociedad AgendaPro México (SOFTWARE RESERVO no tiene nómina ahí). Lleva CECO de Reservo (REV-AE-MX) y necesita un centro de costo con marca Reservo en esa sociedad para redistribuir su costo; mecanismo por definir con [[Nicolás Astudillo]].
+> - [[Pablo Saintard]] queda solo en ADM-HQ dentro de Reservo; la regla del jefe no lo resuelve (no tiene jefe en Reservo). Decisión pendiente de Pablo Lucero.
+>
+> Registro de cambios y estado por persona: Notion, [Cambios CECOS noviembre 2026](https://app.notion.com/p/415ab34c233b8099855bcc149329b18f). Seguimiento: [[Cierre de mes noviembre]].
+
 > **Cómo se lleva esta clasificación a la contabilidad de cada sociedad**
 > (patrones por país, plan de cuentas, reglas de privacidad y el flujo validado):
 > ver [`payroll-centralization-methodology.md`](payroll-centralization-methodology.md).
