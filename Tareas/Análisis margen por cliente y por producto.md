@@ -10,7 +10,7 @@ temas: [margenes]
 notion_id: 3d6ab34c233b805091dde8c188a8591e
 notion_estado: "In progress"
 notion_prioridad: "High"
-notion_actualizado: "2026-11-18T12:13Z"
+notion_actualizado: "2026-11-19T04:02Z"
 fuente: https://app.notion.com/3d6ab34c233b805091dde8c188a8591e
 creado: 2026-09-09
 revisar: false
@@ -77,3 +77,4 @@ revisar: false
 - 2026-11-18 · Notion: página editada
 - 2026-11-18 · Avance desde Claude Code: auditoría de costos por stream (16-nov) y reorden de las subpáginas de Notion; el árbol antiguo «Cómo está construido el modelo» quedó marcado como desactualizado.
 - 2026-11-18 · Avance desde Claude Code: versión 1 simplificada en Notion (17 y 18-nov): 4 llaves, plataforma de AI dentro del margen, tabla de 18 columnas, diagramas por stream. Subtarea de las 46 o 64 columnas reemplazada por «Cerrar las decisiones abiertas de la versión 1» (con OK de Joaquín; 4 abiertas). 5 pendientes menores.
+- 2026-11-19 · Notion: página editada

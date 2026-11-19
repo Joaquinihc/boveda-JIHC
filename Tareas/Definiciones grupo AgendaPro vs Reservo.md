@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: en-curso
+estado: hecho
 prioridad: alta
 tiempo:
 tipo: definicion
