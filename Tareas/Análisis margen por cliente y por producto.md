@@ -22,7 +22,8 @@ revisar: false
 
 ## Subtareas
 - [x] Verificar el plan antes de dejar a Claude desarrollar los modelos dbt
-- [ ] Aplicar la versión 1 en dbt: PR 1 de la página 3 de Notion (tabla `company_margin_by_company_monthly` en rama nueva desde la base) — listo cuando el PR esté abierto y la cuadratura contra el P&L dé 0
+- [ ] Llevar el tablero Company Margin a la tabla nueva: merge del PR #521 y PR 2 de Evidence (hoja 4 de Notion) — listo cuando el tablero lea `finance.company_margin_by_company_monthly` en producción
+- [x] Aplicar la versión 1 en dbt: PR 1 de la página 3 de Notion (tabla `company_margin_by_company_monthly` en rama nueva desde la base) — listo cuando el PR esté abierto y la cuadratura contra el P&L dé 0 → PR #521 abierto el 20-nov; nada queda sin repartir en ningún mes cerrado
 - [ ] Hablar con Nicolás y mandarle el detalle de costos de IA por equipo vertical y por mes (mar–ago 2026), con el desglose por proveedor, cuenta y centro de costo, para que los reclasifique en Odoo (asiento de [[Pisar el P&L costos de API Keys, distribuir entre equipos|T-058]]) — listo cuando Nicolás tenga el detalle y acuerden cómo contabilizarlo
 - [ ] Definir distribución de costos AI por producto
 - [x] Definir proxy de uso de features para SaaS --> usé cantidad de bookings y locations de cada company.
@@ -31,10 +32,12 @@ revisar: false
 ## Notas
 
 ### Pendientes menores
-- 2026-11-19 · Decidir la propuesta P4 de la página 0 de Notion: sacar los contracargos de la llave de Payments (no aparecen en el P&L de Payment Processing).
+- 2026-11-20 · Investigar qué parte de los contracargos se retiene a las compañías y queda registrada como parte de su revenue (puede reabrir la decisión P4 de la hoja 0 de Notion).
+- 2026-11-20 · Borrar el worktree `agendapro-worktrees/company-margin` del PR #407 (cerrado): tiene cambios sin commit de otra sesión, pero su CSV ya es idéntico a la base. Claude lo borra con el OK de Joaquín.
+- 2026-11-19 · Decidir la propuesta P4 de la página 0 de Notion: sacar los contracargos de la llave de Payments (no aparecen en el P&L de Payment Processing). → Resuelto el 20-nov: se mantienen en la llave por ahora.
 - 2026-11-19 · Seguimiento con [[Nicolás Astudillo]]: Argentina no tiene procesadores contabilizados en mayo de 2026 (10,2k USD) y Colombia no los tiene desde mayo (unos 0,75k USD al mes).
-- 2026-11-19 · Decidir los cuatro puntos del tablero Company Margin de Evidence (página 4 de Notion, sección 4): costo por línea del P&L, tipo de cambio constante, columnas de contexto y ranking.
-- 2026-11-19 · Reducir el PR #407 al registro de API keys en una rama nueva desde la base y cerrarlo; coordinar antes con los cambios sin commit del worktree `agendapro-worktrees/company-margin`. Ver [[PR 407 — costos IA por vertical desde registro de API keys (reemplaza seed ai_costs_manual_monthly)]].
+- 2026-11-19 · Decidir los cuatro puntos del tablero Company Margin de Evidence (página 4 de Notion, sección 4): costo por línea del P&L, tipo de cambio constante, columnas de contexto y ranking. → Resuelto el 20-nov: E1, el gráfico de costo pasa a ser por stream; E2, la ficha conserva sucursales, reservas y GPV y quita tickets; tipo de cambio y ranking ya se desprendían de T1.
+- 2026-11-19 · Reducir el PR #407 al registro de API keys en una rama nueva desde la base y cerrarlo; coordinar antes con los cambios sin commit del worktree `agendapro-worktrees/company-margin`. Ver [[PR 407 — costos IA por vertical desde registro de API keys (reemplaza seed ai_costs_manual_monthly)]]. → Resuelto el 19-nov: el registro quedó mergeado como PR #520 (rama `feat/ai-api-key-registry`) y el #407 se cerró sin mergear.
 - 2026-11-19 · Pasar a «Vista previa» los diagramas nuevos de las páginas 2, 3 y 4 de Notion (quedan en modo código al crearse).
 - 2026-11-19 · Subtarea reemplazada: «Pasar el margen por compañía a solo P&L en el PR #407: costo IA desde G0030–G0032 a partir de sep-2026 (antes en nulo), sin el registro de API keys — listo cuando el cambio esté en el PR y la cuadratura contra el P&L dé 0». La versión 1 se construye en una rama nueva desde la base y ya trae el costo de IA solo desde el P&L; pasó a la subtarea «Aplicar la versión 1 en dbt».
 - 2026-11-18 · Preguntar a Yonathan Durán qué namespaces componen «BEAUTY» en su portal de costos de EKS y los montos actuales de RDS y Valkey por vertical (para refrescar la estimación de plataforma de AI, hoy de ago-2026).
@@ -45,9 +48,9 @@ revisar: false
 - 2026-11-18 · Subtarea reemplazada: «Elegir 46 o 64 columnas y construir `company_margin_by_company_monthly` (una fila por compañía y mes) — listo cuando la tabla esté en un PR». La elección quedó resuelta con la tabla de 18 columnas de la versión 1; construirla pasa al plan dbt (página 3 de Notion).
 - 2026-10-20 · El aviso del 2026-10-02 se confirmó con el cierre de septiembre (ver la sección de abajo). Lo cubre la subtarea «Pasar el margen por compañía a solo P&L».
 - 2026-10-20 · Decidir qué hacer con el Azure que queda en G0001 («AWS - Microsoft», facturado con un mes o más de atraso; sep-2026: 6.190 USD, más un abono de reclasificación de +1.153 con detalle «5.2.0 G0001 - AWS»). Si se mantiene como costo IA, pedirle a Contabilidad que el abono de cada reclasificación diga «AI models», como el cargo en G0030.
-- 2026-10-20 · Si el rediseño deja sin uso el modelo `ai_costs_manual_monthly`, sacarlo del PR #407 y borrar la tabla `finance.ai_costs_manual_monthly` (hoy es el seed viejo, ene–ago 2026).
-- 2026-10-20 · Tras el merge del PR #407 ([[Pisar el P&L costos de API Keys, distribuir entre equipos|T-058]]): borrar a mano `finance.ai_api_key_team_assignment` (huérfana, 111 filas, sin vistas dependientes).
-- 2026-10-20 · Ajustar `sources/dwh/finance/company_margin_reconciliation.sql` en Evidence al diseño final (hoy dice «seed manual» y no etiqueta el Azure excluido).
+- 2026-10-20 · Si el rediseño deja sin uso el modelo `ai_costs_manual_monthly`, sacarlo del PR #407 y borrar la tabla `finance.ai_costs_manual_monthly` (hoy es el seed viejo, ene–ago 2026). → 2026-11-19: el seed se queda mientras corra la cadena antigua; se borra en el PR 3 (hoja 3 de Notion) y después Joaquín borra la tabla.
+- 2026-10-20 · Tras el merge del PR #407 ([[Pisar el P&L costos de API Keys, distribuir entre equipos|T-058]]): borrar a mano `finance.ai_api_key_team_assignment` (huérfana, 111 filas, sin vistas dependientes). → Resuelto el 19-nov: Joaquín la borró tras el merge del PR #520, que reemplazó al #407.
+- 2026-10-20 · Ajustar `sources/dwh/finance/company_margin_reconciliation.sql` en Evidence al diseño final (hoy dice «seed manual» y no etiqueta el Azure excluido). → 2026-11-20: lo cubre el PR 2 de Evidence (hoja 4 de Notion: la cuadratura pasa a totales por mes).
 
 ### 2026-10-20 · Revisión del PR #407 y criterio solo P&L
 - **Doble conteo en septiembre.** El P&L real de sep-2026 ya trae G0030 2.531 · G0031 2.859 · G0032 569 USD (corte DWH 14-oct, `finance.profit_and_loss`), iguales al registro de API keys (2.530,61 · 2.859,09 · 568,97). Sin reglas en `company_margin_cost_pool_rules`, esas cuentas caían en Platform → Software, y el pool AI Models sumaba los mismos 5.959 USD desde el registro.
@@ -68,6 +71,13 @@ revisar: false
 - **Plan en dbt** (hoja 3, aprobado el 19-nov; nada aplicado): una sola tabla `finance.company_margin_by_company_monthly` con dos pasos intermedios ephemeral, en una rama nueva desde la base y no sobre el PR #407. Tres PRs: dbt agrega la tabla, Evidence migra el tablero, dbt borra la cadena antigua. Etapa final: mover la tabla de `finance` a `dwh` cuando esté validada.
 - **Abierto**: propuesta P4 (contracargos en la llave de Payments), que no bloquea. Joaquín todavía no pidió empezar el PR 1.
 - Hallazgos con números: [[20261119-01 Llaves de Software, país y ejecución — hallazgos versión 1]]. Scripts y prototipo: `_analisis/2026-11-company-margin-v1/` (carpeta GitHub).
+
+### 2026-11-20 · PR 0 mergeado, PR 1 abierto y decisiones P4, E1 y E2
+- **PR 0 (registro de API keys)**: mergeado como PR #520 el 19-nov (agendapro-dbt, rama `feat/ai-api-key-registry`). Seed `ai_api_key_usage_monthly` con enero a octubre de 2026 (337 filas), idéntico al DWH; `api_key_name` y `team` quedaron como PII. El PR #407 se cerró sin mergear y Joaquín borró `finance.ai_api_key_team_assignment`.
+- **PR 1 (tabla nueva)**: PR #521 abierto el 20-nov (rama `feat/company-margin-v1`), con CI en verde; falta el merge de Joaquín. Agrega `finance.company_margin_by_company_monthly` (18 columnas), dos pasos ephemeral y cuatro tests `canary`. La cadena antigua sigue corriendo hasta el PR 3.
+- **Control con datos** (tabla temporal, ene-2025 a oct-2026, DWH al 19-nov): se construye en 18 a 35 s, contra unos 150 s de la cadena antigua. Nada queda sin repartir en ningún mes cerrado. Márgenes: Software 82,8% ene–oct y 81,5% en oct; Payments 35,4% ene–oct y 32,3% jul–oct; AI 86,0% en sep y 89,7% en oct. Quedan dentro de 1% de la simulación. 1.096 compañías con margen de Software negativo en oct. Detalle en [[20261119-01 Llaves de Software, país y ejecución — hallazgos versión 1]].
+- **Revisión independiente del código**: dos correcciones antes del PR. Un país o centro de costo desconocido ahora va entre todas las compañías; antes dejaba el monto sin compañías. El test de AWS ahora controla que la nube más la plataforma de AI sumen la cuenta del P&L; el control anterior habría fallado en producción con un abono real.
+- **Decisiones de Joaquín del 20-nov**: P4, los contracargos se mantienen en la llave de Payments mientras él revisa cuánto se retiene a las compañías como revenue; E1, el gráfico de costo del tablero pasa a ser por stream; E2, la ficha de compañía conserva sucursales, reservas y GPV y quita tickets. Solo queda abierta T3 (quién lee la tabla en `dwh`, para la etapa final). Traspaso entre sesiones: `_analisis/2026-11-company-margin-v1/CONTEXTO-para-implementar.md` (carpeta GitHub).
 
 ### Archivo
 - 2026-10-02 · Antes de que las cuentas G0030–G0035 tengan movimiento en el P&L, agregar reglas en `company_margin_cost_pool_rules` (stream AI, con su vertical) y dejar de usar el registro de API keys en los meses contabilizados. Si no, el costo de modelos IA se cuenta dos veces. Ver [[Imputación contable de costos de IA (API keys)]].
@@ -94,3 +104,4 @@ revisar: false
 - 2026-11-19 · Avance desde Claude Code: versión 1 cerrada (6 llaves, 15 reglas; decisiones del 18 y 19-nov en la hoja 0 de Notion), plan dbt de una sola tabla aprobado y hojas 4 y 5 nuevas. Subtarea «Cerrar las decisiones abiertas» tachada y «Pasar el margen a solo P&L en el PR #407» reemplazada por «Aplicar la versión 1 en dbt» (con OK de Joaquín; 3 abiertas). 5 pendientes menores.
 - 2026-11-20 · Notion: página editada
 - 2026-11-20 · Mencionada de nuevo en [[2026-11-17 FP&A Weekly]] (cerrar el primer cálculo corrigiendo los costos duplicados entre IA y software y cuadrarlo con el P&L; publicarlo en Finance y, si sirve, en el DWH: ya lo cubren la versión 1 cerrada el 19-nov y la subtarea «Aplicar la versión 1 en dbt») (Reuniones)
+- 2026-11-20 · Avance desde Claude Code: PR #520 (registro de API keys) mergeado y #407 cerrado; PR #521 (tabla de la versión 1) abierto con CI en verde; P4, E1 y E2 decididas. Subtarea «Aplicar la versión 1 en dbt» tachada y nueva «Llevar el tablero Company Margin a la tabla nueva» (3 abiertas). 2 pendientes menores nuevos; 4 resueltos y 2 anotados.

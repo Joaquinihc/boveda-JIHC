@@ -49,6 +49,7 @@ P&L Real ene–oct 2026 (`finance.profit_and_loss`, bloque 2- Service Costs), `f
 - Tablas en `finance`: `int_company_margin_drivers_monthly` (43 columnas), `company_margin_monthly` (38) y `company_margin_summary` (40). Único consumidor: el tablero Company Margin de Evidence, con cinco consultas.
 - El PR #407 está 283 commits atrás de la base, en conflicto y con CI en rojo. Ver [[PR 407 — costos IA por vertical desde registro de API keys (reemplaza seed ai_costs_manual_monthly)]].
 - Un prototipo de reparto en una pasada, sin tabla intermedia, cuadró con el P&L en los 22 meses y tardó 13,5 segundos.
+- 2026-11-20 · La tabla de la versión 1 en dbt (PR #521, construida como tabla temporal con el DWH al 19-nov) tarda 18 a 35 s y no deja nada sin repartir en ningún mes cerrado. Los márgenes quedan dentro de 1% de esta simulación: Software 82,8% ene–oct y 81,5% en oct; Payments 35,4% ene–oct; AI 89,7% en oct. Tope de reservas en oct: 924; 1.096 compañías con margen de Software negativo.
 
 ## Caveats
 - La marca de WhatsApp de una reserva indica intención de envío, no mensajes cobrados por Meta.
