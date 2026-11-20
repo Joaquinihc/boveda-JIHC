@@ -9,9 +9,9 @@ temas:
   - fitness
   - definiciones
 notion_id: 3e3ab34c233b802295cbeb421b274037
-notion_estado: In progress
+notion_estado: Done
 notion_prioridad: Medium
-notion_actualizado: 2026-09-22T14:56Z
+notion_actualizado: 2026-11-20T12:19Z
 fuente: https://app.notion.com/3e3ab34c233b802295cbeb421b274037
 creado: 2026-09-22
 revisar: false
@@ -26,3 +26,4 @@ revisar: false
 
 ## Historial
 - 2026-09-22 · Importada desde Notion (In progress).
+- 2026-11-20 · Cerrada en el tablero → Done en Notion

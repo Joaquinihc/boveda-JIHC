@@ -49,3 +49,4 @@ Dejar un solo método para asignar vertical y macro nicho a cada compañía: la 
 ## Historial
 - 2026-11-16 · Creada desde Claude Code (conversación con Joaquín): conciliación del AI revenue de Beauty con Sabrina y primer lote de overrides.
 - 2026-11-17 · Mencionada de nuevo en [[2026-11-13 Preparación de la presentación de resultados de octubre (Pablo)]]: «hablar con Sabri por la diferencia de Beauty en septiembre-octubre» (ya la cubre la conciliación del 13 al 16-nov) (Reuniones)
+- 2026-11-20 · Mencionada de nuevo en [[2026-11-17 FP&A Weekly]]: «sobreescribir con un PR en dbt la vertical de las compañías que pidió Sabri, una vez que confirme Vale López» (subtarea del primer lote). Acuerdo: se mantiene la definición de macro nichos, los cambios van por PR en dbt con fecha, quién y de qué a qué, y Company Management queda solo de lectura (Reuniones)

@@ -10,7 +10,7 @@ temas: [margenes]
 notion_id: 3d6ab34c233b805091dde8c188a8591e
 notion_estado: "In progress"
 notion_prioridad: "High"
-notion_actualizado: "2026-11-19T04:02Z"
+notion_actualizado: "2026-11-20T00:47Z"
 fuente: https://app.notion.com/3d6ab34c233b805091dde8c188a8591e
 creado: 2026-09-09
 revisar: false
@@ -92,3 +92,5 @@ revisar: false
 - 2026-11-18 · Avance desde Claude Code: versión 1 simplificada en Notion (17 y 18-nov): 4 llaves, plataforma de AI dentro del margen, tabla de 18 columnas, diagramas por stream. Subtarea de las 46 o 64 columnas reemplazada por «Cerrar las decisiones abiertas de la versión 1» (con OK de Joaquín; 4 abiertas). 5 pendientes menores.
 - 2026-11-19 · Notion: página editada
 - 2026-11-19 · Avance desde Claude Code: versión 1 cerrada (6 llaves, 15 reglas; decisiones del 18 y 19-nov en la hoja 0 de Notion), plan dbt de una sola tabla aprobado y hojas 4 y 5 nuevas. Subtarea «Cerrar las decisiones abiertas» tachada y «Pasar el margen a solo P&L en el PR #407» reemplazada por «Aplicar la versión 1 en dbt» (con OK de Joaquín; 3 abiertas). 5 pendientes menores.
+- 2026-11-20 · Notion: página editada
+- 2026-11-20 · Mencionada de nuevo en [[2026-11-17 FP&A Weekly]] (cerrar el primer cálculo corrigiendo los costos duplicados entre IA y software y cuadrarlo con el P&L; publicarlo en Finance y, si sirve, en el DWH: ya lo cubren la versión 1 cerrada el 19-nov y la subtarea «Aplicar la versión 1 en dbt») (Reuniones)
