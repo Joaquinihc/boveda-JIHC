@@ -32,6 +32,8 @@ revisar: false
 ## Notas
 
 ### Pendientes menores
+- 2026-11-24 · Pedir en el canal a Beauty que cargue al DWH la cantidad de conversaciones por cliente y por mes (Medspa y Health ya las tienen), para repartir el costo de IA por conversación — de [[2026-11-24 FP&A Weekly]]
+- 2026-11-24 · Agregar al reporte de margen por cliente en Evidence el diagrama de cómo se consideran los costos (ya está en Notion) — de [[2026-11-24 FP&A Weekly]]
 - 2026-11-20 · Investigar qué parte de los contracargos se retiene a las compañías y queda registrada como parte de su revenue (puede reabrir la decisión P4 de la hoja 0 de Notion).
 - 2026-11-20 · Borrar el worktree `agendapro-worktrees/company-margin` del PR #407 (cerrado): tiene cambios sin commit de otra sesión, pero su CSV ya es idéntico a la base. Claude lo borra con el OK de Joaquín.
 - 2026-11-19 · Decidir la propuesta P4 de la página 0 de Notion: sacar los contracargos de la llave de Payments (no aparecen en el P&L de Payment Processing). → Resuelto el 20-nov: se mantienen en la llave por ahora.
@@ -107,3 +109,6 @@ revisar: false
 - 2026-11-20 · Avance desde Claude Code: PR #520 (registro de API keys) mergeado y #407 cerrado; PR #521 (tabla de la versión 1) abierto con CI en verde; P4, E1 y E2 decididas. Subtarea «Aplicar la versión 1 en dbt» tachada y nueva «Llevar el tablero Company Margin a la tabla nueva» (3 abiertas). 2 pendientes menores nuevos; 4 resueltos y 2 anotados.
 - 2026-11-23 · Notion: página editada
 - 2026-11-24 · Notion: página editada
+- 2026-11-24 · Agregada como pendiente menor: «Pedir a Beauty que cargue al DWH las conversaciones por cliente y por mes» desde [[2026-11-24 FP&A Weekly]] (Reuniones)
+- 2026-11-24 · Agregada como pendiente menor: «Agregar al reporte de margen por cliente el diagrama de costos» desde [[2026-11-24 FP&A Weekly]] (Reuniones)
+- 2026-11-24 · Mencionada de nuevo en [[2026-11-24 FP&A Weekly]] (acordar con Jonathan los costos de plataforma de cada equipo vertical de IA = pendiente menor del 2026-11-18 con Yonathan Durán; en la reunión se vieron como poco relevantes por ser casi fijos)

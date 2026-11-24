@@ -28,6 +28,7 @@ Bandeja de acciones nuevas que los agentes (Reuniones, Claude Code, Cowork) no p
 - [ ] Pasar el cash flow de Evidence (Board Book 5.4 y Financial Performance) a leer Odoo en vez de la planilla de tesorería (posible frente nuevo) — de [[20261119-01 Cash flow Odoo v2 vs Evidence — comparación ene–oct 2026 y auditoría]] · 2026-11-19
 - [ ] Calcular el impacto de llevar la asignación de país de New Merchants (hoy por moneda de pago) al país geográfico, como en merchants, y volver con los resultados a Pablo — de [[2026-11-17 FP&A Weekly]] · 2026-11-20
 - [ ] Enviarle a Pablo Lucero el tablero de prioridades para que lo revise (relacionada con la línea «Ordenar el tablero de FP&A Priorities») — de [[2026-11-17 FP&A Weekly]] · 2026-11-20
+- [ ] Escribir en Slack a Seba (canal con Francisca Guzmán) para ver si se puede dar la cuenta de «cloud» a un Gmail para el computador de las entrevistas de práctica, y pasarle el plazo a Francisca (la entrevista era el 24-nov; probablemente ya hecho) — de [[2026-11-20 Cuenta AgendaPro y computador para entrevistas de práctica (Francisca)]] · 2026-11-24
 
 ## Notas
 
@@ -39,3 +40,5 @@ Bandeja de acciones nuevas que los agentes (Reuniones, Claude Code, Cowork) no p
 - 2026-11-17 · Agregadas 2 líneas: mensaje a Vale López sobre la meta ARR/MRR y slide de churn (título e insight de retención), desde [[2026-11-13 Preparación de la presentación de resultados de octubre (Pablo)]] (Reuniones)
 - 2026-11-19 · Agregada línea: pasar el cash flow de Evidence a leer Odoo en vez de la planilla, desde [[20261119-01 Cash flow Odoo v2 vs Evidence — comparación ene–oct 2026 y auditoría]] (Claude Code)
 - 2026-11-20 · Agregadas 2 líneas: impacto de pasar New Merchants a país geográfico y enviar el tablero de prioridades a Pablo, desde [[2026-11-17 FP&A Weekly]] (Reuniones)
+- 2026-11-24 · Agregada línea: cuenta de «cloud» para el computador de las entrevistas de práctica (Slack a Seba), desde [[2026-11-20 Cuenta AgendaPro y computador para entrevistas de práctica (Francisca)]] (Reuniones)
+- 2026-11-24 · Mencionada de nuevo en [[2026-11-24 FP&A Weekly]] (llevar las prioridades en un solo tablero y ordenarlas antes que todo; relacionada con «Ordenar el tablero de FP&A Priorities» y «Enviarle a Pablo Lucero el tablero de prioridades»)

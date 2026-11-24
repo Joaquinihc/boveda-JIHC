@@ -25,6 +25,7 @@ id: T-100
 - [ ] Cuadrar el cash flow recreado en Odoo con la planilla de Rafa: saldos primero, después movimientos, validando con la cartola del banco. Incluye lo que hoy está en un solo lado: el working capital de ProPay en Santander, los pagos con tarjeta de crédito Santander (≈ −USD 56k en Suppliers CL ene–sep) y el capex de computadores. Listo cuando octubre cuadre por país y las diferencias que queden estén explicadas.
 - [ ] Proponerle a Pablo cómo presentar Payments en el cash flow (bloque Evidence arriba y bloque ProPay/pasarelas abajo, con referencias como los EEFF de dLocal). Listo cuando Pablo la valide o la ajuste.
 - [ ] Cerrar la auditoría de la v2 de Odoo: revisar las hojas de Notion (4 diagramas a «Vista previa» y etiquetas D1–D7), llevarle D1–D6 a Pablo y mandar C1–C19 a Nicolás y Rafael. Listo cuando Pablo haya respondido las seis y Contabilidad tenga la lista.
+- [ ] Exportar el cash flow con el agente exportador del repo de Odoo MCP y cargarlo a mano al DWH en una tabla nueva, en paralelo a la actual — listo cuando la tabla nueva esté en el DWH con los datos exportados y la actual siga intacta
 
 ## Notas
 ### 2026-11-10 · Propuestas de cash flow que pasaron aquí
@@ -60,3 +61,4 @@ id: T-100
 - 2026-11-10 · Subtareas y contexto de T-092, T-093, T-104, T-105, T-106 y T-107 (Joaquín en conversación)
 - 2026-11-19 · Avance desde Claude Code: explicación de la v2 de Odoo, comparación con Evidence ene–oct 2026 y auditoría, en Notion y en [[20261119-01 Cash flow Odoo v2 vs Evidence — comparación ene–oct 2026 y auditoría]]
 - 2026-11-19 · Agregada como subtarea: «Cerrar la auditoría de la v2 de Odoo» y 4 pendientes menores, desde [[20261119-01 Cash flow Odoo v2 vs Evidence — comparación ene–oct 2026 y auditoría]] (Joaquín en conversación)
+- 2026-11-24 · Agregada como subtarea: «Exportar el cash flow con el agente exportador del repo de Odoo MCP y cargarlo a mano al DWH en una tabla nueva» desde [[2026-11-24 FP&A Weekly]] (Reuniones; 4.ª abierta: bloquea el cierre y es la prioridad 1 de la semana)

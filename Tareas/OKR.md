@@ -56,6 +56,7 @@ Fuente: DMs de Slack del 10 al 17-nov y `finance.okr` (corte 17-nov). Planilla: 
 - **Estado en `finance.okr` al 17-nov**: ya llegaron KR13.3 oct 0,75, las metas nuevas de People y KR4.3/KR4.4 oct = 1. KR10.4 y KR12.5 siguen ahí hasta la próxima carga. Sin valor: KR4.1–4.3 sep y oct, O3 KR5 sep y oct, O3 KR2 oct, KR7.2 oct y O1 KR1.2.6.1.
 
 ### Pendientes menores
+- 2026-11-24 · Sacar un PDF de los OKR con un párrafo y una lista de comentarios por área, para revisarlo e iterarlo y darles cierre — de [[2026-11-24 FP&A Weekly]]
 - 2026-10-21 · Verificar en `finance.okr` que KR4.3 y KR4.4 lleguen en 1; si siguen en NULL después de la sync, es el formato con que se tipeó. → Resuelto: en `finance.okr` llegaron en 1 en septiembre y octubre (revisado el 17-nov).
 - 2026-10-21 · KR11.2 (NPS de Hiring Manager) no tiene meta en ningún mes de 2026: definir la meta con People antes de pedir valor. → Resuelto 2026-11-13: metas de la planilla de People (sep 60, dic 70); el 17-nov quedó con evaluación mensual.
 - 2026-10-21 · KR12.3 (0% de colaboradores en plan de acción por más de 3 meses) tiene meta 0 todo el año, y el reporte lo excluye aunque se cumpla: reformular la meta.
@@ -76,3 +77,4 @@ Fuente: DMs de Slack del 10 al 17-nov y `finance.okr` (corte 17-nov). Planilla: 
 - 2026-10-21 · Avance desde Claude Code: mensaje a Alan enviado, borrador a Pablo Marambio en espera y KRs de Mario reasignados a Javiera.
 - 2026-10-23 · Mencionada de nuevo en [[2026-10-20 FP&A Weekly]] (pedir a Pablo Marambio el avance de septiembre)
 - 2026-11-17 · Avance desde Claude Code: ronda de cierre de octubre (7 pedidos, valores cargados en «KR Mensual 2026»), metas de People alineadas a la planilla de Javiera y KR10.4/KR12.5 eliminados.
+- 2026-11-24 · Agregada como pendiente menor: «Sacar un PDF de los OKR con un párrafo y una lista de comentarios» desde [[2026-11-24 FP&A Weekly]] (Reuniones; no entró como subtarea porque la tarea ya tiene 4 abiertas)
