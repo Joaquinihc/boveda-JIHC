@@ -10,7 +10,7 @@ temas: [margenes]
 notion_id: 3d6ab34c233b805091dde8c188a8591e
 notion_estado: "In progress"
 notion_prioridad: "High"
-notion_actualizado: "2026-11-20T13:36Z"
+notion_actualizado: "2026-11-23T20:25Z"
 fuente: https://app.notion.com/3d6ab34c233b805091dde8c188a8591e
 creado: 2026-09-09
 revisar: false
@@ -106,3 +106,4 @@ revisar: false
 - 2026-11-20 · Mencionada de nuevo en [[2026-11-17 FP&A Weekly]] (cerrar el primer cálculo corrigiendo los costos duplicados entre IA y software y cuadrarlo con el P&L; publicarlo en Finance y, si sirve, en el DWH: ya lo cubren la versión 1 cerrada el 19-nov y la subtarea «Aplicar la versión 1 en dbt») (Reuniones)
 - 2026-11-20 · Avance desde Claude Code: PR #520 (registro de API keys) mergeado y #407 cerrado; PR #521 (tabla de la versión 1) abierto con CI en verde; P4, E1 y E2 decididas. Subtarea «Aplicar la versión 1 en dbt» tachada y nueva «Llevar el tablero Company Margin a la tabla nueva» (3 abiertas). 2 pendientes menores nuevos; 4 resueltos y 2 anotados.
 - 2026-11-23 · Notion: página editada
+- 2026-11-24 · Notion: página editada
