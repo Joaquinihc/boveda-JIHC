@@ -2,15 +2,15 @@
 type: tarea
 id: T-042
 estado: en-curso
-prioridad: alta
+prioridad: media
 tipo: tabla-dwh
 origen: notion
 proyecto: "[[_Waterfall One-Time Charges]]"
 temas: [waterfall, otc]
 notion_id: 394ab34c233b8097bd53f205989384b4
 notion_estado: "In progress"
-notion_prioridad: "High"
-notion_actualizado: "2026-11-03T13:04Z"
+notion_prioridad: "Medium"
+notion_actualizado: "2026-11-24T13:55Z"
 fuente: https://app.notion.com/394ab34c233b8097bd53f205989384b4
 creado: 2026-07-05
 revisar: false
@@ -45,3 +45,4 @@ Hay una propuesta de Claude pendiente de leer (artifact linkeado en Notion).
 - 2026-10-21 · Notion: página editada
 - 2026-10-23 · Mencionada de nuevo en [[2026-10-20 FP&A Weekly]] (analizar los casos más comunes, 80–90%, frente a la pedida de Julio)
 - 2026-11-04 · Notion: página editada
+- 2026-11-25 · Notion: prioridad High → Medium

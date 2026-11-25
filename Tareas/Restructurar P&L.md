@@ -11,10 +11,10 @@ temas:
 notion_id: 3dcab34c233b80d9ad30d28f549e43ad
 notion_estado: "In progress"
 notion_prioridad: "High"
-notion_actualizado: "2026-11-03T12:45Z"
+notion_actualizado: "2026-11-24T13:43Z"
 fuente: https://app.notion.com/3dcab34c233b80d9ad30d28f549e43ad
 creado: 2026-09-15
-revisar: false
+revisar: true
 ---
 
 # Restructurar P&L
@@ -46,3 +46,4 @@ Notas de Notion: ¿mover la línea de Expansión a Costos de Adquisición? Bench
 - 2026-11-04 · Notion: página editada
 - 2026-11-05 · Avance desde Claude Code: resuelto el pendiente menor de G4004 (diferencia de cambio debajo del EBITDA con F1003/F1004; G4004 vuelve a cashback) (Joaquín en conversación)
 - 2026-11-16 · 1 pendiente menor pasó a Archivo (Monitor)
+- 2026-11-25 · Notion: ya no está asignada a Joaquín

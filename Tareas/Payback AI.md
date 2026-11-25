@@ -1,7 +1,7 @@
 ---
 type: tarea
 estado: en-curso
-prioridad: alta
+prioridad: media
 tiempo:
 tipo: analisis
 origen: notion
@@ -10,8 +10,8 @@ temas:
   - ai
 notion_id: 3ffab34c233b803fb437d66cbebc8bc9
 notion_estado: In progress
-notion_prioridad: High
-notion_actualizado: 2026-10-20T14:03Z
+notion_prioridad: Medium
+notion_actualizado: 2026-11-24T13:55Z
 fuente: https://app.notion.com/3ffab34c233b803fb437d66cbebc8bc9
 fecha_limite:
 creado: 2026-10-20
@@ -42,3 +42,4 @@ Calcular el payback de los productos de inteligencia artificial (Julia, Agente A
 ## Historial
 - 2026-10-21 · Importada desde Notion (In progress)
 - 2026-10-21 · Avance desde Claude Code: descripción, punto de partida (draft de Pablo, PR #812) y 1 subtarea.
+- 2026-11-25 · Notion: prioridad High → Medium
