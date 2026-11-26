@@ -41,7 +41,17 @@ id: T-100
 - Sobre la subtarea 2: la v2 ya separa Payments en una sección propia y en el reporte «Payments position». Joaquín decide si con eso queda cubierta.
 - No se escribió en Odoo, Evidence ni dbt, y no se envió nada a Pablo, Nicolás ni Rafael.
 
+### 2026-11-26 · Tipos de cambio y carga del cash flow de Odoo al DWH
+- **Tipos de cambio**: Odoo quedó con tasas oficiales en las 7 sociedades (PR #1086 de [[Nicolás Astudillo]], abierto); el DWH sigue con Google Finance (decisión D8). Cifras en [[20261126-01 Tipos de cambio — Google Finance vs banco central (ene–oct 2026)]]. Decimales truncados en el DWH: [[Claude Code — Decimales truncados en el DWH (tipos de cambio, Chargebee y Facebook spend)]].
+- **Diseño de la carga (avance de la subtarea 4)**: agente FP&A en el repo de Odoo usando la Rule 96 de Rafael Rodríguez (autorizó editarla; PR 0a espera su revisión, aprueba Nico). Una tarea programada en el Mac de Joaquín sube a «cash_flow_odoo» → «2026 DWH Loading» (IMPORTRANGE) → Airbyte → dbt → Evidence. Detalle en [[Cash flow en Odoo (v2) — estructura, mapa a Evidence y cómo reproducir]].
+- **Frecuencia (opción B)**: cada lunes, mes en curso y anterior; la primera corrida del mes revisa todo el año y deja los cambios en «Pendientes». Horario propuesto 11:30.
+- **Enero 2026**: la Rule 96 fallaba por falta de tasa al 31-dic-2025 (México y Reservo México). La carga manual de Nico probablemente lo desbloquea; el mensaje a Rafa sobre México quedó desactualizado.
+- **Octubre**: hoja y tabla del DWH siguen vacías; el consolidado de Rafa es provisorio, con 7 pendientes. Recomendación: esperar al agente y no cargar a mano (alimenta el Board Book).
+
 ### Pendientes menores
+- 2026-11-26 · Dry-run de enero en el Mac para confirmar que la tasa manual de Nico desbloquea la Rule 96 (México y Reservo México).
+- 2026-11-26 · Decidir cómo entra octubre al DWH (recomendación: esperar al agente, no cargar a mano).
+- 2026-11-26 · Esperando a otros: Nico mergea #1086 y #1087; Rafa revisa el PR 0a; [[Pablo Lucero]] decide quién cambia la fuente de tipos de cambio del DWH y qué fuente usar para EUR, PEN, CRC, PYG y UYU (D8); Pablo y Contabilidad, las transferencias en suspenso de Reservo del 7-oct.
 - 2026-11-19 · FCF: el de Odoo difiere del de Evidence por definición (deja fuera financing repayment y tipo de cambio, y registra el cobro al entrar a la pasarela), no por error. Cuál queda es la decisión D1 de la hoja 2 de Notion.
 - 2026-11-19 · Marzo de México quedó sin cuadre contra la pantalla de Odoo (timeout). Repetir el export de ese mes.
 - 2026-11-19 · 64 causas de diferencia quedaron «por confirmar» (109 mil USD) y 58 mil USD sin explicar, entre ellos los proveedores de SC3 de octubre. Se aclaran con las respuestas de Contabilidad.
@@ -62,3 +72,4 @@ id: T-100
 - 2026-11-19 · Avance desde Claude Code: explicación de la v2 de Odoo, comparación con Evidence ene–oct 2026 y auditoría, en Notion y en [[20261119-01 Cash flow Odoo v2 vs Evidence — comparación ene–oct 2026 y auditoría]]
 - 2026-11-19 · Agregada como subtarea: «Cerrar la auditoría de la v2 de Odoo» y 4 pendientes menores, desde [[20261119-01 Cash flow Odoo v2 vs Evidence — comparación ene–oct 2026 y auditoría]] (Joaquín en conversación)
 - 2026-11-24 · Agregada como subtarea: «Exportar el cash flow con el agente exportador del repo de Odoo MCP y cargarlo a mano al DWH en una tabla nueva» desde [[2026-11-24 FP&A Weekly]] (Reuniones; 4.ª abierta: bloquea el cierre y es la prioridad 1 de la semana)
+- 2026-11-26 · Avance desde Cowork: tipos de cambio (Odoo a tasas oficiales, D8 abierta), diseño de la carga del cash flow al DWH (Rule 96, opción B) y 3 pendientes menores; subtareas sin cambios (4 abiertas) (Joaquín en conversación)

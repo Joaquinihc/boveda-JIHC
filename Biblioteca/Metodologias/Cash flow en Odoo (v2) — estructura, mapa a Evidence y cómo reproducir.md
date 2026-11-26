@@ -85,3 +85,9 @@ Scripts de la sesión del 19-nov (no versionados): `~/Documents/GitHub/_analisis
 - **Filas de saldo repetidas** en `finance.cash_flow`: la extracción de Evidence las filtra; una lectura directa de la tabla las duplica.
 - **Reservo en la planilla**: aparece desde sep-2026 y Evidence lo consolida desde oct-2026; en Odoo están todos los meses.
 - **`read_group` por XML-RPC** falla con `groupby` vacío: agrupar por `account_id`.
+
+## Carga al DWH (diseño al 26-nov-2026)
+- **Cadena**: agente FP&A en el repo de Odoo, con la Rule 96 de Rafael Rodríguez → tarea programada en el Mac de Joaquín → Google Sheet «cash_flow_odoo» → «2026 DWH Loading» (IMPORTRANGE) → Airbyte → dbt → Evidence.
+- **Frecuencia (opción B)**: cada lunes recalcula el mes en curso y el anterior; la primera corrida del mes revisa todo el año y deja los cambios en la hoja «Pendientes» en vez de pisarlos. Horario propuesto 11:30.
+- **Trampa**: la Rule 96 falla si falta la tasa de cambio de la fecha (ej. 31-dic-2025 en México y Reservo México). Probar con dry-run antes de cargar.
+- Estado y pendientes en [[Cash flow en Odoo]].
