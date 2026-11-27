@@ -22,6 +22,10 @@ responsable: "[[Joaquín Herrera]]"
 - Repos en el Mac (copias locales): `~/Documents/GitHub/agendapro-dashboards-evidence/` (board book; en su raíz, `POS_VENTAS_SOT.md/.sql`, `POS_SALES_DBT_HANDOFF.md`, `POS_RECALCULO_TABLEROS.sql`, `POS_WEEKLY_DASHBOARD.md`) y `~/Documents/GitHub/agendapro-dbt-redshift/` (copia de `agendapro/agendapro-dbt`; los modelos de Ignacio están en la rama `refactor/postgres-to-redshift`).
 - 28-oct · **Evidence ya lee `pos_sales_sot`** en el payback mensual y el board book: PRs #856 (payback cuenta solo ISR), #860 (`pos_sold_monthly` sobre la SoT, desde 2024-01, con Others aparte) y #832 (board book: unidades, Key Metrics, attachment y payback) mergeados en `main`. Siguen en legacy 15 extracciones (OKR, MBR, CEO dashboard, Payments Weekly, cohortes): [[Migrar el resto de Evidence a pos_sales_sot]]. Detalle y cifras en [[Payback Payments]].
 
+## Tablero (Notion)
+- [Locations POS y reactivaciones](https://app.notion.com/p/3ceab34c233b8075b476f3e8047975ba) · In progress
+- Estado al 2026-11-26: el siguiente paso es migrar el resto de Evidence a `pos_sales_sot` (3 PRs, uno por grupo).
+
 ## Próximos pasos
 - [ ] Auditar facturas emitidas pendientes de pago (criterio oficial de registro) — mío.
 - [ ] Cuadrar la cifra de 104 POS entre reportes.
@@ -32,7 +36,7 @@ responsable: "[[Joaquín Herrera]]"
 Los análisis viven en esta carpeta con ID de fecha (`YYYYMMDD-NN Título`). Las reuniones relacionadas se linkean desde `Reuniones/` vía frontmatter `proyectos:`.
 
 
-## Tareas de este proyecto
+## Tareas de este proyecto (archivo de Obsidian, hasta el 26-nov-2026)
 ```base
 filters:
   and:

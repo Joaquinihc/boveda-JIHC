@@ -21,6 +21,10 @@ notion: https://app.notion.com/321ab34c233b80cdafdad8b83fa163dc
 - 2026-11-17 · Las metas de People las manda la planilla de Javiera Correa (decisión de Joaquín); «KR Mensual 2026» se alinea a ella. Dónde se edita cada cosa: [[Planilla OKR — dónde se edita y cómo llega al DWH]].
 - 2026-11-17 · Se eliminaron de «KR Mensual 2026» KR10.4 (candidatos por vacante: sin métrica objetiva en 2026) y KR12.5 (Onboarding 2.0, reemplazado por el NPS de onboarding, KR12.1). Antes, el 13-nov, KR10.6 (rankings de talento), a pedido de Javiera.
 
+## Tablero (Notion)
+- [OKR](https://app.notion.com/p/321ab34c233b80cdafdad8b83fa163dc) · To Review
+- Estado al 2026-11-26: en revisión; valores de octubre cargados en «KR Mensual 2026» el 17-nov.
+
 ## Próximos pasos
 - [ ] Actualización manual de KRs pendientes (Miguel, Alan).
 - [ ] Aclarar responsable del OKR de auditoría con Nicolás. → 2026-11-11: Nicolás dice que lo ve Pablo; falta definir quién reporta KR7.1.1–7.1.6.
@@ -29,7 +33,7 @@ notion: https://app.notion.com/321ab34c233b80cdafdad8b83fa163dc
 Los análisis viven en esta carpeta con ID de fecha (`YYYYMMDD-NN Título`). Las reuniones relacionadas se linkean desde `Reuniones/` vía frontmatter `proyectos:`.
 
 
-## Tareas de este proyecto
+## Tareas de este proyecto (archivo de Obsidian, hasta el 26-nov-2026)
 ```base
 filters:
   and:

@@ -4,14 +4,14 @@ Instrucciones para cualquier agente (Claude) que lea o escriba en esta bóveda.
 
 ## Quién soy
 Analista de FP&A / control de gestión. Reporto a Pablo Lucero (CFO). Zona horaria: America/Santiago.
-Trabajo sobre el DWH Redshift vía `agendapro-dbt-redshift` (rama `refactor postgres-to-redshift` = Redshift, la que vale; `master` = Postgres a deprecar) y los tableros en `agendapro-dashboards-evidence`. Mi tablero de prioridades de equipo: Notion → FP&A Priorities.
+Trabajo sobre el DWH Redshift vía `agendapro-dbt-redshift` (rama `refactor postgres-to-redshift` = Redshift, la que vale; `master` = Postgres a deprecar) y los tableros en `agendapro-dashboards-evidence`. Mi tablero de tareas (el único desde el 26-nov-2026): Notion → FP&A Priorities.
 
 ## Estructura (regla: carpetas para lo excluyente, tags para lo transversal)
 ```
 Home.md              Tablero de entrada (Bases genera las vistas; no editar tablas a mano)
 Inbox/               Capturas sin clasificar. Todo lo dudoso entra aquí.
 Journal/             Nota diaria cronológica (YYYY-MM-DD.md)
-Tareas/              TRABAJO EN VUELO: una nota por tarea; estado en frontmatter; efímero
+Tareas/              ARCHIVO de solo lectura: el tablero de Obsidian hasta el 26-nov-2026 (el vivo es Notion)
 Proyectos/<Nombre>/  CONOCIMIENTO: hub `_Nombre.md` + análisis `YYYYMMDD-NN Título.md`
 Proyectos/Ad hoc/    Análisis sueltos sin proyecto
 Biblioteca/          Conocimiento reutilizable: Metricas/ SQL/ Metodologias/ Recursos/
@@ -21,41 +21,23 @@ Archivo/             Proyectos cerrados (se mueve la carpeta completa)
 _sistema/            Plantillas y prompts de tareas; no es contenido
 ```
 
-## Tareas (flujo) vs Proyectos (conocimiento)
-- `Tareas/` = qué hay que hacer. `Proyectos/` = qué aprendimos/decidimos. **Una tarea nunca guarda conclusiones**: el hallazgo se escribe como análisis `YYYYMMDD-NN` en la carpeta del proyecto y la tarea solo lo linkea antes de cerrarse.
-- Nota de tarea: frontmatter `type: tarea`, `id: T-NNN` (id estable; lo asigna solo el plugin del tablero, correlativo por fecha `creado`; nunca se cambia ni se reutiliza), `estado: propuesta|pendiente|en-curso|en-revision|bloqueada|hecho|descartada`, `prioridad: alta|media-alta|media|media-baja|baja` (o vacía si no tiene), `tiempo: 1-5` (opcional, tiempo estimado: 1 = 2 h o menos · 2 = medio día · 3 = 1 día · 4 = 2–3 días · 5 = 1 semana o más; lo pone solo Joaquín), `tipo:`, `origen: notion|reunion|manual`, `proyecto: [[_Hub]]` (opcional), `temas:`, `fuente:`, `fecha_limite:` (opcional), `creado:`, `revisar:`, `alcance:` (opcional, solo en frentes: una línea **entre comillas dobles** con qué entra en ese frente, porque un «: » sin comillas rompe el frontmatter; ver «Frentes y «Por clasificar»»). Si viene de FP&A Priorities además: `notion_id:`, `notion_estado:` (último Status visto en Notion), `notion_prioridad:` (último Priority visto en Notion) y `notion_actualizado:` (última edición en Notion) — son la memoria del sync, solo el sync los escribe. Cuerpo: descripción + `## Subtareas` (checkboxes) + `## Notas` + `## Historial` (solo agregar líneas fechadas; lo escriben el sync, la tarea de reuniones y el Monitor al aplicar lo que pide Joaquín).
-- **La completitud se marca SOLO en la tarea/tablero**, jamás en las notas de reunión. El sync refleja tablero → nota de origen (marca `- [x]` en "Mis acciones"), nunca al revés.
-- Solo se traen de Notion las filas **asignadas a Joaquín o sin asignar**.
-- Tareas con `notion_id`: Notion manda en el título. **Prioridad**: Notion trae `alta`/`media`/`baja` (High/Medium/Low); `media-alta` y `media-baja` los pone solo Joaquín a mano. El sync solo cambia la prioridad cuando cambia en Notion (compara contra `notion_prioridad`); ahí vuelve al valor de Notion y lo anota en `## Historial`. El `estado` se puede mover en el tablero: el sync solo lo cambia cuando Notion cambió de verdad (compara contra `notion_estado`) y lo anota en `## Historial`; si ambos cambiaron, no toca nada y marca `revisar: true`. Los títulos se comparan normalizados (sin puntuación, tildes ni mayúsculas). Si una fila desaparece de Notion, la nota se conserva con `revisar: true`. Cuando aquí pasa a `hecho`, el sync marca Done en Notion. Subtareas y notas personales NUNCA suben a Notion.
-- **El tablero se organiza en frentes** (ver «Frentes y «Por clasificar»»): los agentes no crean tarjetas; agregan las acciones nuevas a un frente o a la tarjeta «Por clasificar», y Joaquín revisa una vez por semana (lunes) con el Monitor. `descartada` = rechazada o fuera del tablero: se oculta del tablero y **nunca se borra** (la nota guarda su contexto).
-- `revisar`: `false` en tareas creadas a mano (tuyas o de Notion) y en las aprobadas; `true` solo para dudas de clasificación y conflictos del sync.
-- El tablero es `Tareas/Tablero de Tareas.base` (vista «Tablero Joaquín», `type: tablero-joaquin`, del plugin **Base Board (Joaco)**, agrupada por `estado`; no confundir con el diseño «Kanban» nativo de Obsidian, `type: kanban`, que no tiene numeración, ids, colores ni subtareas; dentro de cada columna ordena por prioridad alta → media-alta → media → media-baja → baja → sin prioridad; dentro de la misma prioridad, por `tiempo` de más corta a más larga, sin estimar al final; después el orden manual). Cada tarjeta muestra un **número de orden** (1, 2, 3… recorriendo en-revision → en-curso → pendiente → bloqueada → propuesta; `hecho` no se numera): es solo visual, lo calcula el plugin y no se guarda en ninguna nota. Distinto del `id`, que sí es fijo. Con más de 10 tarjetas, la columna `en-curso` se muestra en dos columnas, como mosaico sin huecos: cada tarjeta va a la mitad más corta (opción «Columnas dobles» de la vista).
+## Tareas: viven en Notion (desde el 26-nov-2026)
+- **El único tablero de tareas es Notion → FP&A Priorities** (base «Prioridades»: https://app.notion.com/p/2abab34c233b80578095e415172d4cf5; data source `collection://2abab34c-233b-8055-a585-000b88caa5b3`). Las mías son las de `Assign` = Joaquín. Es un tablero de equipo: Pablo lo ve y a veces crea tarjetas.
+- **La bóveda guarda contexto, no tareas.** La tarjeta dice *qué* hay que hacer; la bóveda guarda *qué sabemos y por qué* (análisis, decisiones, queries, reuniones). Un hallazgo se escribe como análisis `YYYYMMDD-NN` en su proyecto, nunca en la tarjeta.
+- **Ningún agente escribe en Notion sin el OK explícito de Joaquín en la conversación.** Los pendientes nuevos se proponen (en el plan de `guardar-en-boveda` o en la revisión de Duet): ítem en el checklist de una tarjeta existente, línea en sus «Pendientes menores» o tarjeta nueva. Duet (asistente de Claude, fuera de la bóveda) vigila el tablero, Slack, correo y calendario y propone; no ve la bóveda.
+- **Cada hub de proyecto tiene `## Tablero (Notion)`**: enlaces a sus tarjetas y una línea `Estado al AAAA-MM-DD: …` con el estado y el siguiente paso. Se actualiza al guardar contexto de ese proyecto.
+- **`Tareas/` es archivo de solo lectura.** Ningún agente crea, edita, mueve ni borra notas ahí, salvo pedido explícito de Joaquín. Sirve para buscar contexto viejo por id (`T-NNN`) o título; cada tarea que pasó a Notion tiene en su `## Historial` el enlace a su tarjeta. El esquema histórico y el plugin Base Board (Joaco) están descritos en `Tareas/_acerca de Tareas.md`; el CLAUDE.md anterior, en `_sistema/respaldo-2026-11-26-pre-notion.tgz`.
 
-## Subtareas (regla para todos los agentes)
-- **Tope**: máximo **3 subtareas abiertas** por tarea; las tachadas (`- [x]`) no cuentan y se quedan donde están. Se puede llegar a **5** solo si la 4.ª y la 5.ª bloquean el cierre de la tarea o tienen fecha o alguien esperando.
-- **Una subtarea vale la pena si cumple las tres**: (1) la hace o la persigue Joaquín; (2) sin ella la tarea no se puede cerrar; (3) se puede marcar como hecha en 1–2 días de trabajo, con un «listo cuando» claro.
-- **Lo que no cumple va a otro lado (nunca se borra)**:
-  - Dudas, ideas, «revisar si…», decisiones de otras personas y pasos para después → `## Notas`, sección `### Pendientes menores`, una línea fechada cada uno.
-  - Trabajo grande (más de ~2 días) o con otro entregable → si calza mejor en otro frente, va ahí; si no, línea en «Por clasificar» marcada «(posible frente nuevo)».
-  - Pasos chicos del mismo frente → se fusionan en una sola subtarea.
-- **Orden**: arriba la que destraba a las demás.
-- **Cómo elegir cuáles quedan**: a cada una, tres preguntas: ¿bloquea el cierre de la tarea o a otras subtareas? ¿tiene fecha o alguien esperando? ¿es de Joaquín? Quedan las de más «sí»; con empate, la que destraba más.
-- **Ningún agente pasa el tope por su cuenta**: si la tarea ya está en el tope, propone qué reemplazar, fusionar o mover a Notas y espera el OK de Joaquín (en conversación, o «ok» al Monitor). Al quitar o fusionar una subtarea que tiene descripción en Notas (formato `### N. título`), esa descripción se queda y se le agrega a dónde pasó.
-
-## Frentes y «Por clasificar» (cómo entra trabajo nuevo al tablero)
-- **Frente** = toda tarea activa (`pendiente`, `en-curso`, `en-revision`, `bloqueada`). Lleva un nombre general (lo específico va como subtarea o pendiente menor) y, opcionalmente, `alcance:` en el frontmatter: una línea con lo que entra ahí (temas, personas, reportes, tablas, sociedades).
-- **Ningún agente crea tarjetas nuevas.** Solo nacen tareas cuando Joaquín lo pide (en conversación, o aprobando el plan de `guardar-en-boveda` o la revisión del lunes), desde el sync de Notion (filas de FP&A Priorities) y la de «Cierre de mes <mes>», que el Monitor crea el primer día hábil de cada mes.
-- **Cómo se registra una acción nueva** (reuniones, Slack, Claude Code, Cowork):
-  1. **Filtro**: solo si es de Joaquín (con su nombre, o sin duda razonable por el contexto), es concreta (un paso o entregable verificable; no «revisar si…», ideas ni opiniones) y no quedó resuelta en la misma fuente. Si la fuente no dice quién la hace, **no se registra**: se anota en el registro de la corrida como «sin dueño claro» y el Monitor la menciona el lunes.
-  2. **Duplicado**: si ya está como subtarea o pendiente menor de algún frente, o como línea de «Por clasificar», solo se agrega `- AAAA-MM-DD · Mencionada de nuevo en [[fuente]]` al Historial de esa nota.
-  3. **Frente**: se busca por `alcance`, `proyecto`, `temas`, personas y título. Si hay uno claro: entra como **subtarea** si cumple la regla de «Subtareas» y hay cupo; si no, como línea fechada en `### Pendientes menores` (con la fuente). Historial del frente: `- AAAA-MM-DD · Agregada como subtarea|pendiente menor: «…» desde [[fuente]] (<quién>)`.
-  4. **Sin frente claro** (ninguno o dos candidatos) → línea en [[Por clasificar]]: `- [ ] <acción> — de [[fuente]] · AAAA-MM-DD`.
-- **[[Por clasificar]]** es la única tarjeta en `propuesta` (las propuestas viejas son legado). Sus líneas no tienen tope de subtareas. Se resuelven en la revisión del lunes: a un frente, a un frente nuevo (solo con el OK de Joaquín) o descartadas (pasan a `### Descartadas` de la misma nota, con fecha). Una línea con más de 4 semanas sin decidir pasa sola a `### Descartadas por tiempo`.
-- **Limpieza**: los lunes, el Monitor pasa a `### Archivo` (al final de `## Notas`) los pendientes menores con más de 4 semanas desde su fecha. Nada se borra.
-- **Revisión**: una vez por semana, los lunes a las 10:00, en un solo mensaje del Monitor («ok» aplica sus recomendaciones). Los otros días el Monitor solo avisa urgencias (tareas que no corrieron, fechas vencidas o a 3 días o menos, problemas con Notion).
+## Reglas del tablero (para cualquier agente que proponga cambios en Notion)
+- **Tarjeta = frente de trabajo**, con nombre general; lo específico va en su checklist o en «Pendientes menores». Algo nuevo entra primero como ítem de una tarjeta existente; se propone tarjeta nueva solo si es trabajo aparte (más de ~2 días u otro entregable).
+- **Checklist**: máximo **3 ítems abiertos** por tarjeta; hasta **5** solo si el 4.º y el 5.º bloquean el cierre, tienen fecha o alguien esperando. Un ítem vale la pena si cumple las tres: lo hace o lo persigue Joaquín; sin él la tarjeta no se cierra; se puede marcar en 1–2 días con un «listo cuando» claro. Dudas, ideas, «revisar si…», decisiones de otros y pasos para después van a la sección «Pendientes menores» de la tarjeta.
+- **Si no hay cupo**: a cada ítem, tres preguntas (¿bloquea el cierre? ¿tiene fecha o alguien esperando? ¿es de Joaquín?); se proponen las de más «sí» y se dice qué pasa con las demás. Ningún agente pasa el tope sin OK.
+- **Nada se borra**: lo que sale del checklist pasa a «Pendientes menores» o a otra tarjeta. Las tarjetas asignadas a otras personas no se tocan.
+- **Cierre de mes**: el primer día hábil de cada mes se propone la tarjeta «Cierre de mes <mes>».
+- **Sin datos personales** en las tarjetas (RUT, correos, teléfonos): es un tablero compartido.
 
 ## Política de relaciones (quién linkea qué)
-1. **Hechos → automático, sin preguntar**: tarea extraída de reunión lleva `fuente: [[esa reunión]]`; tarea de Notion lleva `notion_id` + URL; análisis en carpeta de proyecto lleva `proyecto: [[_ese hub]]`; reunión lleva su URL de Notion.
+1. **Hechos → automático, sin preguntar**: análisis en carpeta de proyecto lleva `proyecto: [[_ese hub]]`; reunión lleva su URL de Notion; hub lleva el enlace a sus tarjetas de Notion.
 2. **Inferencias → solo con evidencia textual**: un link automático a proyecto/métrica/persona requiere mención explícita de su nombre en el contenido. La afinidad temática NO basta. Mejor un link faltante que uno falso.
 3. **Ambigüedad → nunca adivinar**: en conversación, preguntar a Joaquín. En tareas programadas (sin humano), dejar la nota sin el link dudoso, marcar `revisar: true` en el frontmatter y listarla en el reporte de la corrida. Joaquín resuelve en su pasada semanal.
 - Los links se escriben una sola vez, en la nota "hija"; las relaciones inversas las dan los backlinks de Obsidian.
@@ -76,25 +58,24 @@ Cada tarea programada escribe solo en su zona y, antes de crear, busca la llave 
 
 | Quién | Escribe en | Llave única |
 |---|---|---|
-| Sync Notion ↔ Tareas (L-V) | `Tareas/` (origen notion) + Done en Notion | `notion_id` (adopta una tarea de reunión equivalente en vez de duplicarla) |
-| Reuniones (mar y vie) | `Reuniones/` + en `Tareas/` solo agrega acciones a frentes o a «Por clasificar» (no crea tareas) | reunión: URL de Notion en `fuente:`; acción: la misma ya registrada en un frente o en «Por clasificar» |
-| PRs (vie) | `Inbox/PR …` | repo + número de PR |
-| Slack (vie) | `Inbox/Slack — …` | permalink del hilo |
-| Monitor (L-V 10:00) | Slack #tablero-bóveda-jihc (todo mensaje suyo empieza con `🤖 *Monitor bóveda* ·`); en `Tareas/`: lo que Joaquín pide en el canal (catálogo cerrado de cambios), la revisión semanal de los lunes (archivo de pendientes menores, vencimiento de «Por clasificar» y lo que Joaquín apruebe con «ok») y la tarea «Cierre de mes <mes>» el primer día hábil del mes; nunca escribe en Notion, ni borra o renombra notas | revisión semanal (su ts queda en el registro); un pedido se procesa una vez (queda con respuesta del Monitor); «Cierre de mes <mes>»: título |
+| Reuniones (mar y vie) | `Reuniones/` (acuerdos, «Mis acciones» y «Sin dueño claro»); no escribe en `Tareas/` ni en Notion | URL de Notion de la reunión en `fuente:` |
 | Mantenimiento (día 1) | `Inbox/Deriva — …`, `Journal/Resumen AAAA-MM.md` | métrica (una Deriva abierta por métrica) |
+| `guardar-en-boveda` (Claude Code o Cowork, con plan aprobado) | `Proyectos/`, `Biblioteca/`, hubs, `Inbox/`; en Notion solo lo que Joaquín apruebe | nota existente del tema |
+| Duet (fuera de la bóveda) | Notion FP&A Priorities, solo con OK de Joaquín | — |
 
+- Retiradas el 26-nov-2026 (desactivadas, no borradas): Sync Notion ↔ Tareas, Monitor (y su canal #tablero-bóveda-jihc), PRs (vie) y Slack (vie). Sus procedimientos quedan en `_sistema/tareas-locales/` como historia.
 - Todas reportan en `_sistema/registro/AAAA-MM.md` (una sección por corrida). **Ningún agente escribe en la nota diaria del Journal**: es de Joaquín.
 - La bóveda se sincroniza con el repo **privado** `Joaquinihc/boveda-JIHC` de GitHub (cuenta de trabajo de Joaquín; https://github.com/Joaquinihc/boveda-JIHC) mediante el plugin Obsidian Git (el Mac es la única fuente: sube cada hora y no trae cambios; el repo es solo de consulta y respaldo, no se edita en GitHub ni desde otros equipos); `.gitignore` define qué no se sube. **Ningún agente ejecuta git en la bóveda** (ni commit, ni push, ni pull): lo hace el plugin. Nunca escribas secretos (tokens, contraseñas, cadenas de conexión) en ninguna nota.
 - Las instrucciones vivas de cada tarea están en `_sistema/tareas-locales/` (fuente única). Ningún agente modifica esa carpeta salvo a pedido explícito de Joaquín en conversación.
 
 ## Reglas duras
-1. **Reuniones destiladas**: máx ~5 bullets de acuerdos + acciones + link a la fuente. Transcripción completa vive en Notion. Importadas con `verificado: false` hasta que Joaquín las revise.
+1. **Reuniones destiladas**: máx ~5 bullets de acuerdos + acciones + link a la fuente. Transcripción completa vive en Notion. Las acciones quedan en la nota de la reunión; no pasan solas al tablero. (Desde el 26-nov-2026 ya no se usa `verificado`.)
 2. **Nunca cifras vivas en Biblioteca/Metricas**: solo metodología. La skill `finance-metric-definitions` y los repos son el árbitro; si la bóveda contradice la skill, gana la skill.
-3. **La bóveda referencia, no reemplaza**: prioridades de equipo → Notion (FP&A Priorities); SQL ejecutable → repos; transcripciones → Notion.
+3. **La bóveda referencia, no reemplaza**: tareas y prioridades → Notion (FP&A Priorities); SQL ejecutable → repos; transcripciones → Notion.
 4. **Los hechos se cosechan, el juicio se declara**: PRs/reportes/reuniones se importan como borrador (Inbox/); una conclusión solo se guarda como definitiva cuando Joaquín lo pide.
 5. **Slack**: guardar solo si (a) decide/cambia una definición, (b) cambio de tabla/modelo del DWH acordado, (c) conclusión de análisis que explica un número, (d) compromiso con fecha. Máx 5 sugerencias/semana, a Inbox/.
 6. **Análisis**: nota única con ID `YYYYMMDD-NN` en su carpeta de proyecto (o Ad hoc/).
-7. **Archivar** = mover la carpeta del proyecto completa a Archivo/. **Las tareas `hecho` nunca se borran ni se archivan**: son el historial (en el tablero están todas, en la columna `hecho` colapsada; también en la vista de tabla Hecho).
+7. **Archivar** = mover la carpeta del proyecto completa a Archivo/. **Las notas de `Tareas/` nunca se borran ni se archivan**: son el historial del tablero de Obsidian.
 8. **No crear carpetas nuevas** de primer nivel ni temáticas.
 
 ## Al escribir una nota nueva

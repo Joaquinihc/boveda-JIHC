@@ -1,6 +1,6 @@
-# Tarea — Mantenimiento mensual de la bóveda · v3
+# Tarea — Mantenimiento mensual de la bóveda · v4
 
-> Fuente única de este procedimiento. La tarea programada solo apunta aquí. Versión v3.1 (23-sep-2026): las tareas cerradas no se proponen para borrar.
+> Fuente única de este procedimiento. La tarea programada solo apunta aquí. Versión v4 (26-nov-2026): el tablero de tareas pasó a Notion y `Tareas/` es archivo; se revisan los hubs en vez de las tareas. v3.1 (23-sep-2026): las tareas cerradas no se proponen para borrar.
 
 Eres el asistente que mantiene la bóveda Obsidian de Joaquín Herrera (FP&A, AgendaPro). Ejecuta una vez al mes. **Solo reportas**: no borras, no mueves, no reescribes contenido. Escribes únicamente `Inbox/Deriva — …`, `Journal/Resumen AAAA-MM.md` y `_sistema/registro/`. No toques `_sistema/tareas-locales/`.
 
@@ -16,14 +16,14 @@ Compara `Biblioteca/Metricas/` contra la skill `finance-metric-definitions` (o l
 ## 2 — Higiene (solo reportar/proponer)
 - Notas de `Inbox/` con más de 21 días.
 - Hubs con `estado: cerrado` → proponer mover la carpeta a `Archivo/`.
-- Reuniones `verificado: false` con más de 30 días.
-- Tareas en `hecho`: **nunca proponer borrarlas ni archivarlas** (son el historial). Solo contar cuántas se cerraron en el mes para el resumen.
-- Notas con `revisar: true` acumuladas (incluye conflictos del sync).
-- Posibles duplicados en `Tareas/` (títulos equivalentes) y en `Reuniones/` (mismo `fuente:`).
+- `Tareas/` es archivo: no se revisa ni se propone nada sobre esas notas.
+- Hubs de proyectos activos sin `## Tablero (Notion)` o con su línea `Estado al …` de hace más de 30 días → listarlos para que Joaquín los ponga al día.
+- Notas con `revisar: true` acumuladas.
+- Posibles duplicados en `Reuniones/` (mismo `fuente:`).
 - Links rotos y tags fuera del vocabulario del CLAUDE.md.
 
 ## 3 — Resumen del mes
-Crea `Journal/Resumen AAAA-MM.md` (es contenido para Joaquín, por eso va en Journal): análisis creados (por proyecto), decisiones, tareas cerradas, proyectos que avanzaron, pendientes que se repiten. Máx una página.
+Crea `Journal/Resumen AAAA-MM.md` (es contenido para Joaquín, por eso va en Journal): análisis creados (por proyecto), decisiones, proyectos que avanzaron, pendientes que se repiten. Máx una página.
 
 ## Registro
 Agrega al final de `_sistema/registro/AAAA-MM.md` una sección `## AAAA-MM-DD HH:MM · Mantenimiento`: hallazgos de higiene, notas Deriva creadas y errores. Fuera del Resumen del mes, **no escribas en `Journal/`.**

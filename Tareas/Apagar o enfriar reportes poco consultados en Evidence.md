@@ -54,3 +54,4 @@ Alternativa sin shard nuevo: bajar el cron global de 4 a 2 corridas diarias. Afe
 
 ## Historial
 - 2026-10-29 · Creada desde Claude Code (pendiente por pedido de Joaquín) tras evaluar el frente en el repo de Evidence.
+- 2026-11-26 · Pasada a Notion: [Orden de Evidence (documentación y reportes poco usados)](https://app.notion.com/p/424ab34c233b81a79e92d18b26431760). Desde hoy se sigue allá; esta nota queda como archivo (Joaquín en conversación)

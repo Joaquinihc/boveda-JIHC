@@ -45,3 +45,4 @@ Ordenar la documentación de `agendapro-dashboards-evidence` con una regla: cada
 
 ## Historial
 - 2026-11-06 · Creada desde Cowork, con la propuesta del 19-oct adjunta; en curso y con prioridad media (Joaquín en conversación).
+- 2026-11-26 · Pasada a Notion: [Orden de Evidence (documentación y reportes poco usados)](https://app.notion.com/p/424ab34c233b81a79e92d18b26431760). Desde hoy se sigue allá; esta nota queda como archivo (Joaquín en conversación)

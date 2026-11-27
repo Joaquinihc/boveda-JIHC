@@ -46,3 +46,4 @@ Lo que falta para cerrar octubre de 2026, el primer mes con Reservo consolidado 
 - 2026-11-10 · Creada para agrupar el cierre de octubre: absorbe T-119, T-122, T-109, T-121 y T-118 (Joaquín en conversación).
 - 2026-11-10 · Pendientes menores de headcount de Reservo, traídos desde T-112 (Joaquín en conversación)
 - 2026-11-10 · `alcance` agregado (modelo de frentes) (Joaquín en conversación)
+- 2026-11-26 · Lo que quedaba del cierre de octubre pasó a la tarjeta de Notion [Cierre de mes noviembre](https://app.notion.com/p/424ab34c233b8128bb92d968c8b00fcd) (sección «Lo que queda de octubre»). Esta nota queda como archivo (Joaquín en conversación)

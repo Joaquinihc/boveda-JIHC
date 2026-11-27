@@ -44,3 +44,4 @@ Tarea general de churn. Incluye los tres ajustes que pidió [[Pablo Santa Inés]
 - 2026-10-08 · Creada desde Claude Code (diagnóstico del pedido de Pablo Santa Inés).
 - 2026-11-10 · Pasa a ser la tarea general de churn: título «Ajustes de churn en Evidence pedidos por Pablo Santa Inés» → «Churn — correcciones y análisis»; las tres correcciones se fusionan en una subtarea (detalle en Notas) y se suma el análisis del alza de octubre de T-103 (Joaquín en conversación)
 - 2026-11-16 · 3 pendientes menores pasaron a Archivo (Monitor)
+- 2026-11-26 · Pasada a Notion: [Churn — correcciones y análisis](https://app.notion.com/p/424ab34c233b818c8b39fa11be05852d). Desde hoy se sigue allá; esta nota queda como archivo (Joaquín en conversación)

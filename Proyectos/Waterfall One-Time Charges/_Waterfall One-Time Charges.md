@@ -18,6 +18,10 @@ notion: https://app.notion.com/394ab34c233b8097bd53f205989384b4
 - 2026-09-22 (reunión) y 28-sep: comercial ya no vende a 1,5x; el OTC se cobra al precio de la mensualidad por el período de instalación y después entra el recurrente. Beauty cobra USD 370 fijos, Medspa no cobra.
 - 2026-09-28: propuesta a Pablo Lucero de tratar el OTC como MRR del producto con la regla n−1 (no separado del MRR como decía el objetivo original). Pendiente de decisión. Ver [[20260928-01 OTC de AI como MRR — regla n−1]] y [[Reconocimiento de OTC de AI — regla n−1]].
 
+## Tablero (Notion)
+- [Waterfall One time charges](https://app.notion.com/p/394ab34c233b8097bd53f205989384b4) · In progress
+- Estado al 2026-11-26: en curso; lo último fue el FP&A Weekly del 20-oct (analizar los casos más comunes, 80–90 %).
+
 ## Próximos pasos
 - [ ] Implementar OTC separado del MRR en la tabla del Waterfall.
 - [ ] Definir si los overrides son recurrentes o one-time.
@@ -26,7 +30,7 @@ notion: https://app.notion.com/394ab34c233b8097bd53f205989384b4
 Los análisis viven en esta carpeta con ID de fecha (`YYYYMMDD-NN Título`). Las reuniones relacionadas se linkean desde `Reuniones/` vía frontmatter `proyectos:`.
 
 
-## Tareas de este proyecto
+## Tareas de este proyecto (archivo de Obsidian, hasta el 26-nov-2026)
 ```base
 filters:
   and:

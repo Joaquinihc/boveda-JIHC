@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: en-curso
+estado: descartada
 prioridad: media
 tiempo:
 tipo: analisis
@@ -43,3 +43,4 @@ Calcular, por país y canal, el % de leads que tenían cuenta creada al momento 
 - 2026-10-07 · Aprobada: en curso, prioridad media (Joaquín en conversación)
 - 2026-10-07 · Avance desde Claude Code: análisis y reporte publicados ([[20261007-01 Leads con cuenta creada en t0 por país y canal]]); subtareas de la reunión del 6-oct con Matías
 - 2026-10-14 · Mencionada de nuevo en [[2026-10-06 Leads con cuenta creada y conversión (Matías)]]
+- 2026-11-26 · No se pasó a Notion al mover el tablero (sin movimiento reciente o reemplazada por otra decisión); queda como historia. Si se retoma, se crea la tarjeta en Notion ese día (Joaquín en conversación)

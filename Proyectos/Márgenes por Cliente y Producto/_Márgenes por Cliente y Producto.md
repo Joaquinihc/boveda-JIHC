@@ -22,6 +22,10 @@ notion: https://app.notion.com/3d6ab34c233b805091dde8c188a8591e
 - 2026-11-19 · Decisión de Joaquín sobre el modelo: una sola tabla (`company_margin_by_company_monthly`), que nace en `finance` y pasa a `dwh` cuando esté validada. Se construye en una rama nueva desde la base, no sobre el PR #407, que queda reducido al registro de API keys. Plan en la hoja 3 de Notion.
 - 2026-11-20 · Decisiones de Joaquín: los contracargos se mantienen en la llave de Payments (P4) mientras él revisa qué parte se retiene a las compañías como revenue; en el tablero de Evidence, el costo se muestra por stream (E1) y la ficha de compañía conserva sucursales, reservas y GPV, sin tickets (E2). Solo queda abierta T3, para cuando la tabla pase a `dwh`.
 
+## Tablero (Notion)
+- [Análisis margen por cliente y por producto](https://app.notion.com/p/3d6ab34c233b805091dde8c188a8591e) · In progress
+- Estado al 2026-11-26: versión 1 en producción desde el 20-nov (PR #521 de dbt); el tablero que la lee está en revisión (PR #918).
+
 ## Próximos pasos
 - [ ] Simplificar el diseño de modelos dbt y mandar PR.
 - [ ] Definir distribución de costos de plataforma (bookings) y validar con Pablo/Nicolás.
@@ -30,7 +34,7 @@ notion: https://app.notion.com/3d6ab34c233b805091dde8c188a8591e
 Los análisis viven en esta carpeta con ID de fecha (`YYYYMMDD-NN Título`). Las reuniones relacionadas se linkean desde `Reuniones/` vía frontmatter `proyectos:`.
 
 
-## Tareas de este proyecto
+## Tareas de este proyecto (archivo de Obsidian, hasta el 26-nov-2026)
 ```base
 filters:
   and:

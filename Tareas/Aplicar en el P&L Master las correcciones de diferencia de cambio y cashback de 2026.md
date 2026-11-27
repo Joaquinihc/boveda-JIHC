@@ -64,3 +64,4 @@ Llevar al P&L Master 2026 el plan de diferencia de cambio acordado el 5-nov: F10
 - 2026-11-06 · Avance desde Claude Code: la baja de Sales e ISR de julio eran finiquitos de mayo; se agregaron en mayo del Master (5 filas, 272.140 MXN) y se actualizó Notion
 - 2026-11-10 · Avance desde Claude Code: F1005 separado de F1003. Odoo reclasificó enero a octubre el 10-nov y el PR #935 se mergeó. Subtarea nueva para aplicarlo en el Master.
 - 2026-11-06 · Mencionada de nuevo en [[2026-11-05 Diferencia de tipo de cambio y cierre del P&L de octubre (Pablo)]] (devolver la cuenta de comisiones bancarias a su nombre, ajustar los registros de diferencia de cambio, cuenta nueva intercompany vs externos y documentar los cambios del mes)
+- 2026-11-26 · La subtarea abierta (F1005) pasó a la tarjeta de Notion [Cierre de mes noviembre](https://app.notion.com/p/424ab34c233b8128bb92d968c8b00fcd). Esta nota queda como archivo (Joaquín en conversación)

@@ -6,7 +6,6 @@ personas: []
 proyectos: []
 temas: []
 fuente:
-verificado: false
 ---
 
 # {{title}}

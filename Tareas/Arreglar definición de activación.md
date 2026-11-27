@@ -49,3 +49,4 @@ Revisar y corregir cómo se define y se mide la activación, para que las métri
 - 2026-10-07 · Creada por Joaquín en conversación, en curso con prioridad media, como tarea madre de «Agregar Activation Velocity con enrollments al tablero de fitness»
 - 2026-10-07 · Avance desde Claude Code: 12 subtareas nuevas con los pendientes de la definición de activación; enlaza los análisis 20260929-01, 20260930-01 y 20261001-01
 - 2026-10-07 · Asignada al proyecto [[_Activación]] desde Claude Code, a pedido de Joaquín
+- 2026-11-26 · Pasada a Notion: [Definición de activación](https://app.notion.com/p/424ab34c233b81608892ef308d7e5309). Desde hoy se sigue allá; esta nota queda como archivo (Joaquín en conversación). En la tarjeta quedaron 3 ítems; las otras 10 subtareas, como pendientes menores

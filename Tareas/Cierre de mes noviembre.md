@@ -67,3 +67,4 @@ Se le paga por AgendaPro México (Buk México AgendaPro, CECO REV-AE-MX) pero el
 - 2026-11-18 · Creada para agrupar el cierre de noviembre, con el frente de CECOs como subtarea 1 (Joaquín en conversación)
 - 2026-11-18 · Avance desde Claude Code: carga de noviembre revisada, PR #507 abierto y cargado en Redshift, Notion al día con el estado de cada cambio, borrador a Gabriela con los 3 ajustes.
 - 2026-11-19 · Avance desde Claude Code: planilla corregida por Gabriela verificada (Ángel, Romero, Portugueis, Cofré, Aucan), altas de Mancilla Vera y Ruelas en Reservo CL, Notion al día; mensaje a Gabriela enviado, borradores a Pablo Lucero y al grupo; subtarea 2 (contabilización de Ruelas) agregada en conversación.
+- 2026-11-26 · Pasada a Notion: [Cierre de mes noviembre](https://app.notion.com/p/424ab34c233b8128bb92d968c8b00fcd). Desde hoy se sigue allá; esta nota queda como archivo (Joaquín en conversación)

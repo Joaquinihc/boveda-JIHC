@@ -17,6 +17,10 @@ responsable: "[[Joaquín Herrera]]"
 - Metodología base: [[Metodología Churn B2B3]].
 - 2026-10-08 · CX ya filtra `status='cancelled'` en el churn involuntario; Evidence queda 7 logos abajo en sep (542 vs 549) hasta el fix → [[20261008-01 Ajustes de churn en Evidence pedidos por CX (Pablo Santa Inés)]].
 
+## Tablero (Notion)
+- [Churn — correcciones y análisis](https://app.notion.com/p/424ab34c233b818c8b39fa11be05852d) · Not started
+- Estado al 2026-11-26: pendientes las 3 correcciones de CX en Evidence y el análisis del churn voluntario de octubre (Colombia).
+
 ## Próximos pasos
 - [ ] Cerrar las 4 diferencias menores vs reporte de Pablo Santa Inés.
 - [ ] Evaluar Escenario C (10 bookings última semana) vs B.
@@ -26,7 +30,7 @@ responsable: "[[Joaquín Herrera]]"
 Los análisis viven en esta carpeta con ID de fecha (`YYYYMMDD-NN Título`). Las reuniones relacionadas se linkean desde `Reuniones/` vía frontmatter `proyectos:`.
 
 
-## Tareas de este proyecto
+## Tareas de este proyecto (archivo de Obsidian, hasta el 26-nov-2026)
 ```base
 filters:
   and:

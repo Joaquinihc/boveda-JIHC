@@ -20,6 +20,10 @@ responsable: "[[Joaquín Herrera]]"
 - Estado al 2026-10-07: conviven tres definiciones de "activado" (Evidence, reportes dbt de velocity e `int_company_activation_status`). El detalle está en [[Activación — fuentes y definiciones vigentes]].
 - Estado al 2026-10-08: con la del directorio de CX (@M4: cuentas, cobros, meses 0 a 4) son cuatro. CX tiene además su activación de onboarding y comisiones (umbral por nicho y tamaño + 2 ciclos) y su graduación.
 
+## Tablero (Notion)
+- [Definición de activación](https://app.notion.com/p/424ab34c233b81608892ef308d7e5309) · Not started
+- Estado al 2026-11-26: sin avance desde el 7-oct; el siguiente paso es mergear el PR 415 de dbt y verificarlo.
+
 ## Próximos pasos
 Las acciones viven en las tareas del proyecto (lista abajo). La principal es [[Arreglar definición de activación]].
 
@@ -50,7 +54,7 @@ views:
         direction: DESC
 ```
 
-## Tareas de este proyecto
+## Tareas de este proyecto (archivo de Obsidian, hasta el 26-nov-2026)
 ```base
 filters:
   and:

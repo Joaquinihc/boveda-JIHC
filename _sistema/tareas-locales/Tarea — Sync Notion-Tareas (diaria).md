@@ -1,3 +1,5 @@
+> **Retirada el 26-nov-2026.** El tablero de tareas pasó a Notion y esta tarea programada quedó desactivada (no borrada). Este archivo queda como historia; no lo ejecutes.
+
 # Tarea — Sync Notion ↔ Tareas (diaria) · v3.2
 
 > Fuente única de este procedimiento. La tarea programada y la skill `/sync-tareas` solo apuntan aquí. Versión v3.2 (23-sep-2026): prioridad de 5 niveles; la prioridad solo se cambia cuando cambia en Notion (`notion_prioridad`). v3.1: comparación de títulos normalizada y filas borradas en Notion.

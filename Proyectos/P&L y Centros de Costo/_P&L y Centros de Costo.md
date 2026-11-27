@@ -40,6 +40,12 @@ responsable: "[[Joaquín Herrera]]"
 - 2026-11-26 · Tipos de cambio: Odoo pasó a tasas oficiales en las 7 sociedades (PR #1086 de [[Nicolás Astudillo]], abierto); DWH y Evidence siguen con Google Finance hasta definir quién cambia la hoja y la fuente de EUR, PEN, CRC, PYG y UYU (D8). Diferencia chica: revenue −0,07 % ene–oct 2026. Detalle en [[20261126-01 Tipos de cambio — Google Finance vs banco central (ene–oct 2026)]].
 - 2026-11-26 · Costos de adquisición para Marketing (`dwh_finance.acquisition_costs`): los sueldos se publican por línea (área + BU) con mínimo 2 personas; si no, van a Sales HQ o a Total. La diferencia de sueldos entre meses se acepta (decisión de Joaquín). Referencia en [[dwh_finance.acquisition_costs — modelo intermedio, regla de mínimo 2 personas y permisos]]; revisión en [[20261126-02 Costos de adquisición — revisión de la regla de mínimo 2 personas por línea]].
 
+## Tablero (Notion)
+- [Cierre de mes noviembre](https://app.notion.com/p/424ab34c233b8128bb92d968c8b00fcd) · In progress
+- [Pisar el P&L costos de API Keys, distribuir entre equipos](https://app.notion.com/p/3d6ab34c233b801599b2fcb1a686c710) · In progress
+- [Agregar P&L verticales a Board Book](https://app.notion.com/p/39dab34c233b80629d2de60f8c9ef019) · Blocked
+- Estado al 2026-11-26: cierre de noviembre en curso (CECOs desde noviembre y contabilización del ejecutivo de Reservo en México); en la tarjeta del cierre quedan puntos de octubre por revisar.
+
 ## Próximos pasos
 - [ ] Notion con estructura actual del P&L vs propuesta + benchmark de públicos.
 - [ ] Cerrar distribución de costos de plataforma entre verticales (G-1000).
@@ -49,7 +55,7 @@ responsable: "[[Joaquín Herrera]]"
 Los análisis viven en esta carpeta con ID de fecha (`YYYYMMDD-NN Título`). Las reuniones relacionadas se linkean desde `Reuniones/` vía frontmatter `proyectos:`.
 
 
-## Tareas de este proyecto
+## Tareas de este proyecto (archivo de Obsidian, hasta el 26-nov-2026)
 ```base
 filters:
   and:

@@ -1,3 +1,5 @@
+> **Retirada el 26-nov-2026.** El tablero de tareas pasó a Notion y esta tarea programada quedó desactivada (no borrada). Este archivo queda como historia; no lo ejecutes.
+
 # Tarea — Slack → sugerencias en Inbox (máx 5) · v3.1
 
 > Fuente única de este procedimiento. La tarea programada solo apunta aquí. Versión v3.1 (23-sep-2026): excluye el canal del Monitor.

@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: pendiente
+estado: descartada
 prioridad: media
 tiempo:
 tipo: definicion
@@ -37,3 +37,4 @@ No hay LTV oficial en la empresa. Nace del cálculo del LTV self-serve para Emil
 
 ## Historial
 - 2026-10-19 · Creada desde Claude Code: pendiente de definir la metodología de LTV tras el cálculo self-serve.
+- 2026-11-26 · No se pasó a Notion al mover el tablero (sin movimiento reciente o reemplazada por otra decisión); queda como historia. Si se retoma, se crea la tarjeta en Notion ese día (Joaquín en conversación)

@@ -1,6 +1,6 @@
 ---
 type: tarea
-estado: bloqueada
+estado: descartada
 prioridad: alta
 tiempo:
 tipo: cuadratura
@@ -31,3 +31,4 @@ Reunión agendada por Nicolás Astudillo para el 29-sep para revisar las inconsi
 - 2026-09-29 · Creada desde [[2026-09-28 Coordinación Finanzas]] (propuesta)
 - 2026-10-07 · Aprobada: en curso, prioridad alta (Joaquín en conversación)
 - 2026-10-29 · Avance desde Claude Code: respuestas de Rafa a las 27 inconsistencias registradas; nueva subtarea para decidir con Pablo y Nico qué se corrige (Joaquín en conversación)
+- 2026-11-26 · No se pasó a Notion al mover el tablero (sin movimiento reciente o reemplazada por otra decisión); queda como historia. Si se retoma, se crea la tarjeta en Notion ese día (Joaquín en conversación)

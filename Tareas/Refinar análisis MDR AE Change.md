@@ -1,7 +1,7 @@
 ---
 type: tarea
 id: T-064
-estado: en-curso
+estado: descartada
 prioridad: media
 tipo: analisis
 origen: reunion
@@ -25,3 +25,4 @@ Incorporar reconversiones, atribuir el cierre solo al último lead, desagregar p
 ## Historial
 - 2026-09-23 · Pasa a propuesta: espera la aprobación de Joaquín (monitor)
 - 2026-09-23 · Aprobada por Joaquín (en conversación) → en-curso, prioridad media; suma subtareas de T-062 y T-063
+- 2026-11-26 · No se pasó a Notion al mover el tablero (sin movimiento reciente o reemplazada por otra decisión); queda como historia. Si se retoma, se crea la tarjeta en Notion ese día (Joaquín en conversación)

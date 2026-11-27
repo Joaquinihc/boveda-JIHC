@@ -36,3 +36,4 @@ Pasar a `dwh.pos_sales_sot` las 15 extracciones de ventas POS de `agendapro-dash
 ## Historial
 - 2026-10-28 · Creada desde Claude Code (propuesta) tras el merge de #856, #860 y #832.
 - 2026-11-10 · estado: propuesta → pendiente (Joaquín en conversación)
+- 2026-11-26 · Sumada como ítem a la tarjeta de Notion [Locations POS y reactivaciones](https://app.notion.com/p/3ceab34c233b8075b476f3e8047975ba). Desde hoy se sigue allá; esta nota queda como archivo (Joaquín en conversación)

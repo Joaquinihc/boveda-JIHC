@@ -1,7 +1,7 @@
 ---
 type: tarea
 id: T-067
-estado: pendiente
+estado: descartada
 prioridad: media
 tiempo: 3
 tipo: reporte
@@ -29,3 +29,4 @@ Dashboard específico para separar bookings y enrollments (los enrollments se ge
 - 2026-10-07 · Aprobada: pendiente, prioridad media, tiempo 3 (Joaquín en conversación)
 - 2026-10-07 · Subtarea agregada: «Gráficos de registro de bookings por corte (pedido de Julio Guzmán)» (de [[2026-09-22 Reunión — Revenue Waterfall, CAC y bookings]]) (Joaquín en conversación)
 - 2026-10-07 · Asignada al proyecto [[_Activación]] desde Claude Code, a pedido de Joaquín
+- 2026-11-26 · No se pasó a Notion al mover el tablero (sin movimiento reciente o reemplazada por otra decisión); queda como historia. Si se retoma, se crea la tarjeta en Notion ese día (Joaquín en conversación)

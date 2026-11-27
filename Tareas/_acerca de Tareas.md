@@ -3,6 +3,8 @@ type: recurso
 ---
 # Tareas
 
+> **Archivo desde el 2026-11-26.** El tablero de tareas ahora es Notion → [FP&A Priorities](https://app.notion.com/p/2abab34c233b80578095e415172d4cf5). Esta carpeta guarda el historial de las tareas que se llevaron en Obsidian: no se crean ni se editan tareas aquí (ver «Tareas: viven en Notion» en `CLAUDE.md`). Lo de abajo describe cómo funcionaba el tablero de Obsidian y su plugin.
+
 **Trabajo en vuelo, no conocimiento.** Una nota por tarea; el estado vive en el frontmatter (`estado: propuesta | pendiente | en-curso | en-revision | bloqueada | hecho | descartada`) y se cambia arrastrando la tarjeta en el tablero (o editando la propiedad). Dentro de cada nota: descripción, `## Subtareas` (checkboxes, visibles y marcables en la tarjeta), `## Notas` libres y, en las que vienen de Notion, `## Historial` (lo escribe el sync).
 
 Reglas:

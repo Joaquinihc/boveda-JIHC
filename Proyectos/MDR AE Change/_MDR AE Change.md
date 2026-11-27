@@ -14,6 +14,9 @@ responsable: "[[Joaquín Herrera]]"
 - Hallazgos (16-sep): conversión subió (CL +14%, MX +37%, CO +106%), retención a 6 meses bajó; cupón 50% asociado a la mayor caída. Confundentes: cupón simultáneo al cambio, mix de canales y verticales.
 - Pedido por Rob; presentación compartida con Matías, Julio y Carlos.
 
+## Tablero (Notion)
+- Sin tarjeta en Notion: el análisis está sin movimiento desde el 23-sep y no se pasó al tablero (T-064 queda en el archivo de `Tareas/`). Si se retoma, se crea la tarjeta ese día. (2026-11-26)
+
 ## Próximos pasos
 - [ ] Refinar: reconversiones, atribución al último lead, desagregado por canal y vertical.
 - [ ] Evaluar CAC total nuevo vs anterior.
@@ -23,7 +26,7 @@ responsable: "[[Joaquín Herrera]]"
 Los análisis viven en esta carpeta con ID de fecha (`YYYYMMDD-NN Título`). Las reuniones relacionadas se linkean desde `Reuniones/` vía frontmatter `proyectos:`.
 
 
-## Tareas de este proyecto
+## Tareas de este proyecto (archivo de Obsidian, hasta el 26-nov-2026)
 ```base
 filters:
   and:
